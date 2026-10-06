@@ -3,10 +3,10 @@
   "name": "01828dda5934f0e61da7",
   "position": {
     "x": 20,
-    "y": 188,
+    "y": 200,
     "z": 4000,
-    "height": 240,
-    "width": 1240,
+    "height": 250,
+    "width": 820,
     "tabOrder": 4000
   },
   "visual": {
@@ -90,13 +90,6 @@
         {
           "properties": {
             "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"

@@ -549,25 +549,25 @@ def build_report():
     p = "resumen"
     v = header(p, "Prevención de Fraude · Operaciones ene–13 mar 2026",
                "100.000 operaciones · 57.655 clientes · montos en ARS (USD convertidos a dólar MEP)")
-    v.append(visual(p, "kpis", "cardVisual", 20, 76, 1240, 100, {"Data": [
+    v.append(visual(p, "kpis", "cardVisual", 20, 76, 1240, 110, {"Data": [
         meas("Operaciones totales"), meas("Clientes activos"), meas("Monto (ARS M)"), meas("Fuera de horario (%)"),
         meas("Clientes con alerta"), meas("Riesgo alto")]}, z=2))
-    v.append(visual(p, "diario", "columnChart", 20, 188, 1240, 240,
+    v.append(visual(p, "diario", "columnChart", 20, 200, 820, 250,
                     {"Category": [nm(col("Calendario", "dia_mes"), "Día")], "Series": [nm(col("Operaciones", "tipo_dia"), "Tipo de día")],
                      "Y": [nm(meas("Cant. operaciones"), "Operaciones")]},
-                    objects=chart_objects(legend_top=True, hide_value_axis=True, extra={"dataPoint": color_por_valor(
+                    objects=chart_objects(legend_top=True, extra={"dataPoint": color_por_valor(
                         "Operaciones", "tipo_dia", {"Día hábil": "#6439FF", "Fin de semana": "#00B386"})}),
                     title="Operaciones por día (hábil vs. fin de semana)", z=3))
-    v.append(visual(p, "canal", "barChart", 20, 440, 400, 266,
+    v.append(visual(p, "canal", "barChart", 860, 200, 400, 250,
                     {"Category": [nm(col("Operaciones", "canal"), "Canal")], "Y": [nm(meas("Cant. operaciones"), "Operaciones")]},
                     objects=chart_objects(labels=True, hide_value_axis=True),
                     title="Operaciones por canal", sort=[(meas("Cant. operaciones"), "Descending")], z=4))
-    v.append(visual(p, "nivel", "clusteredColumnChart", 432, 440, 400, 266,
+    v.append(visual(p, "nivel", "clusteredColumnChart", 20, 464, 600, 240,
                     {"Category": [nm(col("Clientes", "nivel_riesgo"), "Nivel de riesgo")], "Y": [nm(meas("% del volumen"), "% del volumen")]},
                     objects=chart_objects(labels=True, hide_value_axis=True,
                                           extra={"dataPoint": color_por_valor("Clientes", "nivel_riesgo", NIVEL_COLORES)}),
-                    title="% del volumen (ARS) por nivel de riesgo", z=5))
-    v.append(textbox(p, "hallazgos", 844, 440, 416, 266, [
+                    title="% del volumen operado (ARS) según nivel de riesgo del cliente", z=5))
+    v.append(textbox(p, "hallazgos", 640, 464, 620, 240, [
         ("Hallazgos clave", 16, C_ACCENT, True),
         ("1. 13 operaciones a precio fuera de mercado (≈ ARS 741 M de diferencia de valor), concentradas en IOLnet.", 13, C_TEXT, False),
         ("2. 68 clientes con cambio brusco de comportamiento entre enero y feb-mar; 270 sin historial en enero con montos > ARS 5 M.", 13, C_TEXT, False),

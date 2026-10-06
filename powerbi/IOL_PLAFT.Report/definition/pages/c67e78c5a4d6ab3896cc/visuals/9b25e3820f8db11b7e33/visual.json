@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "9b25e3820f8db11b7e33",
   "position": {
-    "x": 432,
-    "y": 440,
+    "x": 20,
+    "y": 464,
     "z": 6000,
-    "height": 266,
-    "width": 400,
+    "height": 240,
+    "width": 600,
     "tabOrder": 6000
   },
   "visual": {
@@ -288,7 +288,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'% del volumen (ARS) por nivel de riesgo'"
+                  "Value": "'% del volumen operado (ARS) según nivel de riesgo del cliente'"
                 }
               }
             },
