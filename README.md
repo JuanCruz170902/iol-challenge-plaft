@@ -13,17 +13,23 @@
 │   ├── raw/Challenge_iol_data_set.csv     dataset provisto (100.000 operaciones)
 │   └── api/                               salida de las APIs + log de llamadas + snapshot de respaldo
 ├── scripts/fetch_api.py                   Task 03: llamadas HTTP (solo librería estándar de Python)
+├── scripts/build_pbip.py                  genera el modelo TMDL y las páginas PBIR del dashboard
 ├── sql/
 │   ├── 00_carga.sql                       esquema, staging y tabla tipada
 │   ├── 01_exploracion.sql                 Task 01: exploración y calidad del dato
 │   ├── 02_api_enriquecimiento.sql         Task 03: calendario hábil, dólar MEP, montos en ARS
 │   ├── 03_patrones_anomalos.sql           Task 02: 4 patrones + score de riesgo por cliente
-│   └── 04_vistas_powerbi.sql              capa semántica (vistas vw_*) para el dashboard
+│   ├── 04_vistas_powerbi.sql              capa semántica (vistas vw_*) para el dashboard
+│   └── 05_export_powerbi.sql              exporta las tablas del dashboard a powerbi/data/*.csv
 ├── outputs/                               resultados de cada query (.txt) y cola de revisión (.csv)
 ├── powerbi/
-│   ├── GUIA_DASHBOARD.md                  modelo, medidas DAX y diseño de páginas
-│   ├── IOL_PLAFT.pbix                     dashboard
-│   └── capturas/                          screenshots usados en este README
+│   ├── IOL_PLAFT.pbip                     proyecto Power BI (abrir con Power BI Desktop)
+│   ├── IOL_PLAFT.SemanticModel/           modelo en TMDL: tablas, relaciones y medidas DAX (texto, versionable)
+│   ├── IOL_PLAFT.Report/                  reporte en PBIR: 7 páginas, tema IOL y logo
+│   ├── data/*.csv                         tablas que lee el modelo (exportadas por sql/05_export_powerbi.sql)
+│   ├── IOL_PLAFT_dashboard.pdf            exportación del dashboard
+│   ├── capturas/                          screenshots usados en este README
+│   └── GUIA_DASHBOARD.md                  diseño de páginas y medidas
 ├── docs/propuesta_ia.md                   Task 04: caso de uso de IA, prompt y resultado
 ├── run_all.ps1 / run_all.sh               corre todo el pipeline de punta a punta
 ```
@@ -48,9 +54,11 @@ El pipeline crea la base `iol` y luego:
 3. llama a las APIs;
 4. enriquece las operaciones;
 5. calcula los patrones;
-6. publica las vistas `iol.vw_*`.
+6. publica las vistas `iol.vw_*` y exporta las tablas del dashboard a `powerbi/data/`.
 
-Los resultados de cada paso quedan en `outputs/`. Para el dashboard: abrir `powerbi/IOL_PLAFT.pbix` y actualizar, o seguir [`powerbi/GUIA_DASHBOARD.md`](powerbi/GUIA_DASHBOARD.md) para armarlo desde cero.
+Los resultados de cada paso quedan en `outputs/`.
+
+**Dashboard:** abrir `powerbi/IOL_PLAFT.pbip` con Power BI Desktop y tocar **Actualizar**. El modelo lee los CSV de `powerbi/data/`, así que no hace falta PostgreSQL para verlo. Si el repo se clonó en otra ruta, primero hay que cambiar el parámetro `CarpetaDatos` (Transformar datos → Editar parámetros) para que apunte a la carpeta `powerbi\data\` local.
 
 ---
 
@@ -127,13 +135,17 @@ Ver [`docs/propuesta_ia.md`](docs/propuesta_ia.md). Caso de uso: **la IA redacta
 
 ## Dashboard (Power BI)
 
-| Resumen | Exploración |
+Es un proyecto Power BI en formato PBIP: el modelo (TMDL) y el reporte (PBIR) se guardan como texto, así que se pueden versionar y revisar en git. Tiene 7 páginas con el tema y el logo de IOL. La **portada** tiene botones para navegar a cada sección, y cada página tiene un botón «← Portada» para volver. **Detalle de cliente** es una página de obtención de detalles: se llega con clic derecho sobre un cliente en la Cola de revisión.
+
+| Portada | Resumen |
 |---|---|
-| ![Resumen](powerbi/capturas/01_resumen.png) | ![Exploración](powerbi/capturas/02_exploracion.png) |
-| **Patrones** | **Cola de revisión** |
-| ![Patrones](powerbi/capturas/03_patrones.png) | ![Cola](powerbi/capturas/04_cola_revision.png) |
-| **Detalle de cliente** | **Datos externos (API)** |
-| ![Detalle](powerbi/capturas/05_detalle_cliente.png) | ![API](powerbi/capturas/06_api.png) |
+| ![Portada](powerbi/capturas/01_portada.png) | ![Resumen](powerbi/capturas/02_resumen.png) |
+| **Exploración** | **Patrones anómalos** |
+| ![Exploración](powerbi/capturas/03_exploracion.png) | ![Patrones](powerbi/capturas/04_patrones.png) |
+| **Cola de revisión** | **Detalle de cliente (CLIBDBEB632)** |
+| ![Cola](powerbi/capturas/05_cola_revision.png) | ![Detalle](powerbi/capturas/06_detalle_cliente.png) |
+| **Datos externos (API)** | |
+| ![API](powerbi/capturas/07_api.png) | |
 
 ## Limitaciones y próximos pasos
 
