@@ -171,9 +171,9 @@ Es un proyecto Power BI en formato PBIP: el modelo (TMDL) y el reporte (PBIR) se
 - *Acción:* revisar las 13 operaciones esta semana e identificar la contraparte de cada una. Implementar un control automático que bloquee o pida confirmación cuando el precio se aleje más del 50% del de mercado.
 
 **2. Clientes que cambian bruscamente su forma de operar**
-- *Qué vimos:* 68 clientes multiplicaron por 5 o más su actividad, o por 10 su monto, entre enero y febrero-marzo. El caso más claro no había operado en enero y desde el 26/02 hizo 282 operaciones en 12 días, todas por conexión automática (API), comprando y vendiendo en el día 5 acciones de baja liquidez. Además, 270 clientes sin actividad en enero aparecieron operando más de $5 millones cada uno.
+- *Qué vimos:* 68 clientes multiplicaron por 5 o más su actividad, o por 10 su monto, entre enero y febrero-marzo. El caso más claro no había operado en enero y desde el 26/02 hizo 282 operaciones en 12 días, todas por conexión automática, comprando y vendiendo en el día 5 acciones de baja liquidez. Además, 270 clientes sin actividad en enero aparecieron operando más de $5 millones cada uno.
 - *Por qué es riesgo:* un cambio repentino es la señal típica de cuenta tomada por terceros, cuenta "mula" o prueba de un mecanismo de manipulación de precios en especies poco líquidas.
-- *Acción:* contrastar a estos clientes con su perfil declarado y su origen de fondos. Para quienes operan por API, verificar la fecha de habilitación y si hay cuentas vinculadas del otro lado de las operaciones.
+- *Acción:* contrastar a estos clientes con su perfil declarado y su origen de fondos. Para quienes operan por conexión automática, verificar la fecha de habilitación y si hay cuentas vinculadas del otro lado de las operaciones.
 
 **3. Concentración extrema de volumen en pocos clientes**
 - *Qué vimos:* un solo cliente del canal IOLnet explica el 18% de todo el volumen del trimestre (unos $6.300 millones en Letras del Tesoro), y también tiene operaciones a precio fuera de mercado. Los 113 clientes más activos concentran el 35% del volumen.
