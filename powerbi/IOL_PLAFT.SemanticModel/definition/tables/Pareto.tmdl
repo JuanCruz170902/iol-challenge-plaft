@@ -2,9 +2,16 @@ table Pareto
 
 	column pct_clientes
 		dataType: double
+		isHidden
 		formatString: 0.0
 		summarizeBy: none
 		sourceColumn: pct_clientes
+
+	column segmento
+		dataType: string
+		summarizeBy: none
+		sourceColumn: segmento
+		sortByColumn: pct_clientes
 
 	column pct_monto
 		dataType: double
@@ -18,7 +25,7 @@ table Pareto
 				let
 					Origen = Csv.Document(File.Contents(CarpetaDatos & "pareto.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
 					Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
-					Tipos = Table.TransformColumnTypes(Encabezados, {{"pct_clientes", type number}, {"pct_monto", type number}}, "en-US")
+					Tipos = Table.TransformColumnTypes(Encabezados, {{"pct_clientes", type number}, {"segmento", type text}, {"pct_monto", type number}}, "en-US")
 				in
 					Tipos
 

@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Calendario.fecha",
-              "nativeQueryRef": "fecha"
+              "nativeQueryRef": "fecha",
+              "displayName": "Fecha"
             }
           ]
         },
@@ -45,7 +46,8 @@
                 }
               },
               "queryRef": "Calendario.fuente_tc",
-              "nativeQueryRef": "fuente_tc"
+              "nativeQueryRef": "fuente_tc",
+              "displayName": "Fuente"
             }
           ]
         },
@@ -68,11 +70,60 @@
                 }
               },
               "queryRef": "Sum(Calendario.tc_ars_por_usd)",
-              "nativeQueryRef": "Sum of tc_ars_por_usd"
+              "nativeQueryRef": "Sum of tc_ars_por_usd",
+              "displayName": "ARS por USD"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -88,7 +139,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Tipo de cambio usado (ARS por USD)'"
+                  "Value": "'Tipo de cambio usado (ARS por USD) · 2 ene–13 mar'"
                 }
               }
             },
@@ -157,5 +208,58 @@
         }
       ]
     }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter1c22af228420f4a9b0847300",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Calendario"
+              }
+            },
+            "Property": "fecha_num"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "t",
+              "Entity": "Calendario",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 4,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "t"
+                        }
+                      },
+                      "Property": "fecha_num"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "20260313L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }

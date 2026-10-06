@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Operaciones.hora_art",
-              "nativeQueryRef": "hora_art"
+              "nativeQueryRef": "hora_art",
+              "displayName": "Hora"
             }
           ]
         },
@@ -63,16 +64,50 @@
                 }
               },
               "queryRef": "Medidas.Cant. operaciones",
-              "nativeQueryRef": "Cant. operaciones"
+              "nativeQueryRef": "Cant. operaciones",
+              "displayName": "Operaciones"
             }
           ]
         }
       }
     },
     "objects": {
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
       "columnHeaders": [
         {
           "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
             "columnAdjustment": {
               "expr": {
                 "Literal": {
@@ -87,6 +122,73 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "SelectRef": {
+                          "ExpressionName": "Medidas.Cant. operaciones"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient2": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FFFFFF'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#A48BFF'"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'noColor'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Medidas.Cant. operaciones"
           }
         }
       ]

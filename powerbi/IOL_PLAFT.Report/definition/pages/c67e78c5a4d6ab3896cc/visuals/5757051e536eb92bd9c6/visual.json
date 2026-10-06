@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "5757051e536eb92bd9c6",
   "position": {
-    "x": 860,
-    "y": 200,
+    "x": 20,
+    "y": 440,
     "z": 5000,
-    "height": 250,
+    "height": 266,
     "width": 400,
     "tabOrder": 5000
   },
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Operaciones.canal",
-              "nativeQueryRef": "canal"
+              "nativeQueryRef": "canal",
+              "displayName": "Canal"
             }
           ]
         },
@@ -45,7 +46,8 @@
                 }
               },
               "queryRef": "Medidas.Cant. operaciones",
-              "nativeQueryRef": "Cant. operaciones"
+              "nativeQueryRef": "Cant. operaciones",
+              "displayName": "Operaciones"
             }
           ]
         }
@@ -68,6 +70,61 @@
         ],
         "isDefaultSort": false
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

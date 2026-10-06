@@ -10,10 +10,10 @@
     "tabOrder": 4000
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Category": {
+        "Rows": {
           "projections": [
             {
               "field": {
@@ -27,11 +27,12 @@
                 }
               },
               "queryRef": "P3Top.id_cliente",
-              "nativeQueryRef": "id_cliente"
+              "nativeQueryRef": "id_cliente",
+              "displayName": "Cliente"
             }
           ]
         },
-        "Series": {
+        "Columns": {
           "projections": [
             {
               "field": {
@@ -49,7 +50,7 @@
             }
           ]
         },
-        "Y": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -68,11 +69,144 @@
                 }
               },
               "queryRef": "Sum(P3Top.ops)",
-              "nativeQueryRef": "Sum of ops"
+              "nativeQueryRef": "Sum of ops",
+              "displayName": "Operaciones"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "SelectRef": {
+                          "ExpressionName": "Sum(P3Top.ops)"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient2": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FFFFFF'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#A48BFF'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "20D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'noColor'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Sum(P3Top.ops)"
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

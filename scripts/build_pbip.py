@@ -73,6 +73,7 @@ T = {
         ("monto_ars", "double", "number", {"fmt": "#,##0", "sum": True}),
         ("flag_precio_fuera_mercado", "boolean", "logical", {}),
         ("flag_operacion_extrema", "boolean", "logical", {}),
+        ("precio_fuera_mercado", "string", "text", {}),
     ]),
     "Clientes": ("clientes.csv", [
         ("id_cliente", "string", "text", {}),
@@ -99,6 +100,8 @@ T = {
     ]),
     "Calendario": ("calendario.csv", [
         ("fecha", "dateTime", "date", {"fmt": "dd/MM/yyyy"}),
+        ("dia_mes", "string", "text", {"sortBy": "fecha_num"}),
+        ("fecha_num", "int64", "Int64.Type", {"hidden": True, "fmt": "0"}),
         ("dow", "int64", "Int64.Type", {"hidden": True, "fmt": "0"}),
         ("dia_semana", "string", "text", {"sortBy": "dow"}),
         ("anio_mes", "string", "text", {}),
@@ -128,7 +131,8 @@ T = {
         ("ops", "int64", "Int64.Type", {"fmt": "#,##0", "sum": True}),
     ]),
     "Pareto": ("pareto.csv", [
-        ("pct_clientes", "double", "number", {"fmt": "0.0"}),
+        ("pct_clientes", "double", "number", {"fmt": "0.0", "hidden": True}),
+        ("segmento", "string", "text", {"sortBy": "pct_clientes"}),
         ("pct_monto", "double", "number", {"fmt": "0.0", "sum": True}),
     ]),
     "P3Top": ("p3_top.csv", [
@@ -154,11 +158,11 @@ T = {
 MEASURES = [
     ("Operaciones totales", "FORMAT ( [Cant. operaciones], \"#,##0\" )", "", "KPI en texto (evita la abreviatura automática 'mil')"),
     ("Clientes activos", "FORMAT ( [Clientes únicos], \"#,##0\" )", "", "KPI en texto"),
-    ("Monto ARS M", "FORMAT ( [Monto ARS (M)], \"#,##0\" )", "", "KPI en texto, millones de pesos"),
+    ("Monto (ARS M)", "FORMAT ( [Monto ARS (M)], \"#,##0\" )", "", "KPI en texto, millones de pesos"),
     ("Fuera de horario (%)", "FORMAT ( [% Fuera de horario], \"0.0%\" )", "", "KPI en texto"),
     ("Clientes con alerta", "FORMAT ( [Clientes en alerta], \"#,##0\" )", "", "KPI en texto"),
     ("Riesgo alto", "FORMAT ( [Clientes riesgo Alto], \"#,##0\" )", "", "KPI en texto"),
-    ("Monto en alerta (ARS M)", "FORMAT ( CALCULATE ( [Monto clientes (M)], Clientes[nivel_riesgo] <> \"Sin alerta\" ), \"#,##0\" )", "", "Monto de los clientes con alguna alerta, en millones de pesos"),
+    ("Monto en alerta (M)", "FORMAT ( CALCULATE ( [Monto clientes (M)], Clientes[nivel_riesgo] <> \"Sin alerta\" ), \"#,##0\" )", "", "Monto de los clientes con alguna alerta, en millones de pesos"),
     ("Cant. operaciones", "COUNTROWS ( Operaciones )", "#,##0", "Cantidad de operaciones"),
     ("Clientes únicos", "DISTINCTCOUNT ( Operaciones[id_cliente] )", "#,##0", "Clientes únicos que operaron"),
     ("Monto ARS (M)", "DIVIDE ( SUM ( Operaciones[monto_ars] ), 1000000 )", "#,##0", "Monto operado en millones de pesos (USD convertidos a dólar MEP)"),
@@ -167,6 +171,7 @@ MEASURES = [
     ("Clientes en alerta", "CALCULATE ( COUNTROWS ( Clientes ), Clientes[nivel_riesgo] <> \"Sin alerta\" )", "#,##0", "Clientes con al menos una alerta"),
     ("Clientes riesgo Alto", "CALCULATE ( COUNTROWS ( Clientes ), Clientes[nivel_riesgo] = \"Alto\" )", "#,##0", "Clientes con score >= 4"),
     ("Monto clientes (M)", "DIVIDE ( SUM ( Clientes[monto_ars] ), 1000000 )", "#,##0", "Monto total de los clientes del contexto, en millones de pesos"),
+    ("% del volumen", "DIVIDE ( SUM ( Clientes[monto_ars] ), CALCULATE ( SUM ( Clientes[monto_ars] ), ALL ( Clientes ) ) )", "0.0%", "Participación en el monto total (ARS) del grupo de clientes del contexto"),
     ("Ops precio fuera de mercado", "CALCULATE ( [Cant. operaciones], Operaciones[flag_precio_fuera_mercado] = TRUE () )", "#,##0", "Operaciones a menos de la mitad o más del doble del precio del día"),
 ]
 
@@ -284,7 +289,18 @@ def agg(t, c, fn=0):
     return {"Aggregation": {"Expression": col(t, c), "Function": fn}}
 
 
+def nm(field, name):
+    """Campo con nombre visible personalizado (encabezado de tabla / título de eje)."""
+    return {**field, "__dn": name}
+
+
 def proj(field):
+    dn = field.get("__dn")
+    if dn:
+        field = {k: v for k, v in field.items() if k != "__dn"}
+        out = proj(field)
+        out["displayName"] = dn
+        return out
     if "Column" in field:
         t, c = field["Column"]["Expression"]["SourceRef"]["Entity"], field["Column"]["Property"]
         return {"field": field, "queryRef": f"{t}.{c}", "nativeQueryRef": c}
@@ -312,7 +328,8 @@ def visual(page, key, vtype, x, y, w, h, roles=None, objects=None, title=None, s
     if roles:
         v["query"] = {"queryState": {r: {"projections": [proj(f) for f in fs]} for r, fs in roles.items()}}
         if sort:
-            v["query"]["sortDefinition"] = {"sort": [{"field": f, "direction": d} for f, d in sort], "isDefaultSort": False}
+            v["query"]["sortDefinition"] = {"sort": [{"field": {k: x for k, x in f.items() if k != "__dn"}, "direction": d}
+                                                     for f, d in sort], "isDefaultSort": False}
     if objects:
         v["objects"] = objects
     if title:
@@ -341,8 +358,67 @@ def textbox(page, key, x, y, w, h, paras, z=0):
     return name, d
 
 
-def table_objects():
-    return {"columnHeaders": [{"properties": {"columnAdjustment": lit("'growToFit'"), "autoSizeColumnWidth": lit("true")}}]}
+NIVEL_COLORES = {"Alto": "#B42318", "Medio": "#F59E0B", "Bajo": "#64748B", "Sin alerta": "#C8B8FE"}
+
+
+def color_por_valor(table, column, colores):
+    """dataPoint.fill por valor de categoría/serie (selector scopeId)."""
+    return [{"properties": {"fill": {"solid": {"color": lit(f"'{c}'")}}},
+             "selector": {"data": [{"scopeId": {"Comparison": {"ComparisonKind": 0, "Left": col(table, column),
+                                                               "Right": {"Literal": {"Value": f"'{v}'"}}}}}]}}
+            for v, c in colores.items()]
+
+
+def chart_objects(labels=False, hide_value_axis=False, legend_top=False, cat_title=None, val_title=None, extra=None):
+    o = {}
+    if labels:
+        # labelDisplayUnits 1 = sin abreviar ("66.123" en vez de "66 mil"; evita el engañoso "0 mil")
+        o["labels"] = [{"properties": {"show": lit("true"), "labelDisplayUnits": lit("1D")}}]
+    ca = {"showAxisTitle": lit("true" if cat_title else "false")}
+    if cat_title:
+        ca["titleText"] = lit(f"'{cat_title}'")
+    o["categoryAxis"] = [{"properties": ca}]
+    va = {"showAxisTitle": lit("true" if val_title else "false")}
+    if val_title:
+        va["titleText"] = lit(f"'{val_title}'")
+    if hide_value_axis:
+        va["show"] = lit("false")
+    o["valueAxis"] = [{"properties": va}]
+    if legend_top:
+        o["legend"] = [{"properties": {"show": lit("true"), "position": lit("'Top'")}}]
+    if extra:
+        o.update(extra)
+    return o
+
+
+def heat_objects(metadata, max_color="#A48BFF", font=9, padding=0, max_value=None):
+    """Matriz compacta (fuente 9, sin relleno de fila) con escala de color de fondo blanco → violeta."""
+    gmin = {"color": {"Literal": {"Value": "'#FFFFFF'"}}}
+    gmax = {"color": {"Literal": {"Value": f"'{max_color}'"}}}
+    if max_value is not None:
+        # Tope fijo: un outlier no "aplana" la escala del resto de las celdas
+        gmin["value"] = {"Literal": {"Value": "0D"}}
+        gmax["value"] = {"Literal": {"Value": f"{max_value}D"}}
+    grad = {"solid": {"color": {"expr": {"FillRule": {
+        "Input": {"SelectRef": {"ExpressionName": metadata}},
+        "FillRule": {"linearGradient2": {"min": gmin, "max": gmax,
+                                         "nullColoringStrategy": {"strategy": {"Literal": {"Value": "'noColor'"}}}}}}}}}}
+    return {
+        "grid": [{"properties": {"rowPadding": lit(f"{padding}D")}}],
+        "rowHeaders": [{"properties": {"fontSize": lit(f"{font}D")}}],
+        "columnHeaders": [{"properties": {"fontSize": lit(f"{font}D"), "columnAdjustment": lit("'growToFit'"), "autoSizeColumnWidth": lit("true")}}],
+        "values": [{"properties": {"fontSize": lit(f"{font}D")}},
+                   {"properties": {"backColor": grad},
+                    "selector": {"data": [{"dataViewWildcard": {"matchingOption": 1}}], "metadata": metadata}}],
+    }
+
+
+def table_objects(font=None):
+    o = {"columnHeaders": [{"properties": {"columnAdjustment": lit("'growToFit'"), "autoSizeColumnWidth": lit("true")}}]}
+    if font:
+        o["columnHeaders"][0]["properties"]["fontSize"] = lit(f"{font}D")
+        o["values"] = [{"properties": {"fontSize": lit(f"{font}D")}}]
+    return o
 
 
 def in_filter(key, table, column, values, negate=False):
@@ -351,6 +427,16 @@ def in_filter(key, table, column, values, negate=False):
     if negate:
         cond = {"Not": {"Expression": cond}}
     return {"name": "Filter" + hid(key, 24), "field": col(table, column), "type": "Categorical",
+            "filter": {"Version": 2, "From": [{"Name": "t", "Entity": table, "Type": 0}], "Where": [{"Condition": cond}]},
+            "howCreated": "User"}
+
+
+def hasta_filter(key, table, column, max_value):
+    """Filtro avanzado column <= max_value (entero)."""
+    cond = {"Comparison": {"ComparisonKind": 4,
+                           "Left": {"Column": {"Expression": {"SourceRef": {"Source": "t"}}, "Property": column}},
+                           "Right": {"Literal": {"Value": f"{max_value}L"}}}}
+    return {"name": "Filter" + hid(key, 24), "field": col(table, column), "type": "Advanced",
             "filter": {"Version": 2, "From": [{"Name": "t", "Entity": table, "Type": 0}], "Where": [{"Condition": cond}]},
             "howCreated": "User"}
 
@@ -463,24 +549,30 @@ def build_report():
     p = "resumen"
     v = header(p, "Prevención de Fraude · Operaciones ene–13 mar 2026",
                "100.000 operaciones · 57.655 clientes · montos en ARS (USD convertidos a dólar MEP)")
-    v.append(visual(p, "kpis", "cardVisual", 20, 76, 1240, 110, {"Data": [
-        meas("Operaciones totales"), meas("Clientes activos"), meas("Monto ARS M"), meas("Fuera de horario (%)"),
+    v.append(visual(p, "kpis", "cardVisual", 20, 76, 1240, 100, {"Data": [
+        meas("Operaciones totales"), meas("Clientes activos"), meas("Monto (ARS M)"), meas("Fuera de horario (%)"),
         meas("Clientes con alerta"), meas("Riesgo alto")]}, z=2))
-    v.append(visual(p, "diario", "columnChart", 20, 200, 820, 250,
-                    {"Category": [col("Calendario", "fecha")], "Series": [col("Operaciones", "tipo_dia")],
-                     "Y": [meas("Cant. operaciones")]}, title="Operaciones por día (hábil vs. fin de semana)", z=3))
-    v.append(visual(p, "canal", "barChart", 860, 200, 400, 250,
-                    {"Category": [col("Operaciones", "canal")], "Y": [meas("Cant. operaciones")]},
+    v.append(visual(p, "diario", "columnChart", 20, 188, 1240, 240,
+                    {"Category": [nm(col("Calendario", "dia_mes"), "Día")], "Series": [nm(col("Operaciones", "tipo_dia"), "Tipo de día")],
+                     "Y": [nm(meas("Cant. operaciones"), "Operaciones")]},
+                    objects=chart_objects(legend_top=True, hide_value_axis=True, extra={"dataPoint": color_por_valor(
+                        "Operaciones", "tipo_dia", {"Día hábil": "#6439FF", "Fin de semana": "#00B386"})}),
+                    title="Operaciones por día (hábil vs. fin de semana)", z=3))
+    v.append(visual(p, "canal", "barChart", 20, 440, 400, 266,
+                    {"Category": [nm(col("Operaciones", "canal"), "Canal")], "Y": [nm(meas("Cant. operaciones"), "Operaciones")]},
+                    objects=chart_objects(labels=True, hide_value_axis=True),
                     title="Operaciones por canal", sort=[(meas("Cant. operaciones"), "Descending")], z=4))
-    v.append(visual(p, "nivel", "clusteredColumnChart", 20, 464, 600, 240,
-                    {"Category": [col("Clientes", "nivel_riesgo")], "Y": [meas("Monto clientes (M)")]},
-                    title="Monto total (ARS M) por nivel de riesgo del cliente", z=5))
-    v.append(textbox(p, "hallazgos", 640, 464, 620, 240, [
-        ("Hallazgos clave", 15, C_ACCENT, True),
-        ("1. 13 operaciones a precio fuera de mercado (≈ ARS 741 M de diferencia de valor), concentradas en IOLnet.", 12, C_TEXT, False),
-        ("2. 68 clientes con cambio brusco de comportamiento entre enero y feb-mar; 270 sin historial en enero con montos > ARS 5 M.", 12, C_TEXT, False),
-        ("3. 113 clientes (0,2%) concentran el 35% del volumen; uno solo explica el 18%.", 12, C_TEXT, False),
-        ("La actividad nocturna y de sábado es pareja en todos los canales: es una característica del dato, no del cliente.", 11, C_MUTED, False),
+    v.append(visual(p, "nivel", "clusteredColumnChart", 432, 440, 400, 266,
+                    {"Category": [nm(col("Clientes", "nivel_riesgo"), "Nivel de riesgo")], "Y": [nm(meas("% del volumen"), "% del volumen")]},
+                    objects=chart_objects(labels=True, hide_value_axis=True,
+                                          extra={"dataPoint": color_por_valor("Clientes", "nivel_riesgo", NIVEL_COLORES)}),
+                    title="% del volumen (ARS) por nivel de riesgo", z=5))
+    v.append(textbox(p, "hallazgos", 844, 440, 416, 266, [
+        ("Hallazgos clave", 16, C_ACCENT, True),
+        ("1. 13 operaciones a precio fuera de mercado (≈ ARS 741 M de diferencia de valor), concentradas en IOLnet.", 13, C_TEXT, False),
+        ("2. 68 clientes con cambio brusco de comportamiento entre enero y feb-mar; 270 sin historial en enero con montos > ARS 5 M.", 13, C_TEXT, False),
+        ("3. 113 clientes (0,2%) concentran el 35% del volumen; uno solo explica el 18%.", 13, C_TEXT, False),
+        ("La actividad nocturna y de sábado es pareja en todos los canales: es una característica del dato, no del cliente.", 12, C_MUTED, False),
     ], z=6))
     page(p, "Resumen", v)
 
@@ -488,37 +580,42 @@ def build_report():
     p = "exploracion"
     v = header(p, "Exploración del dataset", "¿Cuándo se opera, por dónde, en qué instrumentos y qué tan concentrada está la actividad?")
     v.append(visual(p, "heat", "pivotTable", 20, 76, 520, 630,
-                    {"Rows": [col("Operaciones", "hora_art")], "Columns": [col("Calendario", "dia_semana")],
-                     "Values": [meas("Cant. operaciones")]}, objects=table_objects(),
+                    {"Rows": [nm(col("Operaciones", "hora_art"), "Hora")], "Columns": [col("Calendario", "dia_semana")],
+                     "Values": [nm(meas("Cant. operaciones"), "Operaciones")]},
+                    objects=heat_objects("Medidas.Cant. operaciones", font=9),
                     title="Operaciones por hora (ART) y día de semana", z=2))
     v.append(visual(p, "franja", "hundredPercentStackedBarChart", 560, 76, 700, 260,
-                    {"Category": [col("Operaciones", "canal")], "Series": [col("Operaciones", "franja_horaria")],
-                     "Y": [meas("Cant. operaciones")]}, title="Franja horaria por canal (mismo patrón en todos → estructural)", z=3))
+                    {"Category": [nm(col("Operaciones", "canal"), "Canal")], "Series": [nm(col("Operaciones", "franja_horaria"), "Franja")],
+                     "Y": [nm(meas("Cant. operaciones"), "Operaciones")]}, objects=chart_objects(legend_top=True), title="Franja horaria por canal (mismo patrón en todos → estructural)", z=3))
     v.append(visual(p, "top", "barChart", 560, 350, 340, 356,
-                    {"Category": [col("TopInstrumentos", "instrumento")], "Y": [agg("TopInstrumentos", "ops")]},
-                    title="Top 15 instrumentos (operaciones)", sort=[(agg("TopInstrumentos", "ops"), "Descending")], z=4))
+                    {"Category": [nm(col("TopInstrumentos", "instrumento"), "Instrumento")], "Y": [nm(agg("TopInstrumentos", "ops"), "Operaciones")]},
+                    objects=chart_objects(labels=True, hide_value_axis=True), title="Top 15 instrumentos (operaciones)", sort=[(agg("TopInstrumentos", "ops"), "Descending")], z=4))
     v.append(visual(p, "tramos", "columnChart", 920, 350, 340, 170,
-                    {"Category": [col("TramosClientes", "tramo")], "Y": [agg("TramosClientes", "clientes")]},
-                    title="Clientes según cantidad de operaciones", z=5))
-    v.append(visual(p, "pareto", "lineChart", 920, 534, 340, 172,
-                    {"Category": [col("Pareto", "pct_clientes")], "Y": [agg("Pareto", "pct_monto")]},
-                    title="Concentración: % del monto según % de clientes", z=6))
+                    {"Category": [nm(col("TramosClientes", "tramo"), "Operaciones por cliente")], "Y": [nm(agg("TramosClientes", "clientes"), "Clientes")]},
+                    objects=chart_objects(labels=True, hide_value_axis=True, cat_title="Operaciones por cliente"), title="Clientes según cantidad de operaciones", z=5))
+    v.append(visual(p, "pareto", "columnChart", 920, 534, 340, 172,
+                    {"Category": [nm(col("Pareto", "segmento"), "Clientes de mayor monto")], "Y": [nm(agg("Pareto", "pct_monto"), "% del monto")]},
+                    objects=chart_objects(labels=True, hide_value_axis=True), title="Concentración: % del monto en el top de clientes",
+                    sort=[(col("Pareto", "segmento"), "Ascending")], z=6))
     page(p, "Exploración", v)
 
     # ---------------- 3. Patrones
     p = "patrones"
     v = header(p, "Patrones anómalos", "P1 actividad extrema · P2 horarios (estructural) · P3 cambio brusco · P4 precio fuera de mercado")
     v.append(visual(p, "scatter", "scatterChart", 20, 76, 620, 330,
-                    {"Category": [col("Clientes", "id_cliente")], "Series": [col("Clientes", "nivel_riesgo")],
-                     "X": [agg("Clientes", "log10_ops")], "Y": [agg("Clientes", "log10_monto_ars")]},
-                    title="P1 · Clientes: log10(operaciones) vs log10(monto ARS)", z=2))
-    v.append(visual(p, "p3", "clusteredColumnChart", 660, 76, 600, 330,
-                    {"Category": [col("P3Top", "id_cliente")], "Series": [col("P3Top", "mes")], "Y": [agg("P3Top", "ops")]},
+                    {"Category": [nm(col("Clientes", "id_cliente"), "Cliente")], "Series": [nm(col("Clientes", "nivel_riesgo"), "Nivel de riesgo")],
+                     "X": [nm(agg("Clientes", "log10_ops"), "Operaciones (escala log10)")],
+                     "Y": [nm(agg("Clientes", "log10_monto_ars"), "Monto ARS (escala log10)")]},
+                    objects={"dataPoint": color_por_valor("Clientes", "nivel_riesgo", NIVEL_COLORES),
+                             "legend": [{"properties": {"show": lit("true"), "position": lit("'Top'")}}]},
+                    title="P1 · Clientes según cantidad de operaciones y monto (escala logarítmica)", z=2))
+    v.append(visual(p, "p3", "pivotTable", 660, 76, 600, 330,
+                    {"Rows": [nm(col("P3Top", "id_cliente"), "Cliente")], "Columns": [col("P3Top", "mes")],
+                     "Values": [nm(agg("P3Top", "ops"), "Operaciones")]},
+                    objects=heat_objects("Sum(P3Top.ops)", font=9, max_value=20),
                     title="P3 · Top 12 cambios bruscos: operaciones por mes", z=3))
     v.append(visual(p, "p4", "tableEx", 20, 420, 1240, 220,
-                    {"Values": [col("P4PrecioFueraMercado", c) for c in
-                                ("id_cliente", "fecha", "canal", "tipo_tran", "simbolo_titulo", "cantidad", "precio",
-                                 "precio_mediana_dia", "ratio_vs_mercado", "diferencia_ars_mill")]},
+                    {"Values": [nm(col("P4PrecioFueraMercado", c), n) for c, n in [('id_cliente', 'Cliente'), ('fecha', 'Fecha'), ('canal', 'Canal'), ('tipo_tran', 'Tipo'), ('simbolo_titulo', 'Instrumento'), ('cantidad', 'Cantidad'), ('precio', 'Precio operado'), ('precio_mediana_dia', 'Precio de mercado (mediana del día)'), ('ratio_vs_mercado', 'Precio / mercado'), ('diferencia_ars_mill', 'Diferencia de valor (ARS M)')]]},
                     objects=table_objects(), title="P4 · Operaciones a precio fuera de mercado (diferencia de valor en ARS M)",
                     sort=[(col("P4PrecioFueraMercado", "diferencia_ars_mill"), "Descending")], z=4))
     v.append(textbox(p, "p2", 20, 652, 1240, 54, [
@@ -529,18 +626,16 @@ def build_report():
     # ---------------- 4. Cola de revisión
     p = "cola"
     v = header(p, "Cola de revisión priorizada", "Clientes con al menos una alerta, ordenados por score · clic derecho sobre un cliente → Obtener detalles")
-    v.append(visual(p, "s_nivel", "slicer", 20, 76, 300, 80, {"Values": [col("Clientes", "nivel_riesgo")]},
+    v.append(visual(p, "s_nivel", "slicer", 20, 76, 260, 80, {"Values": [col("Clientes", "nivel_riesgo")]},
                     objects={"data": [{"properties": {"mode": lit("'Dropdown'")}}],
                              "header": [{"properties": {"show": lit("true"), "text": lit("'Nivel de riesgo'")}}]}, z=2))
-    v.append(visual(p, "s_canal", "slicer", 340, 76, 300, 80, {"Values": [col("Clientes", "canal_principal")]},
+    v.append(visual(p, "s_canal", "slicer", 300, 76, 260, 80, {"Values": [col("Clientes", "canal_principal")]},
                     objects={"data": [{"properties": {"mode": lit("'Dropdown'")}}],
                              "header": [{"properties": {"show": lit("true"), "text": lit("'Canal principal'")}}]}, z=3))
-    v.append(visual(p, "kpi", "cardVisual", 660, 76, 600, 80, {"Data": [meas("Clientes con alerta"), meas("Riesgo alto"), meas("Monto en alerta (ARS M)")]}, z=4))
+    v.append(visual(p, "kpi", "cardVisual", 580, 76, 680, 80, {"Data": [meas("Clientes con alerta"), meas("Riesgo alto"), meas("Monto en alerta (M)")]}, z=4))
     v.append(visual(p, "tabla", "tableEx", 20, 170, 1240, 536,
-                    {"Values": [col("Clientes", c) for c in
-                                ("id_cliente", "nivel_riesgo", "score_riesgo", "motivos", "canal_principal", "ops", "monto_ars",
-                                 "ops_ene", "ops_feb", "ops_mar")]},
-                    objects=table_objects(), sort=[(col("Clientes", "score_riesgo"), "Descending")],
+                    {"Values": [nm(col("Clientes", c), n) for c, n in [('id_cliente', 'Cliente'), ('nivel_riesgo', 'Nivel'), ('score_riesgo', 'Score'), ('motivos', 'Motivos de la alerta'), ('canal_principal', 'Canal principal'), ('ops', 'Operaciones'), ('monto_ars', 'Monto ARS'), ('ops_ene', 'Ops ene'), ('ops_feb', 'Ops feb'), ('ops_mar', 'Ops mar')]]},
+                    objects=table_objects(font=9), sort=[(col("Clientes", "score_riesgo"), "Descending")],
                     filters=[in_filter("cola_nivel", "Clientes", "nivel_riesgo", ["'Alto'", "'Medio'", "'Bajo'"])], z=5))
     page(p, "Cola de revisión", v)
 
@@ -549,15 +644,16 @@ def build_report():
     fname = "Filter" + hid("drill_cliente", 24)
     v = header(p, "Detalle de cliente", "Página de obtención de detalles: llegar desde la Cola de revisión con clic derecho → Obtener detalles")
     v.append(visual(p, "perfil", "tableEx", 20, 76, 1240, 90,
-                    {"Values": [col("Clientes", c) for c in ("id_cliente", "nivel_riesgo", "score_riesgo", "motivos",
-                                                             "canal_principal", "ops", "dias_activos", "monto_ars")]},
+                    {"Values": [nm(col("Clientes", c), n) for c, n in [('id_cliente', 'Cliente'), ('nivel_riesgo', 'Nivel'), ('score_riesgo', 'Score'), ('motivos', 'Motivos de la alerta'), ('canal_principal', 'Canal principal'), ('ops', 'Operaciones'), ('dias_activos', 'Días activos'), ('monto_ars', 'Monto ARS')]]},
                     objects=table_objects(), z=2))
     v.append(visual(p, "serie", "columnChart", 20, 180, 1240, 220,
-                    {"Category": [col("Calendario", "fecha")], "Series": [col("Operaciones", "tipo_tran")], "Y": [meas("Cant. operaciones")]},
-                    title="Operaciones por día", z=3))
+                    {"Category": [nm(col("Calendario", "dia_mes"), "Día")], "Series": [nm(col("Operaciones", "tipo_tran"), "Tipo")],
+                     "Y": [nm(meas("Cant. operaciones"), "Operaciones")]},
+                    objects=chart_objects(labels=True, hide_value_axis=True, legend_top=True, extra={"dataPoint": color_por_valor(
+                        "Operaciones", "tipo_tran", {"Compra": "#6439FF", "Venta": "#00B386"})}),
+                    title="Operaciones por día (compras y ventas)", z=3))
     v.append(visual(p, "ops", "tableEx", 20, 414, 1240, 292,
-                    {"Values": [col("Operaciones", c) for c in ("fecha_art", "canal", "tipo_tran", "simbolo_titulo",
-                                                                "cantidad", "precio", "monto_ars", "flag_precio_fuera_mercado")]},
+                    {"Values": [nm(col("Operaciones", c), n) for c, n in [('fecha_art', 'Fecha y hora (ART)'), ('canal', 'Canal'), ('tipo_tran', 'Tipo'), ('simbolo_titulo', 'Instrumento'), ('cantidad', 'Cantidad'), ('precio', 'Precio'), ('monto_ars', 'Monto ARS'), ('precio_fuera_mercado', '¿Precio fuera de mercado?')]]},
                     objects=table_objects(), sort=[(col("Operaciones", "fecha_art"), "Ascending")], title="Operaciones", z=4))
     extra = {
         "filterConfig": {"filters": [{"name": fname, "field": col("Clientes", "id_cliente"), "type": "Categorical",
@@ -571,14 +667,19 @@ def build_report():
     p = "api"
     v = header(p, "Datos externos (APIs)", "Feriados 2026 y dólar MEP: qué fuente respondió en la última corrida y cómo se usó")
     v.append(visual(p, "tc", "lineChart", 20, 76, 800, 300,
-                    {"Category": [col("Calendario", "fecha")], "Series": [col("Calendario", "fuente_tc")],
-                     "Y": [agg("Calendario", "tc_ars_por_usd")]}, title="Tipo de cambio usado (ARS por USD)", z=2))
+                    {"Category": [nm(col("Calendario", "fecha"), "Fecha")], "Series": [nm(col("Calendario", "fuente_tc"), "Fuente")],
+                     "Y": [nm(agg("Calendario", "tc_ars_por_usd"), "ARS por USD")]},
+                    objects=chart_objects(legend_top=True), title="Tipo de cambio usado (ARS por USD) · 2 ene–13 mar",
+                    filters=[hasta_filter("tc_hasta", "Calendario", "fecha_num", 20260313)], z=2))
     v.append(visual(p, "feriados", "tableEx", 840, 76, 420, 300,
-                    {"Values": [col("Calendario", "fecha"), col("Calendario", "dia_semana"), col("Calendario", "feriado")]},
+                    {"Values": [nm(col("Calendario", "fecha"), "Fecha"), nm(col("Calendario", "dia_semana"), "Día"),
+                                nm(col("Calendario", "feriado"), "Feriado")]},
                     objects=table_objects(), title="Feriados del período (API)",
-                    filters=[in_filter("feriado_no_vacio", "Calendario", "feriado", ["null", "''"], negate=True)], z=3))
+                    filters=[in_filter("feriado_no_vacio", "Calendario", "feriado", ["null", "''"], negate=True),
+                             hasta_filter("feriado_hasta", "Calendario", "fecha_num", 20260313)], z=3))
     v.append(visual(p, "log", "tableEx", 20, 390, 1240, 316,
-                    {"Values": [col("ApiLog", c) for c in ("api", "estado", "filas", "detalle", "url")]},
+                    {"Values": [nm(col("ApiLog", c), n) for c, n in [("api", "API / fuente"), ("estado", "Estado"), ("filas", "Filas"),
+                                                                     ("detalle", "Detalle"), ("url", "URL")]]},
                     objects=table_objects(), title="Log de llamadas a las APIs", z=4))
     page(p, "Datos externos (API)", v)
 

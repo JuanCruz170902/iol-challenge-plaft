@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "6cba54b914789bf202f2",
   "position": {
-    "x": 640,
-    "y": 464,
+    "x": 844,
+    "y": 440,
     "z": 7000,
-    "height": 240,
-    "width": 620,
+    "height": 266,
+    "width": 416,
     "tabOrder": 7000
   },
   "visual": {
@@ -22,7 +22,7 @@
                     "value": "Hallazgos clave",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "15px",
+                      "fontSize": "16px",
                       "color": "#B42318"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "1. 13 operaciones a precio fuera de mercado (≈ ARS 741 M de diferencia de valor), concentradas en IOLnet.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "12px",
+                      "fontSize": "13px",
                       "color": "#1F2430"
                     }
                   }
@@ -48,7 +48,7 @@
                     "value": "2. 68 clientes con cambio brusco de comportamiento entre enero y feb-mar; 270 sin historial en enero con montos > ARS 5 M.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "12px",
+                      "fontSize": "13px",
                       "color": "#1F2430"
                     }
                   }
@@ -61,7 +61,7 @@
                     "value": "3. 113 clientes (0,2%) concentran el 35% del volumen; uno solo explica el 18%.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "12px",
+                      "fontSize": "13px",
                       "color": "#1F2430"
                     }
                   }
@@ -74,7 +74,7 @@
                     "value": "La actividad nocturna y de sábado es pareja en todos los canales: es una característica del dato, no del cliente.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px",
+                      "fontSize": "12px",
                       "color": "#6B7280"
                     }
                   }

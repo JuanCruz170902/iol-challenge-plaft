@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "P4PrecioFueraMercado.id_cliente",
-              "nativeQueryRef": "id_cliente"
+              "nativeQueryRef": "id_cliente",
+              "displayName": "Cliente"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "P4PrecioFueraMercado.fecha",
-              "nativeQueryRef": "fecha"
+              "nativeQueryRef": "fecha",
+              "displayName": "Fecha"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "P4PrecioFueraMercado.canal",
-              "nativeQueryRef": "canal"
+              "nativeQueryRef": "canal",
+              "displayName": "Canal"
             },
             {
               "field": {
@@ -69,7 +72,8 @@
                 }
               },
               "queryRef": "P4PrecioFueraMercado.tipo_tran",
-              "nativeQueryRef": "tipo_tran"
+              "nativeQueryRef": "tipo_tran",
+              "displayName": "Tipo"
             },
             {
               "field": {
@@ -83,7 +87,8 @@
                 }
               },
               "queryRef": "P4PrecioFueraMercado.simbolo_titulo",
-              "nativeQueryRef": "simbolo_titulo"
+              "nativeQueryRef": "simbolo_titulo",
+              "displayName": "Instrumento"
             },
             {
               "field": {
@@ -97,7 +102,8 @@
                 }
               },
               "queryRef": "P4PrecioFueraMercado.cantidad",
-              "nativeQueryRef": "cantidad"
+              "nativeQueryRef": "cantidad",
+              "displayName": "Cantidad"
             },
             {
               "field": {
@@ -111,7 +117,8 @@
                 }
               },
               "queryRef": "P4PrecioFueraMercado.precio",
-              "nativeQueryRef": "precio"
+              "nativeQueryRef": "precio",
+              "displayName": "Precio operado"
             },
             {
               "field": {
@@ -125,7 +132,8 @@
                 }
               },
               "queryRef": "P4PrecioFueraMercado.precio_mediana_dia",
-              "nativeQueryRef": "precio_mediana_dia"
+              "nativeQueryRef": "precio_mediana_dia",
+              "displayName": "Precio de mercado (mediana del día)"
             },
             {
               "field": {
@@ -139,7 +147,8 @@
                 }
               },
               "queryRef": "P4PrecioFueraMercado.ratio_vs_mercado",
-              "nativeQueryRef": "ratio_vs_mercado"
+              "nativeQueryRef": "ratio_vs_mercado",
+              "displayName": "Precio / mercado"
             },
             {
               "field": {
@@ -153,7 +162,8 @@
                 }
               },
               "queryRef": "P4PrecioFueraMercado.diferencia_ars_mill",
-              "nativeQueryRef": "diferencia_ars_mill"
+              "nativeQueryRef": "diferencia_ars_mill",
+              "displayName": "Diferencia de valor (ARS M)"
             }
           ]
         }

@@ -92,13 +92,18 @@ table Operaciones
 		summarizeBy: none
 		sourceColumn: flag_operacion_extrema
 
+	column precio_fuera_mercado
+		dataType: string
+		summarizeBy: none
+		sourceColumn: precio_fuera_mercado
+
 	partition Operaciones = m
 		mode: import
 		source =
 				let
 					Origen = Csv.Document(File.Contents(CarpetaDatos & "operaciones.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
 					Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
-					Tipos = Table.TransformColumnTypes(Encabezados, {{"id_transaccion", type text}, {"id_cliente", type text}, {"fecha", type date}, {"fecha_art", type datetime}, {"hora_art", Int64.Type}, {"franja_horaria", type text}, {"tipo_dia", type text}, {"tipo_tran", type text}, {"canal", type text}, {"moneda", type text}, {"simbolo_titulo", type text}, {"familia_instrumento", type text}, {"cantidad", Int64.Type}, {"precio", type number}, {"monto_ars", type number}}, "en-US"),
+					Tipos = Table.TransformColumnTypes(Encabezados, {{"id_transaccion", type text}, {"id_cliente", type text}, {"fecha", type date}, {"fecha_art", type datetime}, {"hora_art", Int64.Type}, {"franja_horaria", type text}, {"tipo_dia", type text}, {"tipo_tran", type text}, {"canal", type text}, {"moneda", type text}, {"simbolo_titulo", type text}, {"familia_instrumento", type text}, {"cantidad", Int64.Type}, {"precio", type number}, {"monto_ars", type number}, {"precio_fuera_mercado", type text}}, "en-US"),
 					Booleanos = Table.TransformColumns(Tipos, {{"flag_precio_fuera_mercado", each _ = "t", type logical}, {"flag_operacion_extrema", each _ = "t", type logical}})
 				in
 					Booleanos

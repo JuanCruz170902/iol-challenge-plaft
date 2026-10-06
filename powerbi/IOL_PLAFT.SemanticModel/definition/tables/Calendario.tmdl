@@ -6,6 +6,19 @@ table Calendario
 		summarizeBy: none
 		sourceColumn: fecha
 
+	column dia_mes
+		dataType: string
+		summarizeBy: none
+		sourceColumn: dia_mes
+		sortByColumn: fecha_num
+
+	column fecha_num
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: fecha_num
+
 	column dow
 		dataType: int64
 		isHidden
@@ -51,7 +64,7 @@ table Calendario
 				let
 					Origen = Csv.Document(File.Contents(CarpetaDatos & "calendario.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
 					Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
-					Tipos = Table.TransformColumnTypes(Encabezados, {{"fecha", type date}, {"dow", Int64.Type}, {"dia_semana", type text}, {"anio_mes", type text}, {"feriado", type text}, {"tc_ars_por_usd", type number}, {"fuente_tc", type text}}, "en-US"),
+					Tipos = Table.TransformColumnTypes(Encabezados, {{"fecha", type date}, {"dia_mes", type text}, {"fecha_num", Int64.Type}, {"dow", Int64.Type}, {"dia_semana", type text}, {"anio_mes", type text}, {"feriado", type text}, {"tc_ars_por_usd", type number}, {"fuente_tc", type text}}, "en-US"),
 					Booleanos = Table.TransformColumns(Tipos, {{"es_habil", each _ = "t", type logical}})
 				in
 					Booleanos

@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "TramosClientes.tramo",
-              "nativeQueryRef": "tramo"
+              "nativeQueryRef": "tramo",
+              "displayName": "Operaciones por cliente"
             }
           ]
         },
@@ -50,11 +51,74 @@
                 }
               },
               "queryRef": "Sum(TramosClientes.clientes)",
-              "nativeQueryRef": "Sum of clientes"
+              "nativeQueryRef": "Sum of clientes",
+              "displayName": "Clientes"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Operaciones por cliente'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

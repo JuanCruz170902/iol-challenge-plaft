@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Operaciones.canal",
-              "nativeQueryRef": "canal"
+              "nativeQueryRef": "canal",
+              "displayName": "Canal"
             }
           ]
         },
@@ -45,7 +46,8 @@
                 }
               },
               "queryRef": "Operaciones.franja_horaria",
-              "nativeQueryRef": "franja_horaria"
+              "nativeQueryRef": "franja_horaria",
+              "displayName": "Franja"
             }
           ]
         },
@@ -63,11 +65,60 @@
                 }
               },
               "queryRef": "Medidas.Cant. operaciones",
-              "nativeQueryRef": "Cant. operaciones"
+              "nativeQueryRef": "Cant. operaciones",
+              "displayName": "Operaciones"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

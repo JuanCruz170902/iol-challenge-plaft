@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Operaciones.fecha_art",
-              "nativeQueryRef": "fecha_art"
+              "nativeQueryRef": "fecha_art",
+              "displayName": "Fecha y hora (ART)"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "Operaciones.canal",
-              "nativeQueryRef": "canal"
+              "nativeQueryRef": "canal",
+              "displayName": "Canal"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "Operaciones.tipo_tran",
-              "nativeQueryRef": "tipo_tran"
+              "nativeQueryRef": "tipo_tran",
+              "displayName": "Tipo"
             },
             {
               "field": {
@@ -69,7 +72,8 @@
                 }
               },
               "queryRef": "Operaciones.simbolo_titulo",
-              "nativeQueryRef": "simbolo_titulo"
+              "nativeQueryRef": "simbolo_titulo",
+              "displayName": "Instrumento"
             },
             {
               "field": {
@@ -83,7 +87,8 @@
                 }
               },
               "queryRef": "Operaciones.cantidad",
-              "nativeQueryRef": "cantidad"
+              "nativeQueryRef": "cantidad",
+              "displayName": "Cantidad"
             },
             {
               "field": {
@@ -97,7 +102,8 @@
                 }
               },
               "queryRef": "Operaciones.precio",
-              "nativeQueryRef": "precio"
+              "nativeQueryRef": "precio",
+              "displayName": "Precio"
             },
             {
               "field": {
@@ -111,7 +117,8 @@
                 }
               },
               "queryRef": "Operaciones.monto_ars",
-              "nativeQueryRef": "monto_ars"
+              "nativeQueryRef": "monto_ars",
+              "displayName": "Monto ARS"
             },
             {
               "field": {
@@ -121,11 +128,12 @@
                       "Entity": "Operaciones"
                     }
                   },
-                  "Property": "flag_precio_fuera_mercado"
+                  "Property": "precio_fuera_mercado"
                 }
               },
-              "queryRef": "Operaciones.flag_precio_fuera_mercado",
-              "nativeQueryRef": "flag_precio_fuera_mercado"
+              "queryRef": "Operaciones.precio_fuera_mercado",
+              "nativeQueryRef": "precio_fuera_mercado",
+              "displayName": "¿Precio fuera de mercado?"
             }
           ]
         }

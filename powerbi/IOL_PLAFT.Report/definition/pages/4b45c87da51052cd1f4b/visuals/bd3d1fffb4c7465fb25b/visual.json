@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Clientes.id_cliente",
-              "nativeQueryRef": "id_cliente"
+              "nativeQueryRef": "id_cliente",
+              "displayName": "Cliente"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "Clientes.nivel_riesgo",
-              "nativeQueryRef": "nivel_riesgo"
+              "nativeQueryRef": "nivel_riesgo",
+              "displayName": "Nivel"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "Clientes.score_riesgo",
-              "nativeQueryRef": "score_riesgo"
+              "nativeQueryRef": "score_riesgo",
+              "displayName": "Score"
             },
             {
               "field": {
@@ -69,7 +72,8 @@
                 }
               },
               "queryRef": "Clientes.motivos",
-              "nativeQueryRef": "motivos"
+              "nativeQueryRef": "motivos",
+              "displayName": "Motivos de la alerta"
             },
             {
               "field": {
@@ -83,7 +87,8 @@
                 }
               },
               "queryRef": "Clientes.canal_principal",
-              "nativeQueryRef": "canal_principal"
+              "nativeQueryRef": "canal_principal",
+              "displayName": "Canal principal"
             },
             {
               "field": {
@@ -97,7 +102,8 @@
                 }
               },
               "queryRef": "Clientes.ops",
-              "nativeQueryRef": "ops"
+              "nativeQueryRef": "ops",
+              "displayName": "Operaciones"
             },
             {
               "field": {
@@ -111,7 +117,8 @@
                 }
               },
               "queryRef": "Clientes.monto_ars",
-              "nativeQueryRef": "monto_ars"
+              "nativeQueryRef": "monto_ars",
+              "displayName": "Monto ARS"
             },
             {
               "field": {
@@ -125,7 +132,8 @@
                 }
               },
               "queryRef": "Clientes.ops_ene",
-              "nativeQueryRef": "ops_ene"
+              "nativeQueryRef": "ops_ene",
+              "displayName": "Ops ene"
             },
             {
               "field": {
@@ -139,7 +147,8 @@
                 }
               },
               "queryRef": "Clientes.ops_feb",
-              "nativeQueryRef": "ops_feb"
+              "nativeQueryRef": "ops_feb",
+              "displayName": "Ops feb"
             },
             {
               "field": {
@@ -153,7 +162,8 @@
                 }
               },
               "queryRef": "Clientes.ops_mar",
-              "nativeQueryRef": "ops_mar"
+              "nativeQueryRef": "ops_mar",
+              "displayName": "Ops mar"
             }
           ]
         }
@@ -192,6 +202,26 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
                 }
               }
             }

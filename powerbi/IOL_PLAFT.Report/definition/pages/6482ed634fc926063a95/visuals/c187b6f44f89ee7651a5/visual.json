@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Calendario.fecha",
-              "nativeQueryRef": "fecha"
+              "nativeQueryRef": "fecha",
+              "displayName": "Fecha"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "Calendario.dia_semana",
-              "nativeQueryRef": "dia_semana"
+              "nativeQueryRef": "dia_semana",
+              "displayName": "Día"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "Calendario.feriado",
-              "nativeQueryRef": "feriado"
+              "nativeQueryRef": "feriado",
+              "displayName": "Feriado"
             }
           ]
         }
@@ -225,6 +228,55 @@
                           }
                         ]
                       ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filterfbc2a9b10e17ee9da5638e11",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Calendario"
+              }
+            },
+            "Property": "fecha_num"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "t",
+              "Entity": "Calendario",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 4,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "t"
+                        }
+                      },
+                      "Property": "fecha_num"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "20260313L"
                     }
                   }
                 }

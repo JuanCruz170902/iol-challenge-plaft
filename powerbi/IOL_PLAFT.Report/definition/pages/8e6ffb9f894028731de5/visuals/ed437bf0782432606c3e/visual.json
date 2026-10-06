@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Clientes.id_cliente",
-              "nativeQueryRef": "id_cliente"
+              "nativeQueryRef": "id_cliente",
+              "displayName": "Cliente"
             }
           ]
         },
@@ -45,7 +46,8 @@
                 }
               },
               "queryRef": "Clientes.nivel_riesgo",
-              "nativeQueryRef": "nivel_riesgo"
+              "nativeQueryRef": "nivel_riesgo",
+              "displayName": "Nivel de riesgo"
             }
           ]
         },
@@ -68,7 +70,8 @@
                 }
               },
               "queryRef": "Sum(Clientes.log10_ops)",
-              "nativeQueryRef": "Sum of log10_ops"
+              "nativeQueryRef": "Sum of log10_ops",
+              "displayName": "Operaciones (escala log10)"
             }
           ]
         },
@@ -91,11 +94,200 @@
                 }
               },
               "queryRef": "Sum(Clientes.log10_monto_ars)",
-              "nativeQueryRef": "Sum of log10_monto_ars"
+              "nativeQueryRef": "Sum of log10_monto_ars",
+              "displayName": "Monto ARS (escala log10)"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#B42318'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Clientes"
+                          }
+                        },
+                        "Property": "nivel_riesgo"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Alto'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F59E0B'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Clientes"
+                          }
+                        },
+                        "Property": "nivel_riesgo"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Medio'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#64748B'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Clientes"
+                          }
+                        },
+                        "Property": "nivel_riesgo"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Bajo'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#C8B8FE'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Clientes"
+                          }
+                        },
+                        "Property": "nivel_riesgo"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Sin alerta'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -111,7 +303,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'P1 · Clientes: log10(operaciones) vs log10(monto ARS)'"
+                  "Value": "'P1 · Clientes según cantidad de operaciones y monto (escala logarítmica)'"
                 }
               }
             },

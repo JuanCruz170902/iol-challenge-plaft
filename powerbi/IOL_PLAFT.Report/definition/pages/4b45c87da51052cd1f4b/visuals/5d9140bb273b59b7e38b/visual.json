@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "5d9140bb273b59b7e38b",
   "position": {
-    "x": 660,
+    "x": 580,
     "y": 76,
     "z": 5000,
     "height": 80,
-    "width": 600,
+    "width": 680,
     "tabOrder": 5000
   },
   "visual": {
@@ -51,11 +51,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Monto en alerta (ARS M)"
+                  "Property": "Monto en alerta (M)"
                 }
               },
-              "queryRef": "Medidas.Monto en alerta (ARS M)",
-              "nativeQueryRef": "Monto en alerta (ARS M)"
+              "queryRef": "Medidas.Monto en alerta (M)",
+              "nativeQueryRef": "Monto en alerta (M)"
             }
           ]
         }

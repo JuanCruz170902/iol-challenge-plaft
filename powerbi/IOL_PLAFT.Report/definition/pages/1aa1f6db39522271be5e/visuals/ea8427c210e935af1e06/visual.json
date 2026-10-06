@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "TopInstrumentos.instrumento",
-              "nativeQueryRef": "instrumento"
+              "nativeQueryRef": "instrumento",
+              "displayName": "Instrumento"
             }
           ]
         },
@@ -50,7 +51,8 @@
                 }
               },
               "queryRef": "Sum(TopInstrumentos.ops)",
-              "nativeQueryRef": "Sum of ops"
+              "nativeQueryRef": "Sum of ops",
+              "displayName": "Operaciones"
             }
           ]
         }
@@ -78,6 +80,61 @@
         ],
         "isDefaultSort": false
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "ApiLog.api",
-              "nativeQueryRef": "api"
+              "nativeQueryRef": "api",
+              "displayName": "API / fuente"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "ApiLog.estado",
-              "nativeQueryRef": "estado"
+              "nativeQueryRef": "estado",
+              "displayName": "Estado"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "ApiLog.filas",
-              "nativeQueryRef": "filas"
+              "nativeQueryRef": "filas",
+              "displayName": "Filas"
             },
             {
               "field": {
@@ -69,7 +72,8 @@
                 }
               },
               "queryRef": "ApiLog.detalle",
-              "nativeQueryRef": "detalle"
+              "nativeQueryRef": "detalle",
+              "displayName": "Detalle"
             },
             {
               "field": {
@@ -83,7 +87,8 @@
                 }
               },
               "queryRef": "ApiLog.url",
-              "nativeQueryRef": "url"
+              "nativeQueryRef": "url",
+              "displayName": "URL"
             }
           ]
         }

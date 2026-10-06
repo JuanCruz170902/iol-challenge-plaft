@@ -142,7 +142,7 @@ Es un proyecto Power BI en formato PBIP: el modelo (TMDL) y el reporte (PBIR) se
 | ![Portada](powerbi/capturas/01_portada.png) | ![Resumen](powerbi/capturas/02_resumen.png) |
 | **Exploración** | **Patrones anómalos** |
 | ![Exploración](powerbi/capturas/03_exploracion.png) | ![Patrones](powerbi/capturas/04_patrones.png) |
-| **Cola de revisión** | **Detalle de cliente (CLIBDBEB632)** |
+| **Cola de revisión** | **Detalle de cliente (CLI74090760, precio fuera de mercado)** |
 | ![Cola](powerbi/capturas/05_cola_revision.png) | ![Detalle](powerbi/capturas/06_detalle_cliente.png) |
 | **Datos externos (API)** | |
 | ![API](powerbi/capturas/07_api.png) | |

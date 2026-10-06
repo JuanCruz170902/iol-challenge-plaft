@@ -23,11 +23,12 @@
                       "Entity": "Calendario"
                     }
                   },
-                  "Property": "fecha"
+                  "Property": "dia_mes"
                 }
               },
-              "queryRef": "Calendario.fecha",
-              "nativeQueryRef": "fecha"
+              "queryRef": "Calendario.dia_mes",
+              "nativeQueryRef": "dia_mes",
+              "displayName": "Día"
             }
           ]
         },
@@ -45,7 +46,8 @@
                 }
               },
               "queryRef": "Operaciones.tipo_tran",
-              "nativeQueryRef": "tipo_tran"
+              "nativeQueryRef": "tipo_tran",
+              "displayName": "Tipo"
             }
           ]
         },
@@ -63,11 +65,171 @@
                 }
               },
               "queryRef": "Medidas.Cant. operaciones",
-              "nativeQueryRef": "Cant. operaciones"
+              "nativeQueryRef": "Cant. operaciones",
+              "displayName": "Operaciones"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#6439FF'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Operaciones"
+                          }
+                        },
+                        "Property": "tipo_tran"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Compra'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#00B386'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Operaciones"
+                          }
+                        },
+                        "Property": "tipo_tran"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Venta'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -83,7 +245,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Operaciones por día'"
+                  "Value": "'Operaciones por día (compras y ventas)'"
                 }
               }
             },

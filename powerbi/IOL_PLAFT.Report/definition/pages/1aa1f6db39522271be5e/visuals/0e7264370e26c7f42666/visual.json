@@ -10,7 +10,7 @@
     "tabOrder": 7000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -23,11 +23,12 @@
                       "Entity": "Pareto"
                     }
                   },
-                  "Property": "pct_clientes"
+                  "Property": "segmento"
                 }
               },
-              "queryRef": "Pareto.pct_clientes",
-              "nativeQueryRef": "pct_clientes"
+              "queryRef": "Pareto.segmento",
+              "nativeQueryRef": "segmento",
+              "displayName": "Clientes de mayor monto"
             }
           ]
         },
@@ -50,11 +51,85 @@
                 }
               },
               "queryRef": "Sum(Pareto.pct_monto)",
-              "nativeQueryRef": "Sum of pct_monto"
+              "nativeQueryRef": "Sum of pct_monto",
+              "displayName": "% del monto"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pareto"
+                  }
+                },
+                "Property": "segmento"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": false
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -70,7 +145,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Concentración: % del monto según % de clientes'"
+                  "Value": "'Concentración: % del monto en el top de clientes'"
                 }
               }
             },

@@ -7,7 +7,7 @@ table Medidas
 	measure 'Clientes activos' = FORMAT ( [Clientes únicos], "#,##0" )
 
 	/// KPI en texto, millones de pesos
-	measure 'Monto ARS M' = FORMAT ( [Monto ARS (M)], "#,##0" )
+	measure 'Monto (ARS M)' = FORMAT ( [Monto ARS (M)], "#,##0" )
 
 	/// KPI en texto
 	measure 'Fuera de horario (%)' = FORMAT ( [% Fuera de horario], "0.0%" )
@@ -19,7 +19,7 @@ table Medidas
 	measure 'Riesgo alto' = FORMAT ( [Clientes riesgo Alto], "#,##0" )
 
 	/// Monto de los clientes con alguna alerta, en millones de pesos
-	measure 'Monto en alerta (ARS M)' = FORMAT ( CALCULATE ( [Monto clientes (M)], Clientes[nivel_riesgo] <> "Sin alerta" ), "#,##0" )
+	measure 'Monto en alerta (M)' = FORMAT ( CALCULATE ( [Monto clientes (M)], Clientes[nivel_riesgo] <> "Sin alerta" ), "#,##0" )
 
 	/// Cantidad de operaciones
 	measure 'Cant. operaciones' = COUNTROWS ( Operaciones )
@@ -52,6 +52,10 @@ table Medidas
 	/// Monto total de los clientes del contexto, en millones de pesos
 	measure 'Monto clientes (M)' = DIVIDE ( SUM ( Clientes[monto_ars] ), 1000000 )
 		formatString: #,##0
+
+	/// Participación en el monto total (ARS) del grupo de clientes del contexto
+	measure '% del volumen' = DIVIDE ( SUM ( Clientes[monto_ars] ), CALCULATE ( SUM ( Clientes[monto_ars] ), ALL ( Clientes ) ) )
+		formatString: 0.0%
 
 	/// Operaciones a menos de la mitad o más del doble del precio del día
 	measure 'Ops precio fuera de mercado' = CALCULATE ( [Cant. operaciones], Operaciones[flag_precio_fuera_mercado] = TRUE () )
