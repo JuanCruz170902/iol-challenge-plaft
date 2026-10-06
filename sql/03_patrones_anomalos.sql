@@ -16,6 +16,7 @@
 --   ==> Score de riesgo por cliente (tabla clientes_riesgo)
 -- =============================================================================
 SET search_path TO iol;
+SET client_min_messages = warning;
 \pset footer off
 
 -- Perfil base por cliente (lo usan todos los patrones) -----------------------
@@ -308,7 +309,7 @@ SELECT p.id_cliente, p.canal_principal, p.canales, p.ops, p.dias_activos, p.simb
            CASE WHEN f.f_cambio_brusco        THEN 'Cambio brusco feb-mar' END,
            CASE WHEN f.f_sin_historial_monto_alto THEN 'Sin historial en enero + monto alto' END,
            CASE WHEN f.f_actividad_alta       THEN 'Actividad top 0,1%' END,
-           CASE WHEN f.f_operacion_extrema    THEN 'Operación >= p99,9' END,
+           CASE WHEN f.f_operacion_extrema    THEN 'Operación >= p99,9 (info)' END,
            CASE WHEN f.f_horario_atipico      THEN 'Horario atípico (z>=3)' END) AS motivos
 FROM perfil_cliente p JOIN f USING (id_cliente)
 WHERE f.f_precio_fuera_mercado OR f.f_cambio_brusco OR f.f_sin_historial_monto_alto OR f.f_actividad_alta OR f.f_horario_atipico;

@@ -1,4 +1,3 @@
-SET
 === 1.1 Descripción general ===
  operaciones | clientes_unicos | simbolos | descripciones |     primera_op_utc     |     ultima_op_utc      | dias_con_actividad_utc | ops_por_cliente_prom 
 -------------+-----------------+----------+---------------+------------------------+------------------------+------------------------+----------------------

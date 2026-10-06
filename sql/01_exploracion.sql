@@ -4,6 +4,7 @@
 -- Salida de referencia: outputs/01_exploracion.txt
 -- =============================================================================
 SET search_path TO iol;
+SET client_min_messages = warning;
 \pset footer off
 
 -- -----------------------------------------------------------------------------

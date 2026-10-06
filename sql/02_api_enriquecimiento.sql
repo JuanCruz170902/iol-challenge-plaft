@@ -10,6 +10,7 @@
 --   4. Crea iol.operaciones_enr: cada operación con monto homogeneizado en ARS y flags de calendario.
 -- =============================================================================
 SET search_path TO iol;
+SET client_min_messages = warning;
 \pset footer off
 
 -- 1) Carga ------------------------------------------------------------------

@@ -6,6 +6,7 @@
 
 DROP SCHEMA IF EXISTS iol CASCADE;
 CREATE SCHEMA iol;
+SET client_min_messages = warning;
 SET search_path TO iol;
 
 -- 1) Tabla staging: todo como texto, tal cual viene en el CSV -----------------
