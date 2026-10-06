@@ -1,0 +1,221 @@
+=== Umbrales calculados ===
+ p999_ops_cliente | p999_monto_cliente_ars | mediana_monto_cliente_ars | p999_monto_operacion_ars | pct_base_madrugada | pct_base_dia_inhabil 
+------------------+------------------------+---------------------------+--------------------------+--------------------+----------------------
+               31 |               32105971 |                     57449 |                 24470875 |               21.4 |                 10.3
+
+=== P1a Resumen: clientes en el top 0,1% y peso en el total ===
+ clientes | por_frecuencia | por_monto | ambos | pct_ops_total | pct_monto_total 
+----------+----------------+-----------+-------+---------------+-----------------
+      113 |             63 |        58 |     8 |          4.66 |           34.73
+
+=== P1b Top 15 por monto en ARS ===
+ id_cliente  |  canal_principal  | ops | dias_activos | simbolos | simbolo_principal | monto_ars_mill | veces_mediana_monto | pct_compras 
+-------------+-------------------+-----+--------------+----------+-------------------+----------------+---------------------+-------------
+ CLI74090760 | IOLnet            | 101 |           39 |       17 | S29Y6             |         6276.3 |              109249 |        69.3
+ CLI5DB1F6D9 | IOLnet            | 127 |           51 |       67 | AL30              |          830.0 |               14447 |        74.0
+ CLICB9170B6 | Sitio Web Desktop |   9 |            7 |        8 | SPOT              |          392.2 |                6828 |        88.9
+ CLI9C55B909 | Sitio Web Desktop |   8 |            7 |        7 | CRM               |          369.1 |                6425 |        75.0
+ CLIC12C57AC | IOLnet            |  19 |           15 |       14 | IRCPD             |          340.8 |                5932 |        78.9
+ CLIE2C3E233 | Sitio Web Desktop |   1 |            1 |        1 | SPY               |          224.2 |                3902 |         0.0
+ CLI7450F4B7 | App Mobile        |  54 |           34 |       36 | TLCMD             |          222.0 |                3864 |        70.4
+ CLI0DA54807 | Sitio Web Desktop |   8 |            6 |        2 | BIOX              |          218.7 |                3807 |        87.5
+ CLI714447BF | IOLnet            |   2 |            2 |        2 | #MAV150560106     |          179.6 |                3126 |        50.0
+ CLI2FD26182 | Sitio Web Desktop |   2 |            2 |        2 | AL30              |          171.3 |                2981 |       100.0
+ CLI20D116EF | Sitio Web Desktop |  10 |            8 |        9 | PLTR              |          137.0 |                2385 |        80.0
+ CLI77CB0287 | App Mobile        |   5 |            4 |        4 | PETR3             |          134.4 |                2340 |       100.0
+ CLI477DB845 | Sitio Web Desktop |   3 |            3 |        1 | YPFD              |          110.0 |                1914 |       100.0
+ CLIAC2E7191 | Sitio Web Desktop |   1 |            1 |        1 | AL30D             |          105.4 |                1834 |       100.0
+ CLI2EFEE1FA | App Mobile        |  54 |           31 |       14 | YPFD              |           89.1 |                1550 |        74.1
+
+=== P1c Top 10 por frecuencia ===
+ id_cliente  |  canal_principal  | ops | dias_activos | ops_por_dia | simbolos | simbolo_principal | monto_ars_mill 
+-------------+-------------------+-----+--------------+-------------+----------+-------------------+----------------
+ CLIDBBA0462 | API               | 676 |           59 |        11.5 |      138 | GFGC79054F        |           10.7
+ CLI4F62C09B | Sitio Web Desktop | 542 |           59 |         9.2 |       98 | BYMA              |           21.4
+ CLIBDBEB632 | API               | 282 |           12 |        23.5 |        5 | COME              |            0.2
+ CLID39D529B | API               | 165 |           56 |         2.9 |      116 | NATU3             |           30.3
+ CLI5DB1F6D9 | IOLnet            | 127 |           51 |         2.5 |       67 | AL30              |          830.0
+ CLI74090760 | IOLnet            | 101 |           39 |         2.6 |       17 | S29Y6             |         6276.3
+ CLIC7983F3D | API               |  87 |           33 |         2.6 |        3 | PAMP              |            2.7
+ CLI51E3CC13 | App Mobile        |  80 |           37 |         2.2 |       33 | IBIT              |            0.7
+ CLIA46BC931 | API               |  77 |           39 |         2.0 |       57 | ASMLD             |            2.4
+ CLIC1EE483B | App Mobile        |  74 |           32 |         2.3 |        2 | AL30D             |            0.6
+
+=== P1d ¿En qué canales operan? (vs. población) ===
+        origen        | pct_ops_top01 | pct_ops_poblacion 
+----------------------+---------------+-------------------
+ Sitio Web Desktop    |          37.0 |              29.0
+ API                  |          30.2 |               1.7
+ App Mobile           |          22.3 |              66.4
+ IOLnet               |           5.6 |               0.3
+ Sitio Web Responsive |           4.9 |               2.7
+
+=== P1e ¿En qué instrumentos? (top 10 símbolos por monto de estos clientes) ===
+ simbolo_titulo |                  descripcion                   | ops | clientes_top01 | monto_ars_mill 
+----------------+------------------------------------------------+-----+----------------+----------------
+ T13F6          | BONCAP 13F6 VTO 13/02/2026                     |   9 |              2 |         2089.0
+ TTS26          | BONO NACION TASA DUAL15/09/26                  |   2 |              2 |         1472.9
+ T30J6          | BONCAP T30J6 VTO 30/06/2026                    |   6 |              3 |         1225.4
+ AL30           | Bono Rep. Argentina Usd Step Up 2030           |  67 |             11 |          683.5
+ S17A6          | Letra Tesoro Nacional Capitalizable 17/04/26 $ |  18 |              6 |          629.4
+ AL30D          | Bono Rep. Argentina Usd Step Up 2030           | 111 |             16 |          476.6
+ S29Y6          | Lt Rep Arg Cap V.29/05/26 $ Cg                 |  20 |              4 |          354.0
+ SPY            | Cedear Spdr S&P 500                            |   7 |              7 |          323.7
+ YPFD           | YPF                                            |  33 |             15 |          303.6
+ VIST           | Cedear Vista Oil & Gas Sab De                  |  29 |             16 |          298.5
+
+=== P1f Operaciones individuales extremas (monto >= p99,9 de operaciones) por canal ===
+        origen        | ops_extremas | clientes | monto_ars_mill 
+----------------------+--------------+----------+----------------
+ Sitio Web Desktop    |           49 |       36 |         2667.4
+ IOLnet               |           37 |        9 |         7064.3
+ App Mobile           |           12 |       11 |          539.5
+ Sitio Web Responsive |            2 |        2 |           61.4
+
+=== P2a Paso 1: concentración de las operaciones en día inhábil ===
+ clientes_con_ops_inhabil | ops_inhabil | pct_explicado_top10_clientes | pct_explicado_top100_clientes 
+--------------------------+-------------+------------------------------+-------------------------------
+                     8693 |       10255 |                         2.09 |                          6.45
+
+=== P2b Paso 1: mismo análisis por franja horaria y canal (si todos ~iguales => estructural) ===
+        origen        | pct_madrugada | pct_mercado | pct_dia_inhabil 
+----------------------+---------------+-------------+-----------------
+ API                  |          20.8 |        29.3 |            10.1
+ App Mobile           |          21.3 |        29.3 |            10.1
+ IOLnet               |          25.5 |        31.7 |            10.7
+ Sitio Web Desktop    |          21.7 |        30.2 |            10.5
+ Sitio Web Responsive |          21.0 |        30.4 |            10.2
+
+=== P2c Paso 1: los "sábados" son la continuación del viernes (primer y último horario por día de semana, UTC) ===
+ dia_semana_utc | hora_min | hora_max |  ops  
+----------------+----------+----------+-------
+ 1 Mon          | 10:30    | 23:59    |  9155
+ 2 Tue          | 00:00    | 23:59    | 20142
+ 3 Wed          | 00:00    | 23:59    | 19099
+ 4 Thu          | 00:00    | 23:59    | 19487
+ 5 Fri          | 00:00    | 23:59    | 19619
+ 6 Sat          | 00:00    | 19:59    | 12498
+
+=== P2d Paso 2: clientes con desvío significativo (z >= 3) sobre su propia cantidad de operaciones ===
+ clientes_evaluados_10mas_ops | z_madrugada_3 | z_inhabil_3 | esperados_por_azar_cada_uno 
+------------------------------+---------------+-------------+-----------------------------
+                          649 |             1 |           8 |                         0.9
+
+ id_cliente  |  canal_principal  | ops | ops_madrugada | z_madrugada | ops_dia_inhabil | z_inhabil | monto_ars_mill 
+-------------+-------------------+-----+---------------+-------------+-----------------+-----------+----------------
+ CLI65428E50 | API               |  18 |             1 |       -1.64 |               9 |      5.56 |           0.16
+ CLIAAF59141 | App Mobile        |  20 |             5 |        0.39 |               8 |      4.38 |           1.44
+ CLI85AB9EF3 | App Mobile        |  10 |             4 |        1.43 |               5 |      4.14 |           0.18
+ CLI5AA5100A | App Mobile        |  22 |            10 |        2.75 |               8 |      4.04 |           1.50
+ CLI6DD51E47 | App Mobile        |  12 |             4 |        1.01 |               5 |      3.59 |           0.25
+ CLI57296F1B | App Mobile        |  17 |             3 |       -0.38 |               6 |      3.40 |           0.19
+ CLIBF3A045D | Sitio Web Desktop |  22 |            11 |        3.27 |               4 |      1.23 |           0.64
+ CLIBF03B1C3 | Sitio Web Desktop |  10 |             4 |        1.43 |               4 |      3.10 |           1.50
+ CLIEE174EC5 | Sitio Web Desktop |  24 |             9 |        1.92 |               7 |      3.05 |           6.04
+
+=== P3a Resumen ===
+             tipo_cambio             | clientes | por_frecuencia | por_monto_con_historia | sin_actividad_enero | monto_feb_mar_mill 
+-------------------------------------+----------+----------------+------------------------+---------------------+--------------------
+ Sin historial en enero + monto alto |      270 |              0 |                      0 |                 270 |             3423.0
+ Cambio brusco                       |       68 |             25 |                     45 |                  10 |              564.1
+
+=== P3b Top 15 por salto de frecuencia ===
+ id_cliente  |   canal_principal    | ops_ene | ops_feb | ops_mar | multiplicador_frecuencia | monto_ene_mill | monto_feb_mar_mill | simbolo_principal 
+-------------+----------------------+---------+---------+---------+--------------------------+----------------+--------------------+-------------------
+ CLIBDBEB632 | API                  |       0 |      40 |     242 |                    211.5 |           0.00 |               0.18 | COME
+ CLI3EEDE03E | API                  |       1 |       6 |      12 |                     13.5 |           0.45 |              16.56 | MSTR
+ CLIE860C717 | Sitio Web Desktop    |       1 |      12 |       5 |                     12.8 |           0.00 |               1.22 | GFGC79515A
+ CLIE21D339C | Sitio Web Desktop    |       0 |       0 |      16 |                     12.0 |           0.00 |               1.22 | MORI
+ CLIF26D247F | App Mobile           |       0 |       7 |       9 |                     12.0 |           0.00 |               0.92 | AMZN
+ CLIF6EE4C10 | App Mobile           |       0 |      13 |       2 |                     11.3 |           0.00 |               0.39 | AL30
+ CLI736B84E1 | App Mobile           |       1 |       7 |       6 |                      9.7 |           0.05 |               0.67 | LOC3D
+ CLI9EBD6800 | Sitio Web Desktop    |       1 |       7 |       5 |                      9.0 |           0.37 |              17.69 | BMA
+ CLI7AA4AB54 | Sitio Web Desktop    |       1 |      10 |       2 |                      9.0 |           0.11 |               1.87 | ETHAD
+ CLIFB6204E7 | Sitio Web Desktop    |       2 |      16 |       6 |                      8.3 |           0.06 |               0.64 | SUPV
+ CLIC12E2566 | Sitio Web Desktop    |       1 |       9 |       2 |                      8.2 |           0.03 |               0.41 | GGAL
+ CLI2BFE70EF | App Mobile           |       1 |       9 |       2 |                      8.2 |           0.05 |               0.62 | AAPL
+ CLI4F8898D6 | App Mobile           |       0 |       6 |       5 |                      8.2 |           0.00 |               0.05 | COME
+ CLI5195F3F2 | Sitio Web Desktop    |       1 |       5 |       6 |                      8.2 |           0.01 |               0.45 | NFLX
+ CLI0C75994A | Sitio Web Responsive |       0 |       4 |       7 |                      8.2 |           0.00 |               0.47 | GFGV6400AB
+
+=== P3c Top 15 por salto de monto (con y sin historial en enero) ===
+ id_cliente  |   canal_principal    | ops_ene | ops_feb_mar | monto_ene_mill | monto_feb_mar_mill | multiplicador_monto | simbolo_principal 
+-------------+----------------------+---------+-------------+----------------+--------------------+---------------------+-------------------
+ CLI0DA54807 | Sitio Web Desktop    |       0 |           8 |           0.00 |             218.71 | nuevo               | BIOX
+ CLI714447BF | IOLnet               |       0 |           2 |           0.00 |             179.60 | nuevo               | #MAV150560106
+ CLIE12C419E | Sitio Web Desktop    |       0 |           1 |           0.00 |              85.83 | nuevo               | GGAL
+ CLI80AAF688 | Sitio Web Desktop    |       0 |           1 |           0.00 |              70.68 | nuevo               | AL30
+ CLIC1D6DFE3 | Sitio Web Desktop    |       3 |           4 |           2.60 |              44.49 | 17.1                | AL30D
+ CLIFA991EF7 | Sitio Web Desktop    |       0 |           1 |           0.00 |              39.44 | nuevo               | S17A6
+ CLI084D999E | App Mobile           |       0 |           1 |           0.00 |              38.65 | nuevo               | GGAL
+ CLI148E0685 | Sitio Web Desktop    |       1 |           5 |           0.57 |              38.49 | 68.1                | MSTR
+ CLI29CEEA29 | IOLnet               |       0 |           3 |           0.00 |              37.65 | nuevo               | BPA8C
+ CLI15CE8B7C | App Mobile           |       0 |           2 |           0.00 |              37.41 | nuevo               | MSTR
+ CLI7C5C94A4 | Sitio Web Responsive |       0 |           1 |           0.00 |              33.97 | nuevo               | YPFD
+ CLI1A9492FD | Sitio Web Desktop    |       0 |           1 |           0.00 |              33.63 | nuevo               | UNH
+ CLIE161EC3A | Sitio Web Desktop    |       0 |           1 |           0.00 |              32.62 | nuevo               | BPOB8
+ CLI46250831 | Sitio Web Desktop    |       0 |           2 |           0.00 |              31.58 | nuevo               | IBIT
+ CLIF59CE725 | Sitio Web Desktop    |       0 |           1 |           0.00 |              30.08 | nuevo               | PBR
+
+=== P4a Resumen ===
+ operaciones | clientes | diferencia_valor_ars_mill 
+-------------+----------+---------------------------
+          13 |        9 |                     740.8
+
+=== P4b Detalle (ordenado por diferencia de valor) ===
+ id_cliente  |      origen       |    dia     | tipo_tran | simbolo_titulo | cantidad  |    precio    | precio_mediana_dia | ratio_vs_mercado | diferencia_ars_mill 
+-------------+-------------------+------------+-----------+----------------+-----------+--------------+--------------------+------------------+---------------------
+ CLI74090760 | IOLnet            | 2026-01-06 | Compra    | T13F6          | 331012551 |     0.010000 |             1.4055 |           0.0071 |              461.93
+ CLIEFAFE73D | IOLnet            | 2026-01-07 | Compra    | TGNO4          |     38077 |     0.999900 |          4582.4922 |           0.0002 |              174.45
+ CLIEFAFE73D | IOLnet            | 2026-01-07 | Compra    | METR           |     40351 |     0.999700 |          2440.9238 |           0.0004 |               98.45
+ CLIBE39D16C | IOLnet            | 2026-02-20 | Compra    | SATL           |       930 |     1.004600 |          5360.7606 |           0.0002 |                4.98
+ CLIC19D5B54 | IOLnet            | 2026-03-07 | Venta     | AL30           |       426 |     0.010000 |           864.6275 |           0.0000 |                0.37
+ CLI65B4A2A4 | IOLnet            | 2026-03-03 | Venta     | YPFD           |        11 | 23074.336200 |         52271.0983 |           0.4414 |                0.32
+ CLICD7E98E4 | Sitio Web Desktop | 2026-02-10 | Venta     | BHIP           |       489 |   134.612300 |           481.7090 |           0.2794 |                0.17
+ CLI3ADFB136 | IOLnet            | 2026-02-20 | Compra    | BHIP           |       192 |   134.545600 |           436.7185 |           0.3081 |                0.06
+ CLI2B5FD66A | Sitio Web Desktop | 2026-02-10 | Compra    | BHIP           |        88 |   138.272600 |           481.7090 |           0.2870 |                0.03
+ CLI2B5FD66A | Sitio Web Desktop | 2026-01-07 | Compra    | COME           |        68 |    25.110400 |            59.3494 |           0.4231 |                0.00
+ CLI2B5FD66A | Sitio Web Desktop | 2026-02-12 | Venta     | COME           |        53 |    24.945800 |            51.9823 |           0.4799 |                0.00
+ CLI2B5FD66A | Sitio Web Desktop | 2026-01-16 | Compra    | COME           |        48 |    24.826500 |            50.5854 |           0.4908 |                0.00
+ CLI47EE1F3A | Sitio Web Desktop | 2026-01-08 | Compra    | COME           |        11 |    24.970700 |            56.3525 |           0.4431 |                0.00
+
+=== P4c ¿Dónde se concentran los precios fuera de mercado? (canal) ===
+      origen       | ops | clientes | precio_placeholder_001_o_1 
+-------------------+-----+----------+----------------------------
+ IOLnet            |   7 |        6 |                          5
+ Sitio Web Desktop |   6 |        3 |                          0
+
+=== R1 Clientes por nivel de riesgo ===
+ nivel_riesgo | clientes | ops  | monto_ars_mill | pct_monto_total 
+--------------+----------+------+----------------+-----------------
+ Alto         |        5 |  401 |         6422.5 |            18.3
+ Medio        |      180 | 4788 |         6263.7 |            17.8
+ Bajo         |      268 |  554 |         2626.7 |             7.5
+
+=== R2 Cola de revisión priorizada (score >= 3) ===
+ id_cliente  | nivel_riesgo | score |   canal_principal    | ops | monto_ars_mill |                                    motivos                                    
+-------------+--------------+-------+----------------------+-----+----------------+-------------------------------------------------------------------------------
+ CLI74090760 | Alto         |     5 | IOLnet               | 101 |         6276.3 | Precio fuera de mercado | Actividad top 0,1% | Operación >= p99,9
+ CLIEFAFE73D | Alto         |     5 | IOLnet               |   5 |           59.9 | Precio fuera de mercado | Actividad top 0,1% | Operación >= p99,9
+ CLIC1D6DFE3 | Alto         |     4 | Sitio Web Desktop    |   7 |           47.1 | Cambio brusco feb-mar | Actividad top 0,1% | Operación >= p99,9
+ CLI148E0685 | Alto         |     4 | Sitio Web Desktop    |   6 |           39.1 | Cambio brusco feb-mar | Actividad top 0,1%
+ CLIBDBEB632 | Alto         |     4 | API                  | 282 |            0.2 | Cambio brusco feb-mar | Actividad top 0,1%
+ CLI0DA54807 | Medio        |     3 | Sitio Web Desktop    |   8 |          218.7 | Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9
+ CLI714447BF | Medio        |     3 | IOLnet               |   2 |          179.6 | Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9
+ CLIE12C419E | Medio        |     3 | Sitio Web Desktop    |   1 |           85.8 | Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9
+ CLI80AAF688 | Medio        |     3 | Sitio Web Desktop    |   1 |           70.7 | Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9
+ CLIFA991EF7 | Medio        |     3 | Sitio Web Desktop    |   1 |           39.4 | Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9
+ CLI084D999E | Medio        |     3 | App Mobile           |   1 |           38.7 | Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9
+ CLI29CEEA29 | Medio        |     3 | IOLnet               |   3 |           37.6 | Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9
+ CLI15CE8B7C | Medio        |     3 | App Mobile           |   2 |           37.4 | Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9
+ CLI7C5C94A4 | Medio        |     3 | Sitio Web Responsive |   1 |           34.0 | Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9
+ CLI1A9492FD | Medio        |     3 | Sitio Web Desktop    |   1 |           33.6 | Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9
+ CLIE161EC3A | Medio        |     3 | Sitio Web Desktop    |   1 |           32.6 | Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9
+ CLI3ADFB136 | Medio        |     3 | Sitio Web Desktop    |  18 |            2.1 | Precio fuera de mercado
+ CLICD7E98E4 | Medio        |     3 | Sitio Web Desktop    |   4 |            0.3 | Precio fuera de mercado
+ CLI65B4A2A4 | Medio        |     3 | IOLnet               |   1 |            0.3 | Precio fuera de mercado
+ CLI2B5FD66A | Medio        |     3 | Sitio Web Desktop    |   7 |            0.0 | Precio fuera de mercado
+ CLI47EE1F3A | Medio        |     3 | Sitio Web Desktop    |   6 |            0.0 | Precio fuera de mercado
+ CLIBE39D16C | Medio        |     3 | IOLnet               |   3 |            0.0 | Precio fuera de mercado
+ CLIC19D5B54 | Medio        |     3 | IOLnet               |   1 |            0.0 | Precio fuera de mercado
+
