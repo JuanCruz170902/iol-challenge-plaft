@@ -1,0 +1,226 @@
+SET
+=== 1.1 Descripción general ===
+ operaciones | clientes_unicos | simbolos | descripciones |     primera_op_utc     |     ultima_op_utc      | dias_con_actividad_utc | ops_por_cliente_prom 
+-------------+-----------------+----------+---------------+------------------------+------------------------+------------------------+----------------------
+      100000 |           57655 |     1445 |          1086 | 2026-01-02 10:33:18+00 | 2026-03-13 19:59:48+00 |                     59 |                 1.73
+
+=== 1.2a Nulos / vacíos / valores no positivos ===
+ cliente_vacio | simbolo_vacio | cantidad_no_positiva | precio_no_positivo | id_transaccion_duplicado 
+---------------+---------------+----------------------+--------------------+--------------------------
+             0 |             0 |                    0 |                  0 |                        0
+
+=== 1.2b Duplicados lógicos (mismo cliente, instante, título, cantidad y precio) ===
+ grupos_duplicados | operaciones_involucradas 
+-------------------+--------------------------
+                 0 |                        0
+
+=== 1.2c Milisegundos del timestamp por canal (particularidad: .010 concentrado en IOLnet) ===
+        origen        | ms_flag |  ops  
+----------------------+---------+-------
+ API                  | 000     |  1688
+ App Mobile           | 000     | 66434
+ App Mobile           | 010     |     4
+ IOLnet               | 000     |    12
+ IOLnet               | 010     |   259
+ Sitio Web Desktop    | 000     | 28944
+ Sitio Web Desktop    | 010     |     8
+ Sitio Web Responsive | 000     |  2651
+
+=== 1.2d Símbolos con más de una descripción, y moneda declarada vs sufijo del ticker ===
+               control               | casos 
+-------------------------------------+-------
+ ticker_termina_en_D_pero_moneda_ARS |    99
+ simbolos_operados_en_ARS_y_USD      |     0
+ simbolos_con_>1_descripcion         |     3
+
+=== 1.3 Top 15 instrumentos por cantidad de operaciones ===
+ simbolo_titulo |             descripcion              | moneda | ops  | pct_ops | clientes 
+----------------+--------------------------------------+--------+------+---------+----------
+ AL30           | Bono Rep. Argentina Usd Step Up 2030 | ARS    | 8859 |    8.86 |     8038
+ AL30D          | Bono Rep. Argentina Usd Step Up 2030 | USD    | 4589 |    4.59 |     3706
+ MSFT           | Cedear Microsoft Corp.               | ARS    | 2336 |    2.34 |     2135
+ SPY            | Cedear Spdr S&P 500                  | ARS    | 2311 |    2.31 |     2185
+ AMZN           | Cedear Amazon.Com, Inc               | ARS    | 2054 |    2.05 |     1893
+ MELI           | Cedear Mercadolibre Inc.             | ARS    | 1881 |    1.88 |     1723
+ PAMP           | Pampa Energía                        | ARS    | 1668 |    1.67 |     1481
+ NVDA           | Cedear Nvidia Corporation            | ARS    | 1493 |    1.49 |     1396
+ YPFD           | YPF                                  | ARS    | 1485 |    1.49 |     1375
+ GOOGL          | Cedear Alphabet Inc. Cl. A           | ARS    | 1453 |    1.45 |     1380
+ COME           | Sociedad Comercial del Plata         | ARS    | 1350 |    1.35 |      930
+ GLD            | Cedear Etf Spdr Gold Trust           | ARS    | 1263 |    1.26 |     1178
+ AAPL           | Cedear Apple Inc.                    | ARS    | 1110 |    1.11 |     1067
+ TXAR           | Ternium Argentina Sa                 | ARS    | 1101 |    1.10 |      944
+ ALUA           | Aluar                                | ARS    | 1059 |    1.06 |      914
+
+=== 1.3b Familias de instrumento (heurística por descripción) ===
+    familia    |  ops  | pct_ops 
+---------------+-------+---------
+ CEDEAR        | 54052 |   54.05
+ Bono / Letra  | 23512 |   23.51
+ Acción / Otro | 20366 |   20.37
+ Opción        |  2070 |    2.07
+
+=== 1.4a Por canal ===
+        origen        |  ops  | pct_ops | clientes | ops_por_cliente 
+----------------------+-------+---------+----------+-----------------
+ App Mobile           | 66438 |   66.44 |    42590 |            1.56
+ Sitio Web Desktop    | 28952 |   28.95 |    15476 |            1.87
+ Sitio Web Responsive |  2651 |    2.65 |     1259 |            2.11
+ API                  |  1688 |    1.69 |       62 |           27.23
+ IOLnet               |   271 |    0.27 |       18 |           15.06
+
+=== 1.4b Por moneda ===
+ moneda |  ops  | pct_ops | monto_total_moneda_original 
+--------+-------+---------+-----------------------------
+ ARS    | 85420 |   85.42 |                 27637859754
+ USD    | 14580 |   14.58 |                     5131008
+
+=== 1.4c Por tipo de transacción ===
+ tipo_tran |  ops  | pct_ops 
+-----------+-------+---------
+ Compra    | 70051 |   70.05
+ Venta     | 29949 |   29.95
+
+=== 1.4d Canal x tipo (% de compras dentro de cada canal) ===
+        origen        | pct_compra | pct_usd 
+----------------------+------------+---------
+ API                  |       70.2 |     8.8
+ App Mobile           |       69.8 |    14.9
+ IOLnet               |       72.7 |    40.6
+ Sitio Web Desktop    |       70.5 |    14.6
+ Sitio Web Responsive |       70.2 |     8.7
+
+=== 1.5 Percentiles de monto por moneda (moneda original) ===
+ moneda | minimo |   p50    |    p90    |    p99     |    p999     |    maximo     | max_sobre_mediana 
+--------+--------+----------+-----------+------------+-------------+---------------+-------------------
+ ARS    |   0.40 | 34434.80 | 386339.42 | 3605899.14 | 24212550.78 | 1472943883.31 |             42775
+ USD    |   0.00 |    48.30 |    738.84 |    4997.89 |    18595.03 |     100489.83 |              2080
+
+=== 1.5b Las 10 operaciones de mayor cantidad nominal ===
+         fecha_utc         | id_cliente  | origen | simbolo_titulo | moneda |  cantidad  |  precio  |     monto     
+---------------------------+-------------+--------+----------------+--------+------------+----------+---------------
+ 2026-01-09 08:47:22.01+00 | CLI74090760 | IOLnet | T30A7          | ARS    | 1503210011 | 0.010100 |   15182421.11
+ 2026-01-03 19:01:35.01+00 | CLI74090760 | IOLnet | T31Y7          | ARS    | 1427140785 | 0.010000 |   14271407.85
+ 2026-01-17 15:24:31.01+00 | CLI74090760 | IOLnet | TTS26          | ARS    | 1067195974 | 1.380200 | 1472943883.31
+ 2026-01-16 05:51:14.01+00 | CLI74090760 | IOLnet | T30J6          | ARS    |  976270797 | 1.255000 | 1225219850.24
+ 2026-01-29 15:11:16.01+00 | CLI74090760 | IOLnet | T13F6          | ARS    |  661750591 | 1.423800 |  942200491.47
+ 2026-01-23 10:07:12.01+00 | CLI74090760 | IOLnet | T13F6          | ARS    |  496675425 | 1.418900 |  704732760.53
+ 2026-01-06 06:25:40.01+00 | CLI74090760 | IOLnet | T13F6          | ARS    |  331012551 | 0.010000 |    3310125.51
+ 2026-01-07 16:09:13.01+00 | CLI74090760 | IOLnet | T13F6          | ARS    |  289899750 | 1.402900 |  406700359.28
+ 2026-01-31 06:08:09.01+00 | CLI74090760 | IOLnet | S17A6          | ARS    |  213473214 | 1.034100 |  220752650.60
+ 2026-01-29 08:09:38.01+00 | CLI74090760 | IOLnet | S17A6          | ARS    |  171938257 | 1.026100 |  176425845.51
+
+=== 1.6a Clientes por tramo de cantidad de operaciones ===
+ tramo_ops  | clientes | pct_clientes |  ops  | pct_ops 
+------------+----------+--------------+-------+---------
+ 01) 1      |    40841 |        70.84 | 40841 |   40.84
+ 02) 2      |     9610 |        16.67 | 19220 |   19.22
+ 03) 3-5    |     5499 |         9.54 | 19473 |   19.47
+ 04) 6-10   |     1182 |         2.05 |  8632 |    8.63
+ 05) 11-50  |      503 |         0.87 |  9026 |    9.03
+ 06) 51-100 |       14 |         0.02 |   915 |    0.92
+ 07) >100   |        6 |         0.01 |  1893 |    1.89
+
+=== 1.6b Concentración (curva de Pareto): % de operaciones y de monto ARS que explica el top X% de clientes ===
+ corte | pct_ops | pct_monto_ars 
+-------+---------+---------------
+ 0.001 |    4.23 |         38.91
+  0.01 |   12.36 |         58.89
+  0.05 |   25.90 |         78.14
+  0.10 |   35.62 |         86.30
+  0.20 |   48.59 |         93.23
+  0.50 |   71.17 |         99.00
+
+=== 1.6c Top 10 clientes por cantidad de operaciones ===
+ id_cliente  | ops | canales |       canal       | simbolos | dias_activos | monto_ars  
+-------------+-----+---------+-------------------+----------+--------------+------------
+ CLIDBBA0462 | 676 |       1 | API               |      138 |           59 |   10661095
+ CLI4F62C09B | 542 |       1 | Sitio Web Desktop |       98 |           59 |   21382734
+ CLIBDBEB632 | 282 |       1 | API               |        5 |           12 |     177776
+ CLID39D529B | 165 |       1 | API               |      116 |           56 |   16434339
+ CLI5DB1F6D9 | 127 |       1 | IOLnet            |       67 |           51 |  463896831
+ CLI74090760 | 101 |       1 | IOLnet            |       17 |           39 | 6276265450
+ CLIC7983F3D |  87 |       2 | API               |        3 |           33 |    2707039
+ CLI51E3CC13 |  80 |       1 | App Mobile        |       33 |           37 |     725903
+ CLIA46BC931 |  77 |       2 | API               |       57 |           39 |     307659
+ CLIC1EE483B |  74 |       1 | App Mobile        |        2 |           32 |     401120
+
+=== 1.7a Operaciones por día de semana (hora Argentina) ===
+ dow_art | dia |  ops  | pct_ops 
+---------+-----+-------+---------
+       1 | Lun | 11506 |   11.51
+       2 | Mar | 19749 |   19.75
+       3 | Mié | 19178 |   19.18
+       4 | Jue | 19438 |   19.44
+       5 | Vie | 19874 |   19.87
+       6 | Sáb | 10255 |   10.26
+
+=== 1.7b Operaciones por hora Argentina ===
+ hora_art | ops  | pct_ops | franja  
+----------+------+---------+---------
+        0 | 3612 |    3.61 | fuera
+        1 | 3595 |    3.60 | fuera
+        2 | 3454 |    3.45 | fuera
+        3 | 3566 |    3.57 | fuera
+        4 | 3573 |    3.57 | fuera
+        5 | 3599 |    3.60 | fuera
+        6 | 3691 |    3.69 | fuera
+        7 | 4387 |    4.39 | fuera
+        8 | 4921 |    4.92 | fuera
+        9 | 5360 |    5.36 | fuera
+       10 | 5768 |    5.77 | fuera
+       11 | 5691 |    5.69 | mercado
+       12 | 5382 |    5.38 | mercado
+       13 | 5204 |    5.20 | mercado
+       14 | 4837 |    4.84 | mercado
+       15 | 4432 |    4.43 | mercado
+       16 | 4045 |    4.05 | mercado
+       17 | 3572 |    3.57 | fuera
+       18 | 3629 |    3.63 | fuera
+       19 | 3478 |    3.48 | fuera
+       20 | 3627 |    3.63 | fuera
+       21 | 3477 |    3.48 | fuera
+       22 | 3511 |    3.51 | fuera
+       23 | 3589 |    3.59 | fuera
+
+=== 1.7c Resumen de franjas atípicas ===
+ pct_fuera_horario_mercado | pct_madrugada_0a6 | pct_fin_de_semana | ops_fin_de_semana 
+---------------------------+-------------------+-------------------+-------------------
+                     70.41 |             21.40 |             10.26 |             10255
+
+=== 1.7d ¿Fuera de horario es un fenómeno de pocos clientes o de todos? (por canal) ===
+        origen        | pct_fuera_horario | pct_sabado 
+----------------------+-------------------+------------
+ API                  |              70.7 |       10.1
+ App Mobile           |              70.7 |       10.1
+ IOLnet               |              68.3 |       10.7
+ Sitio Web Desktop    |              69.8 |       10.5
+ Sitio Web Responsive |              69.6 |       10.2
+
+=== 1.7e Ventana horaria de cada día: primera y última operación (UTC) ===
+  dia_utc   | dow | ops  | primera_utc | ultima_utc | ops_antes_10utc 
+------------+-----+------+-------------+------------+-----------------
+ 2026-01-02 | Fri | 1079 | 10:33       | 23:58      |               0
+ 2026-01-03 | Sat | 1496 | 00:02       | 19:39      |             902
+ 2026-01-05 | Mon | 1248 | 10:33       | 23:59      |               0
+ 2026-01-06 | Tue | 2654 | 00:00       | 23:58      |            1082
+ 2026-01-07 | Wed | 2468 | 00:00       | 23:59      |             847
+ 2026-01-08 | Thu | 2343 | 00:00       | 23:55      |             937
+ 2026-01-09 | Fri | 2154 | 00:01       | 23:59      |             694
+ 2026-01-10 | Sat | 1387 | 00:00       | 19:56      |             836
+ 2026-01-12 | Mon | 1089 | 10:30       | 23:59      |               0
+ 2026-01-13 | Tue | 2522 | 00:03       | 23:59      |             934
+ 2026-01-14 | Wed | 2234 | 00:00       | 23:59      |             825
+ 2026-01-15 | Thu | 1976 | 00:00       | 23:59      |             731
+ 2026-01-16 | Fri | 1844 | 00:00       | 23:58      |             613
+ 2026-01-17 | Sat | 1157 | 00:01       | 19:59      |             691
+ 2026-01-19 | Mon |  772 | 10:30       | 23:57      |               0
+ 2026-01-20 | Tue | 1861 | 00:01       | 23:59      |             647
+
+=== 1.7f Días calendario sin ninguna operación (dentro del rango) ===
+    dia     | dow 
+------------+-----
+ 2026-01-01 | Thu
+ 2026-02-16 | Mon
+ 2026-02-17 | Tue
+
