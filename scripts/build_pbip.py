@@ -552,12 +552,10 @@ def build_report():
     v.append(visual(p, "kpis", "cardVisual", 20, 76, 1240, 110, {"Data": [
         meas("Operaciones totales"), meas("Clientes activos"), meas("Monto (ARS M)"), meas("Fuera de horario (%)"),
         meas("Clientes con alerta"), meas("Riesgo alto")]}, z=2))
+    # Eje de fecha continuo (como la versión original): muestra los meses y deja ver los huecos de feriados
     v.append(visual(p, "diario", "columnChart", 20, 200, 820, 250,
-                    {"Category": [nm(col("Calendario", "dia_mes"), "Día")], "Series": [nm(col("Operaciones", "tipo_dia"), "Tipo de día")],
-                     "Y": [nm(meas("Cant. operaciones"), "Operaciones")]},
-                    objects=chart_objects(legend_top=True, extra={"dataPoint": color_por_valor(
-                        "Operaciones", "tipo_dia", {"Día hábil": "#6439FF", "Fin de semana": "#00B386"})}),
-                    title="Operaciones por día (hábil vs. fin de semana)", z=3))
+                    {"Category": [col("Calendario", "fecha")], "Series": [col("Operaciones", "tipo_dia")],
+                     "Y": [meas("Cant. operaciones")]}, title="Operaciones por día (hábil vs. fin de semana)", z=3))
     v.append(visual(p, "canal", "barChart", 860, 200, 400, 250,
                     {"Category": [nm(col("Operaciones", "canal"), "Canal")], "Y": [nm(meas("Cant. operaciones"), "Operaciones")]},
                     objects=chart_objects(labels=True, hide_value_axis=True),
