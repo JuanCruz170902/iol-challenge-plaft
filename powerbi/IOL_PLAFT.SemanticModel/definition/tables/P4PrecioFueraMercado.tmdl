@@ -1,0 +1,68 @@
+table P4PrecioFueraMercado
+
+	column id_cliente
+		dataType: string
+		summarizeBy: none
+		sourceColumn: id_cliente
+
+	column fecha
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		summarizeBy: none
+		sourceColumn: fecha
+
+	column canal
+		dataType: string
+		summarizeBy: none
+		sourceColumn: canal
+
+	column tipo_tran
+		dataType: string
+		summarizeBy: none
+		sourceColumn: tipo_tran
+
+	column simbolo_titulo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: simbolo_titulo
+
+	column cantidad
+		dataType: int64
+		formatString: #,##0
+		summarizeBy: none
+		sourceColumn: cantidad
+
+	column precio
+		dataType: double
+		formatString: #,##0.00
+		summarizeBy: none
+		sourceColumn: precio
+
+	column precio_mediana_dia
+		dataType: double
+		formatString: #,##0.00
+		summarizeBy: none
+		sourceColumn: precio_mediana_dia
+
+	column ratio_vs_mercado
+		dataType: double
+		formatString: 0.0000
+		summarizeBy: none
+		sourceColumn: ratio_vs_mercado
+
+	column diferencia_ars_mill
+		dataType: double
+		formatString: #,##0.00
+		summarizeBy: none
+		sourceColumn: diferencia_ars_mill
+
+	partition P4PrecioFueraMercado = m
+		mode: import
+		source =
+				let
+					Origen = Csv.Document(File.Contents(CarpetaDatos & "p4_precio_fuera_mercado.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+					Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+					Tipos = Table.TransformColumnTypes(Encabezados, {{"id_cliente", type text}, {"fecha", type date}, {"canal", type text}, {"tipo_tran", type text}, {"simbolo_titulo", type text}, {"cantidad", Int64.Type}, {"precio", type number}, {"precio_mediana_dia", type number}, {"ratio_vs_mercado", type number}, {"diferencia_ars_mill", type number}}, "en-US")
+				in
+					Tipos
+

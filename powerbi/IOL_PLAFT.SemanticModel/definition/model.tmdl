@@ -1,0 +1,26 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-AR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Operaciones
+ref table Clientes
+ref table Calendario
+ref table ApiLog
+ref table TopInstrumentos
+ref table TramosClientes
+ref table Pareto
+ref table P3Top
+ref table P4PrecioFueraMercado
+ref table Medidas
+
+ref cultureInfo es-ES
+

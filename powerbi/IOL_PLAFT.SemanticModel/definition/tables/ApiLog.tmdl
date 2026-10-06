@@ -1,0 +1,38 @@
+table ApiLog
+
+	column api
+		dataType: string
+		summarizeBy: none
+		sourceColumn: api
+
+	column estado
+		dataType: string
+		summarizeBy: none
+		sourceColumn: estado
+
+	column filas
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: filas
+
+	column detalle
+		dataType: string
+		summarizeBy: none
+		sourceColumn: detalle
+
+	column url
+		dataType: string
+		summarizeBy: none
+		sourceColumn: url
+
+	partition ApiLog = m
+		mode: import
+		source =
+				let
+					Origen = Csv.Document(File.Contents(CarpetaDatos & "api_log.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+					Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+					Tipos = Table.TransformColumnTypes(Encabezados, {{"api", type text}, {"estado", type text}, {"filas", Int64.Type}, {"detalle", type text}, {"url", type text}}, "en-US")
+				in
+					Tipos
+

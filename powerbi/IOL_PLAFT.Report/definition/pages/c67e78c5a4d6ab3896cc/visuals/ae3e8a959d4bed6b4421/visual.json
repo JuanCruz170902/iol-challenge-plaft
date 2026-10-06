@@ -1,0 +1,107 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "ae3e8a959d4bed6b4421",
+  "position": {
+    "x": 20,
+    "y": 76,
+    "z": 3000,
+    "height": 110,
+    "width": 1240,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Operaciones totales"
+                }
+              },
+              "queryRef": "Medidas.Operaciones totales",
+              "nativeQueryRef": "Operaciones totales"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Clientes activos"
+                }
+              },
+              "queryRef": "Medidas.Clientes activos",
+              "nativeQueryRef": "Clientes activos"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Monto ARS M"
+                }
+              },
+              "queryRef": "Medidas.Monto ARS M",
+              "nativeQueryRef": "Monto ARS M"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Fuera de horario (%)"
+                }
+              },
+              "queryRef": "Medidas.Fuera de horario (%)",
+              "nativeQueryRef": "Fuera de horario (%)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Clientes con alerta"
+                }
+              },
+              "queryRef": "Medidas.Clientes con alerta",
+              "nativeQueryRef": "Clientes con alerta"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Riesgo alto"
+                }
+              },
+              "queryRef": "Medidas.Riesgo alto",
+              "nativeQueryRef": "Riesgo alto"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

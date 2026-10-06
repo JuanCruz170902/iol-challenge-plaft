@@ -1,0 +1,69 @@
+table Medidas
+
+	/// KPI en texto (evita la abreviatura automática 'mil')
+	measure 'Operaciones totales' = FORMAT ( [Cant. operaciones], "#,##0" )
+
+	/// KPI en texto
+	measure 'Clientes activos' = FORMAT ( [Clientes únicos], "#,##0" )
+
+	/// KPI en texto, millones de pesos
+	measure 'Monto ARS M' = FORMAT ( [Monto ARS (M)], "#,##0" )
+
+	/// KPI en texto
+	measure 'Fuera de horario (%)' = FORMAT ( [% Fuera de horario], "0.0%" )
+
+	/// KPI en texto
+	measure 'Clientes con alerta' = FORMAT ( [Clientes en alerta], "#,##0" )
+
+	/// KPI en texto
+	measure 'Riesgo alto' = FORMAT ( [Clientes riesgo Alto], "#,##0" )
+
+	/// Monto de los clientes con alguna alerta, en millones de pesos
+	measure 'Monto en alerta (ARS M)' = FORMAT ( CALCULATE ( [Monto clientes (M)], Clientes[nivel_riesgo] <> "Sin alerta" ), "#,##0" )
+
+	/// Cantidad de operaciones
+	measure 'Cant. operaciones' = COUNTROWS ( Operaciones )
+		formatString: #,##0
+
+	/// Clientes únicos que operaron
+	measure 'Clientes únicos' = DISTINCTCOUNT ( Operaciones[id_cliente] )
+		formatString: #,##0
+
+	/// Monto operado en millones de pesos (USD convertidos a dólar MEP)
+	measure 'Monto ARS (M)' = DIVIDE ( SUM ( Operaciones[monto_ars] ), 1000000 )
+		formatString: #,##0
+
+	/// Operaciones fuera de 11 a 17 hs (hora Argentina)
+	measure '% Fuera de horario' = DIVIDE ( CALCULATE ( [Cant. operaciones], Operaciones[franja_horaria] <> "Mercado (11-17)" ), [Cant. operaciones] )
+		formatString: 0.0%
+
+	/// Operaciones en fin de semana o feriado
+	measure '% Día inhábil' = DIVIDE ( CALCULATE ( [Cant. operaciones], Operaciones[tipo_dia] <> "Día hábil" ), [Cant. operaciones] )
+		formatString: 0.0%
+
+	/// Clientes con al menos una alerta
+	measure 'Clientes en alerta' = CALCULATE ( COUNTROWS ( Clientes ), Clientes[nivel_riesgo] <> "Sin alerta" )
+		formatString: #,##0
+
+	/// Clientes con score >= 4
+	measure 'Clientes riesgo Alto' = CALCULATE ( COUNTROWS ( Clientes ), Clientes[nivel_riesgo] = "Alto" )
+		formatString: #,##0
+
+	/// Monto total de los clientes del contexto, en millones de pesos
+	measure 'Monto clientes (M)' = DIVIDE ( SUM ( Clientes[monto_ars] ), 1000000 )
+		formatString: #,##0
+
+	/// Operaciones a menos de la mitad o más del doble del precio del día
+	measure 'Ops precio fuera de mercado' = CALCULATE ( [Cant. operaciones], Operaciones[flag_precio_fuera_mercado] = TRUE () )
+		formatString: #,##0
+
+	column Dummy
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: [Dummy]
+
+	partition Medidas = calculated
+		mode: import
+		source = ROW("Dummy", BLANK())
+

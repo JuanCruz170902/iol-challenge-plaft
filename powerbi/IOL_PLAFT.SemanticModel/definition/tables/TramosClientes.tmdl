@@ -1,0 +1,37 @@
+table TramosClientes
+
+	column orden
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: orden
+
+	column tramo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: tramo
+		sortByColumn: orden
+
+	column clientes
+		dataType: int64
+		formatString: #,##0
+		summarizeBy: sum
+		sourceColumn: clientes
+
+	column ops
+		dataType: int64
+		formatString: #,##0
+		summarizeBy: sum
+		sourceColumn: ops
+
+	partition TramosClientes = m
+		mode: import
+		source =
+				let
+					Origen = Csv.Document(File.Contents(CarpetaDatos & "tramos_clientes.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+					Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+					Tipos = Table.TransformColumnTypes(Encabezados, {{"orden", Int64.Type}, {"tramo", type text}, {"clientes", Int64.Type}, {"ops", Int64.Type}}, "en-US")
+				in
+					Tipos
+

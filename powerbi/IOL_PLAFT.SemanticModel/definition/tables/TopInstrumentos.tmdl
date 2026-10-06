@@ -1,0 +1,42 @@
+table TopInstrumentos
+
+	column ranking
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: ranking
+
+	column instrumento
+		dataType: string
+		summarizeBy: none
+		sourceColumn: instrumento
+		sortByColumn: ranking
+
+	column ops
+		dataType: int64
+		formatString: #,##0
+		summarizeBy: sum
+		sourceColumn: ops
+
+	column clientes
+		dataType: int64
+		formatString: #,##0
+		summarizeBy: sum
+		sourceColumn: clientes
+
+	column monto_ars_mill
+		dataType: double
+		formatString: #,##0.0
+		summarizeBy: sum
+		sourceColumn: monto_ars_mill
+
+	partition TopInstrumentos = m
+		mode: import
+		source =
+				let
+					Origen = Csv.Document(File.Contents(CarpetaDatos & "top_instrumentos.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+					Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+					Tipos = Table.TransformColumnTypes(Encabezados, {{"ranking", Int64.Type}, {"instrumento", type text}, {"ops", Int64.Type}, {"clientes", Int64.Type}, {"monto_ars_mill", type number}}, "en-US")
+				in
+					Tipos
+

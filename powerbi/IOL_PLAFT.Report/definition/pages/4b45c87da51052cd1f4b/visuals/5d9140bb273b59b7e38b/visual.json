@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "5d9140bb273b59b7e38b",
+  "position": {
+    "x": 660,
+    "y": 76,
+    "z": 5000,
+    "height": 80,
+    "width": 600,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Clientes con alerta"
+                }
+              },
+              "queryRef": "Medidas.Clientes con alerta",
+              "nativeQueryRef": "Clientes con alerta"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Riesgo alto"
+                }
+              },
+              "queryRef": "Medidas.Riesgo alto",
+              "nativeQueryRef": "Riesgo alto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Monto en alerta (ARS M)"
+                }
+              },
+              "queryRef": "Medidas.Monto en alerta (ARS M)",
+              "nativeQueryRef": "Monto en alerta (ARS M)"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

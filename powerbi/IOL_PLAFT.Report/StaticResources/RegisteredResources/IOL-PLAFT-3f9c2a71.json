@@ -1,0 +1,19 @@
+{
+  "name": "IOL-PLAFT-3f9c2a71.json",
+  "dataColors": [
+    "#6439FF",
+    "#00B386",
+    "#1F2430",
+    "#A48BFF",
+    "#F59E0B",
+    "#B42318",
+    "#64748B",
+    "#C8B8FE"
+  ],
+  "foreground": "#1F2430",
+  "background": "#FFFFFF",
+  "tableAccent": "#6439FF",
+  "good": "#00B386",
+  "bad": "#B42318",
+  "neutral": "#F59E0B"
+}

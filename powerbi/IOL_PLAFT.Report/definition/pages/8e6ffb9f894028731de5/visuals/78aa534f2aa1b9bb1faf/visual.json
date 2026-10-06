@@ -1,0 +1,286 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "78aa534f2aa1b9bb1faf",
+  "position": {
+    "x": 20,
+    "y": 420,
+    "z": 5000,
+    "height": 220,
+    "width": 1240,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P4PrecioFueraMercado"
+                    }
+                  },
+                  "Property": "id_cliente"
+                }
+              },
+              "queryRef": "P4PrecioFueraMercado.id_cliente",
+              "nativeQueryRef": "id_cliente"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P4PrecioFueraMercado"
+                    }
+                  },
+                  "Property": "fecha"
+                }
+              },
+              "queryRef": "P4PrecioFueraMercado.fecha",
+              "nativeQueryRef": "fecha"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P4PrecioFueraMercado"
+                    }
+                  },
+                  "Property": "canal"
+                }
+              },
+              "queryRef": "P4PrecioFueraMercado.canal",
+              "nativeQueryRef": "canal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P4PrecioFueraMercado"
+                    }
+                  },
+                  "Property": "tipo_tran"
+                }
+              },
+              "queryRef": "P4PrecioFueraMercado.tipo_tran",
+              "nativeQueryRef": "tipo_tran"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P4PrecioFueraMercado"
+                    }
+                  },
+                  "Property": "simbolo_titulo"
+                }
+              },
+              "queryRef": "P4PrecioFueraMercado.simbolo_titulo",
+              "nativeQueryRef": "simbolo_titulo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P4PrecioFueraMercado"
+                    }
+                  },
+                  "Property": "cantidad"
+                }
+              },
+              "queryRef": "P4PrecioFueraMercado.cantidad",
+              "nativeQueryRef": "cantidad"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P4PrecioFueraMercado"
+                    }
+                  },
+                  "Property": "precio"
+                }
+              },
+              "queryRef": "P4PrecioFueraMercado.precio",
+              "nativeQueryRef": "precio"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P4PrecioFueraMercado"
+                    }
+                  },
+                  "Property": "precio_mediana_dia"
+                }
+              },
+              "queryRef": "P4PrecioFueraMercado.precio_mediana_dia",
+              "nativeQueryRef": "precio_mediana_dia"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P4PrecioFueraMercado"
+                    }
+                  },
+                  "Property": "ratio_vs_mercado"
+                }
+              },
+              "queryRef": "P4PrecioFueraMercado.ratio_vs_mercado",
+              "nativeQueryRef": "ratio_vs_mercado"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P4PrecioFueraMercado"
+                    }
+                  },
+                  "Property": "diferencia_ars_mill"
+                }
+              },
+              "queryRef": "P4PrecioFueraMercado.diferencia_ars_mill",
+              "nativeQueryRef": "diferencia_ars_mill"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "P4PrecioFueraMercado"
+                  }
+                },
+                "Property": "diferencia_ars_mill"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'P4 · Operaciones a precio fuera de mercado (diferencia de valor en ARS M)'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

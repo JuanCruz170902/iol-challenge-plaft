@@ -1,0 +1,24 @@
+table Pareto
+
+	column pct_clientes
+		dataType: double
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: pct_clientes
+
+	column pct_monto
+		dataType: double
+		formatString: 0.0
+		summarizeBy: sum
+		sourceColumn: pct_monto
+
+	partition Pareto = m
+		mode: import
+		source =
+				let
+					Origen = Csv.Document(File.Contents(CarpetaDatos & "pareto.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+					Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+					Tipos = Table.TransformColumnTypes(Encabezados, {{"pct_clientes", type number}, {"pct_monto", type number}}, "en-US")
+				in
+					Tipos
+

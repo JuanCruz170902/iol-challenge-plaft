@@ -1,0 +1,105 @@
+table Operaciones
+
+	column id_transaccion
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: id_transaccion
+
+	column id_cliente
+		dataType: string
+		summarizeBy: none
+		sourceColumn: id_cliente
+
+	column fecha
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		summarizeBy: none
+		sourceColumn: fecha
+
+	column fecha_art
+		dataType: dateTime
+		formatString: dd/MM/yyyy HH:mm:ss
+		summarizeBy: none
+		sourceColumn: fecha_art
+
+	column hora_art
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: hora_art
+
+	column franja_horaria
+		dataType: string
+		summarizeBy: none
+		sourceColumn: franja_horaria
+
+	column tipo_dia
+		dataType: string
+		summarizeBy: none
+		sourceColumn: tipo_dia
+
+	column tipo_tran
+		dataType: string
+		summarizeBy: none
+		sourceColumn: tipo_tran
+
+	column canal
+		dataType: string
+		summarizeBy: none
+		sourceColumn: canal
+
+	column moneda
+		dataType: string
+		summarizeBy: none
+		sourceColumn: moneda
+
+	column simbolo_titulo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: simbolo_titulo
+
+	column familia_instrumento
+		dataType: string
+		summarizeBy: none
+		sourceColumn: familia_instrumento
+
+	column cantidad
+		dataType: int64
+		formatString: #,##0
+		summarizeBy: none
+		sourceColumn: cantidad
+
+	column precio
+		dataType: double
+		formatString: #,##0.0000
+		summarizeBy: none
+		sourceColumn: precio
+
+	column monto_ars
+		dataType: double
+		formatString: #,##0
+		summarizeBy: sum
+		sourceColumn: monto_ars
+
+	column flag_precio_fuera_mercado
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: flag_precio_fuera_mercado
+
+	column flag_operacion_extrema
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: flag_operacion_extrema
+
+	partition Operaciones = m
+		mode: import
+		source =
+				let
+					Origen = Csv.Document(File.Contents(CarpetaDatos & "operaciones.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+					Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+					Tipos = Table.TransformColumnTypes(Encabezados, {{"id_transaccion", type text}, {"id_cliente", type text}, {"fecha", type date}, {"fecha_art", type datetime}, {"hora_art", Int64.Type}, {"franja_horaria", type text}, {"tipo_dia", type text}, {"tipo_tran", type text}, {"canal", type text}, {"moneda", type text}, {"simbolo_titulo", type text}, {"familia_instrumento", type text}, {"cantidad", Int64.Type}, {"precio", type number}, {"monto_ars", type number}}, "en-US"),
+					Booleanos = Table.TransformColumns(Tipos, {{"flag_precio_fuera_mercado", each _ = "t", type logical}, {"flag_operacion_extrema", each _ = "t", type logical}})
+				in
+					Booleanos
+

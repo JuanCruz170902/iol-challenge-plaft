@@ -1,5 +1,7 @@
 # Dashboard Power BI — guía de armado
 
+> **Estado:** el dashboard ya está construido como proyecto PBIP (`powerbi/IOL_PLAFT.pbip`). El modelo y las páginas los genera `scripts/build_pbip.py` a partir del esqueleto que crea Power BI Desktop, y leen los CSV de `powerbi/data/`. Esta guía documenta el diseño, y sirve también para rearmarlo a mano o conectándolo directo a PostgreSQL.
+
 Archivo esperado: `powerbi/IOL_PLAFT.pbix`. Capturas: `powerbi/capturas/*.png`, que se referencian en el README.
 
 ## 1. Conexión

@@ -1,0 +1,258 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "071f9455830d9c15bb50",
+  "position": {
+    "x": 20,
+    "y": 414,
+    "z": 5000,
+    "height": 292,
+    "width": 1240,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones"
+                    }
+                  },
+                  "Property": "fecha_art"
+                }
+              },
+              "queryRef": "Operaciones.fecha_art",
+              "nativeQueryRef": "fecha_art"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones"
+                    }
+                  },
+                  "Property": "canal"
+                }
+              },
+              "queryRef": "Operaciones.canal",
+              "nativeQueryRef": "canal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones"
+                    }
+                  },
+                  "Property": "tipo_tran"
+                }
+              },
+              "queryRef": "Operaciones.tipo_tran",
+              "nativeQueryRef": "tipo_tran"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones"
+                    }
+                  },
+                  "Property": "simbolo_titulo"
+                }
+              },
+              "queryRef": "Operaciones.simbolo_titulo",
+              "nativeQueryRef": "simbolo_titulo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones"
+                    }
+                  },
+                  "Property": "cantidad"
+                }
+              },
+              "queryRef": "Operaciones.cantidad",
+              "nativeQueryRef": "cantidad"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones"
+                    }
+                  },
+                  "Property": "precio"
+                }
+              },
+              "queryRef": "Operaciones.precio",
+              "nativeQueryRef": "precio"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones"
+                    }
+                  },
+                  "Property": "monto_ars"
+                }
+              },
+              "queryRef": "Operaciones.monto_ars",
+              "nativeQueryRef": "monto_ars"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones"
+                    }
+                  },
+                  "Property": "flag_precio_fuera_mercado"
+                }
+              },
+              "queryRef": "Operaciones.flag_precio_fuera_mercado",
+              "nativeQueryRef": "flag_precio_fuera_mercado"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Operaciones"
+                  }
+                },
+                "Property": "fecha_art"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Operaciones'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -19,4 +19,6 @@ if ($LASTEXITCODE -ne 0) { throw "Falló fetch_api.py" }
 Run-Sql "sql/02_api_enriquecimiento.sql" "outputs/02_api_enriquecimiento.txt"
 Run-Sql "sql/03_patrones_anomalos.sql"   "outputs/03_patrones_anomalos.txt"
 Run-Sql "sql/04_vistas_powerbi.sql"
+New-Item -ItemType Directory -Force -Path "powerbi/data" | Out-Null
+Run-Sql "sql/05_export_powerbi.sql"
 Write-Host "OK - resultados en outputs/, vistas iol.vw_* listas para Power BI"

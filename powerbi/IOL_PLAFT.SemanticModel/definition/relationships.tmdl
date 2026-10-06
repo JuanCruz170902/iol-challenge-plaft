@@ -1,0 +1,7 @@
+relationship Operaciones_Clientes
+	fromColumn: Operaciones.id_cliente
+	toColumn: Clientes.id_cliente
+
+relationship Operaciones_Calendario
+	fromColumn: Operaciones.fecha
+	toColumn: Calendario.fecha

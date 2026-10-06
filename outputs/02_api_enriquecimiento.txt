@@ -1,10 +1,10 @@
 === 3.0 Log de llamadas a APIs (qué fuente se usó en esta corrida) ===
      api      |  estado  | filas |                              detalle                              
 --------------+----------+-------+-------------------------------------------------------------------
- nolaborables | ERROR    |     0 | URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
  argdatos     | ERROR    |     0 | URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
  argdatos     | ERROR    |     0 | URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
  mep_impl     | FALLBACK |     0 | el SQL calcula el MEP implícito con el dataset
+ nolaborables | ERROR    |     0 | URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
  snapshot     | FALLBACK |    20 | se usó la copia local versionada
 
 === 3.1 Feriados dentro del período del dataset (según API) ===

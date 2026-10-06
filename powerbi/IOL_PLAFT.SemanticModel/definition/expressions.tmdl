@@ -1,0 +1,2 @@
+/// Carpeta con los CSV exportados por sql/05_export_powerbi.sql (terminar con \)
+expression CarpetaDatos = "C:\Users\usuario\Downloads\iol-challenge-plaft\powerbi\data\" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]

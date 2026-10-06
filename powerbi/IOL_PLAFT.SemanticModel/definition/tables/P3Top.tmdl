@@ -1,0 +1,36 @@
+table P3Top
+
+	column id_cliente
+		dataType: string
+		summarizeBy: none
+		sourceColumn: id_cliente
+
+	column mes_orden
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: mes_orden
+
+	column mes
+		dataType: string
+		summarizeBy: none
+		sourceColumn: mes
+		sortByColumn: mes_orden
+
+	column ops
+		dataType: int64
+		formatString: #,##0
+		summarizeBy: sum
+		sourceColumn: ops
+
+	partition P3Top = m
+		mode: import
+		source =
+				let
+					Origen = Csv.Document(File.Contents(CarpetaDatos & "p3_top.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+					Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+					Tipos = Table.TransformColumnTypes(Encabezados, {{"id_cliente", type text}, {"mes_orden", Int64.Type}, {"mes", type text}, {"ops", Int64.Type}}, "en-US")
+				in
+					Tipos
+
