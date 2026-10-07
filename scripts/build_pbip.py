@@ -568,7 +568,7 @@ def build_report():
     v.append(textbox(p, "hallazgos", 640, 464, 620, 240, [
         ("Hallazgos clave", 16, C_ACCENT, True),
         ("1. 13 operaciones a precio fuera de mercado (≈ ARS 741 M de diferencia de valor), concentradas en IOLnet.", 13, C_TEXT, False),
-        ("2. 68 clientes con cambio brusco de comportamiento entre enero y feb-mar; 270 sin historial en enero con montos > ARS 5 M.", 13, C_TEXT, False),
+        ("2. 68 clientes con cambio brusco de comportamiento entre enero y feb-mar; 271 sin historial en enero con montos > ARS 5 M.", 13, C_TEXT, False),
         ("3. 113 clientes (0,2%) concentran el 35% del volumen; uno solo explica el 18%.", 13, C_TEXT, False),
         ("La actividad nocturna y de sábado es pareja en todos los canales: es una característica del dato, no del cliente.", 12, C_MUTED, False),
     ], z=6))

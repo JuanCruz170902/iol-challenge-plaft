@@ -1,6 +1,4 @@
 api,estado,filas,detalle,url
-nolaborables,ERROR,0,URLError: <urlopen error Tunnel connection failed: 403 Forbidden>,https://nolaborables.com.ar/api/v2/feriados/2026
-argdatos,ERROR,0,URLError: <urlopen error Tunnel connection failed: 403 Forbidden>,https://api.argentinadatos.com/v1/feriados/2026
-snapshot,FALLBACK,20,se usó la copia local versionada,data/api/snapshot/feriados_2026.json
-argdatos,ERROR,0,URLError: <urlopen error Tunnel connection failed: 403 Forbidden>,https://api.argentinadatos.com/v1/cotizaciones/dolares/bolsa
-mep_impl,FALLBACK,0,el SQL calcula el MEP implícito con el dataset,dataset AL30/AL30D
+nolaborables,ERROR,0,URLError: <urlopen error [Errno 11001] getaddrinfo failed>,https://nolaborables.com.ar/api/v2/feriados/2026
+argdatos,OK,20,,https://api.argentinadatos.com/v1/feriados/2026
+argdatos,OK,107,,https://api.argentinadatos.com/v1/cotizaciones/dolares/bolsa

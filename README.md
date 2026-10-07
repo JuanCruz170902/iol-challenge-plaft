@@ -14,6 +14,7 @@
 │   └── api/                               salida de las APIs + log de llamadas + snapshot de respaldo
 ├── scripts/fetch_api.py                   Task 03: llamadas HTTP (solo librería estándar de Python)
 ├── scripts/build_pbip.py                  genera el modelo TMDL y las páginas PBIR del dashboard
+├── correr_api.bat                         Windows: doble clic para correr solo la consulta a las APIs
 ├── sql/
 │   ├── 00_carga.sql                       esquema, staging y tabla tipada
 │   ├── 01_exploracion.sql                 Task 01: exploración y calidad del dato
@@ -58,6 +59,8 @@ El pipeline crea la base `iol` y luego:
 
 Los resultados de cada paso quedan en `outputs/`.
 
+**Solo la consulta a las APIs (Task 03):** en Windows alcanza con hacer doble clic en `correr_api.bat`, que corre `scripts/fetch_api.py` con Python y muestra el log de la corrida. No necesita PostgreSQL.
+
 **Dashboard:** abrir `powerbi/IOL_PLAFT.pbip` con Power BI Desktop y tocar **Actualizar**. El modelo lee los CSV de `powerbi/data/`, así que no hace falta PostgreSQL para verlo. Si el repo se clonó en otra ruta, primero hay que cambiar el parámetro `CarpetaDatos` (Transformar datos → Editar parámetros) para que apunte a la carpeta `powerbi\data\` local.
 
 ---
@@ -100,7 +103,7 @@ Detalle completo en [`outputs/03_patrones_anomalos.txt`](outputs/03_patrones_ano
 |---|---|---|---|
 | **P1** | Actividad inusualmente alta | Top 0,1% de clientes por cantidad de operaciones (≥ 31) **o** por monto total (≥ ARS 32 M) | **113 clientes** (0,2%) concentran el **35% del volumen**. El canal API, que es el 1,7% de las operaciones totales, representa el 30% de la actividad de estos clientes; IOLnet pasa del 0,3% al 5,6%. Instrumentos: Letras y Boncaps (T13F6, S17A6, S29Y6), AL30/AL30D y opciones GGAL. |
 | **P2** | Horarios y días atípicos | 1) ¿Es estructural? 2) z-score binomial de cada cliente (≥ 10 ops) contra la línea base (21% madrugada, 10% día inhábil); se marca z ≥ 3 | **Es estructural** (ver Task 01). Solo 9 de 649 clientes superan z ≥ 3, cuando por azar se esperarían 2. Es una señal débil y de bajo monto. |
-| **P3** | Cambio brusco de comportamiento | Enero vs. febrero-marzo, normalizado por días hábiles. **A:** ≤ 2 ops en enero y tasa ≥ 5x. **B:** monto ≥ ARS 5 M y ≥ 10x enero. **C:** sin actividad en enero y monto ≥ ARS 5 M | **68 clientes con cambio brusco.** Caso emblemático: `CLIBDBEB632`, 0 operaciones en enero y 282 entre el 26/02 y el 11/03, todas por API, compra-venta del mismo día en 5 acciones de baja liquidez. Además hay **270 clientes sin historial en enero** que mueven ARS 3.423 M; pueden ser altas nuevas o clientes dormidos. |
+| **P3** | Cambio brusco de comportamiento | Enero vs. febrero-marzo, normalizado por días hábiles. **A:** ≤ 2 ops en enero y tasa ≥ 5x. **B:** monto ≥ ARS 5 M y ≥ 10x enero. **C:** sin actividad en enero y monto ≥ ARS 5 M | **68 clientes con cambio brusco.** Caso emblemático: `CLIBDBEB632`, 0 operaciones en enero y 282 entre el 26/02 y el 11/03, todas por API, compra-venta del mismo día en 5 acciones de baja liquidez. Además hay **271 clientes sin historial en enero** que mueven ARS 3.430 M; pueden ser altas nuevas o clientes dormidos. |
 | **P4** | Precio fuera de mercado | Precio < 50% o > 200% de la mediana del mismo instrumento ese día (≥ 5 operaciones de referencia; se excluyen opciones) | **13 operaciones de 9 clientes** con una diferencia de valor de **ARS 741 M** respecto del precio de mercado. 5 de las 7 operaciones de IOLnet tienen precio 1,00 o 0,01. Ejemplo: `CLIEFAFE73D` compró 38.077 TGNO4 a $1,00 (mercado $4.582) y 40.351 METR a $1,00 (mercado $2.441) con 14 segundos de diferencia. |
 
 **Score de riesgo por cliente** (tabla `clientes_riesgo`). Pesos: P4 = 3 · P3 cambio brusco = 2 · P1 = 2 · P3 sin historial = 1 · P2 = 1. Nivel Alto ≥ 4, Medio 2–3, Bajo 1.
@@ -115,9 +118,17 @@ Script: [`scripts/fetch_api.py`](scripts/fetch_api.py). Uso del dato: [`sql/02_a
 | Feriados 2026 | `nolaborables.com.ar/api/v2/feriados/2026` → fallback `api.argentinadatos.com/v1/feriados/2026` → fallback snapshot versionado | Calendario de días hábiles bursátiles. Cada operación se marca como hábil, fin de semana o feriado. |
 | Dólar MEP diario | `api.argentinadatos.com/v1/cotizaciones/dolares/bolsa` → fallback MEP implícito del dataset | Convertir las operaciones en USD a pesos para comparar todo el volumen en una sola moneda. Se usa el **MEP**, no el oficial, porque es el tipo de cambio de referencia de la operatoria bursátil. |
 
+**Resultado de la última corrida** (`data/api/api_log.csv`, 07/10/2026, ejecutada en Windows con Python 3.10):
+
+| API | Estado | Filas | Detalle |
+|---|---|---|---|
+| `nolaborables.com.ar/api/v2/feriados/2026` | ERROR | 0 | `getaddrinfo failed`: el dominio no resuelve DNS (el servicio parece discontinuado) |
+| `api.argentinadatos.com/v1/feriados/2026` | **OK** | 20 | Feriados 2026 usados para el calendario |
+| `api.argentinadatos.com/v1/cotizaciones/dolares/bolsa` | **OK** | 107 | Dólar MEP diario del 15/12/2025 al 31/03/2026 |
+
 **Manejo de fallas (documentado, como pide la consigna):**
-- **`nolaborables.com.ar` no resolvía DNS** durante el desarrollo (el dominio parece discontinuado). El script lo intenta primero, como pide la consigna. Si falla, usa ArgentinaDatos, que publica el mismo calendario oficial. Si también falla, usa un snapshot JSON versionado en el repo.
-- **Dólar MEP:** si la API no responde, el SQL calcula un **MEP implícito con el propio dataset** (mediana diaria de AL30 en ARS / AL30D en USD). Se validó contra la API en tres fechas, con un desvío menor al 1%:
+- **`nolaborables.com.ar` no resuelve DNS.** El script lo intenta primero, como pide la consigna. Al fallar, pasa a ArgentinaDatos, que publica el mismo calendario oficial. Si también fallara, usa un snapshot JSON versionado en el repo.
+- **Dólar MEP:** si la API no responde, el SQL calcula un **MEP implícito con el propio dataset** (mediana diaria de AL30 en ARS / AL30D en USD). Se validó contra la API, con un desvío menor al 1%:
 
   | Fecha | MEP API | MEP implícito | Desvío |
   |---|---|---|---|
@@ -125,9 +136,9 @@ Script: [`scripts/fetch_api.py`](scripts/fetch_api.py). Uso del dato: [`sql/02_a
   | 13/02/2026 | 1.426,00 | 1.415,96 | -0,70% |
   | 13/03/2026 | 1.427,20 | 1.418,18 | -0,63% |
 
-- Cada intento queda registrado en `data/api/api_log.csv` (tabla `api_log` y página "Datos externos" del dashboard). Así se sabe qué fuente se usó en cada corrida.
+- Cada intento queda registrado en `data/api/api_log.csv` (tabla `api_log` y página "Datos externos" del dashboard). Así se sabe qué fuente se usó en cada corrida. En un entorno sin salida a internet, el mismo pipeline corre completo con los dos fallbacks.
 
-**Qué aportó al análisis.** El calendario de la API confirma que el dataset **no tiene operaciones en feriados**, pero sí en sábados. Esto refuerza la hipótesis de que el horario es un artefacto del dato y no comportamiento. Con el dólar MEP, el volumen total se homogeneiza en **≈ ARS 35.100 M**. Sin esa conversión, el 15% de las operaciones (las de USD) quedaría afuera de los rankings por monto.
+**Qué aportó al análisis.** El calendario de la API confirma que el dataset **no tiene operaciones en feriados**, pero sí en sábados. Esto refuerza la hipótesis de que el horario es un artefacto del dato y no comportamiento. Con el dólar MEP, el volumen total se homogeneiza en **≈ ARS 35.115 M**. Sin esa conversión, el 15% de las operaciones (las de USD) quedaría afuera de los rankings por monto.
 
 ## Task 04 — Propuesta de IA
 
@@ -171,7 +182,7 @@ Es un proyecto Power BI en formato PBIP: el modelo (TMDL) y el reporte (PBIR) se
 - *Acción:* revisar las 13 operaciones esta semana e identificar la contraparte de cada una. Implementar un control automático que bloquee o pida confirmación cuando el precio se aleje más del 50% del de mercado.
 
 **2. Clientes que cambian bruscamente su forma de operar**
-- *Qué vimos:* 68 clientes multiplicaron por 5 o más su actividad, o por 10 su monto, entre enero y febrero-marzo. El caso más claro no había operado en enero y desde el 26/02 hizo 282 operaciones en 12 días, todas por conexión automática, comprando y vendiendo en el día 5 acciones de baja liquidez. Además, 270 clientes sin actividad en enero aparecieron operando más de $5 millones cada uno.
+- *Qué vimos:* 68 clientes multiplicaron por 5 o más su actividad, o por 10 su monto, entre enero y febrero-marzo. El caso más claro no había operado en enero y desde el 26/02 hizo 282 operaciones en 12 días, todas por conexión automática, comprando y vendiendo en el día 5 acciones de baja liquidez. Además, 271 clientes sin actividad en enero aparecieron operando más de $5 millones cada uno.
 - *Por qué es riesgo:* un cambio repentino es la señal típica de cuenta tomada por terceros, cuenta "mula" o prueba de un mecanismo de manipulación de precios en especies poco líquidas.
 - *Acción:* contrastar a estos clientes con su perfil declarado y su origen de fondos. Para quienes operan por conexión automática, verificar la fecha de habilitación y si hay cuentas vinculadas del otro lado de las operaciones.
 
@@ -180,4 +191,4 @@ Es un proyecto Power BI en formato PBIP: el modelo (TMDL) y el reporte (PBIR) se
 - *Por qué es riesgo:* la exposición está concentrada. Si alguno de estos clientes no tiene un perfil que justifique esos montos, el impacto regulatorio y reputacional es alto.
 - *Acción:* revisar con prioridad los 5 clientes de riesgo **Alto** de la cola. Para los 113, confirmar que la documentación de respaldo patrimonial esté al día y monitorearlos de forma continua.
 
-**Próximo paso.** La cola de revisión priorizada (5 de riesgo alto, 180 medio y 268 bajo) está disponible en el tablero, con los motivos de cada alerta. Proponemos generar automáticamente una ficha resumen por cliente para reducir el tiempo de revisión de cada caso.
+**Próximo paso.** La cola de revisión priorizada (5 de riesgo alto, 180 medio y 269 bajo) está disponible en el tablero, con los motivos de cada alerta. Proponemos generar automáticamente una ficha resumen por cliente para reducir el tiempo de revisión de cada caso.

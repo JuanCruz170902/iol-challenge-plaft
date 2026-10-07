@@ -1,21 +1,21 @@
 fecha,nombre,tipo,fuente
-2026-01-01,Año nuevo,inamovible,snapshot
-2026-02-16,Carnaval,inamovible,snapshot
-2026-02-17,Carnaval,inamovible,snapshot
-2026-03-23,Puente turístico no laborable,puente,snapshot
-2026-03-24,Día Nacional de la Memoria por la Verdad y la Justicia,inamovible,snapshot
-2026-04-02,Día del Veterano y de los Caídos en la Guerra de Malvinas,inamovible,snapshot
-2026-04-03,Viernes Santo,inamovible,snapshot
-2026-05-01,Día del Trabajador,inamovible,snapshot
-2026-05-25,Día de la Revolución de Mayo,inamovible,snapshot
-2026-06-15,Paso a la Inmortalidad del General Martín Güemes (17/6),trasladable,snapshot
-2026-06-20,Paso a la Inmortalidad del General Manuel Belgrano,inamovible,snapshot
-2026-07-09,Día de la Independencia,inamovible,snapshot
-2026-07-10,Puente turístico no laborable,puente,snapshot
-2026-08-17,Paso a la Inmortalidad del Gral. José de San Martín,trasladable,snapshot
-2026-10-12,Día del Respeto a la Diversidad Cultural,trasladable,snapshot
-2026-11-09,Visita del papa León XIV,inamovible,snapshot
-2026-11-23,Día de la Soberanía Nacional (20/11),trasladable,snapshot
-2026-12-07,Puente turístico no laborable,puente,snapshot
-2026-12-08,Día de la Inmaculada Concepción de María,inamovible,snapshot
-2026-12-25,Navidad,inamovible,snapshot
+2026-01-01,Año nuevo,inamovible,argdatos
+2026-02-16,Carnaval,inamovible,argdatos
+2026-02-17,Carnaval,inamovible,argdatos
+2026-03-23,Puente turístico no laborable,puente,argdatos
+2026-03-24,Día Nacional de la Memoria por la Verdad y la Justicia,inamovible,argdatos
+2026-04-02,Día del Veterano y de los Caídos en la Guerra de Malvinas,inamovible,argdatos
+2026-04-03,Viernes Santo,inamovible,argdatos
+2026-05-01,Día del Trabajador,inamovible,argdatos
+2026-05-25,Día de la Revolución de Mayo,inamovible,argdatos
+2026-06-15,Paso a la Inmortalidad del General Martín Güemes (17/6),trasladable,argdatos
+2026-06-20,Paso a la Inmortalidad del General Manuel Belgrano,inamovible,argdatos
+2026-07-09,Día de la Independencia,inamovible,argdatos
+2026-07-10,Puente turístico no laborable,puente,argdatos
+2026-08-17,Paso a la Inmortalidad del Gral. José de San Martín,trasladable,argdatos
+2026-10-12,Día del Respeto a la Diversidad Cultural,trasladable,argdatos
+2026-11-09,Visita del papa León XIV,inamovible,argdatos
+2026-11-23,Día de la Soberanía Nacional (20/11),trasladable,argdatos
+2026-12-07,Puente turístico no laborable,puente,argdatos
+2026-12-08,Día de la Inmaculada Concepción de María,inamovible,argdatos
+2026-12-25,Navidad,inamovible,argdatos

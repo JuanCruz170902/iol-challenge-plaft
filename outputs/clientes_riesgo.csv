@@ -1,7 +1,7 @@
 id_cliente,canal_principal,canales,ops,dias_activos,simbolos,simbolo_principal,monto_ars,pct_compras,ops_ene,ops_feb,ops_mar,monto_ene,monto_feb_mar,score_riesgo,nivel_riesgo,orden_nivel,motivos,p1_actividad_alta,p2_horario_atipico,p3_cambio_brusco,p3_sin_historial_monto_alto,p4_precio_fuera_mercado,diferencia_valor_ars
 CLI74090760,IOLnet,1,101,39,17,S29Y6,6276265450.2286,69.3,70,26,5,5548640809.0353,727624641.1933,5,Alto,1,"Precio fuera de mercado | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,t,461928014.92
 CLIEFAFE73D,IOLnet,1,5,3,5,EEM,59936872.8202,100.0,3,1,1,38279475.5302,21657397.2900,5,Alto,1,"Precio fuera de mercado | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,t,272902857.76
-CLIC1D6DFE3,Sitio Web Desktop,1,7,7,7,AL30D,47089101.6670,42.9,3,3,1,2599804.9490,44489296.7180,4,Alto,1,"Cambio brusco feb-mar | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,t,f,f,0.00
+CLIC1D6DFE3,Sitio Web Desktop,1,7,7,7,AL30D,47178127.5370,42.9,3,3,1,2599804.9490,44578322.5880,4,Alto,1,"Cambio brusco feb-mar | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,t,f,f,0.00
 CLI148E0685,Sitio Web Desktop,1,6,6,5,MSTR,39060343.8136,33.3,1,3,2,565470.5164,38494873.2972,4,Alto,1,"Cambio brusco feb-mar | Actividad top 0,1%",t,f,t,f,f,0.00
 CLIBDBEB632,API,1,282,12,5,COME,177776.4677,71.6,0,40,242,0,177776.4677,4,Alto,1,"Cambio brusco feb-mar | Actividad top 0,1%",t,f,t,f,f,0.00
 CLI0DA54807,Sitio Web Desktop,1,8,6,2,BIOX,218709348.1892,87.5,0,8,0,0,218709348.1892,3,Medio,2,"Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,t,f,0.00
@@ -10,7 +10,7 @@ CLIE12C419E,Sitio Web Desktop,1,1,1,1,GGAL,85831048.2137,100.0,0,1,0,0,85831048.
 CLI80AAF688,Sitio Web Desktop,1,1,1,1,AL30,70684343.2476,100.0,0,1,0,0,70684343.2476,3,Medio,2,"Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,t,f,0.00
 CLIFA991EF7,Sitio Web Desktop,1,1,1,1,S17A6,39435353.8030,0.0,0,0,1,0,39435353.8030,3,Medio,2,"Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,t,f,0.00
 CLI084D999E,App Mobile,1,1,1,1,GGAL,38654919.6640,100.0,0,1,0,0,38654919.6640,3,Medio,2,"Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,t,f,0.00
-CLI29CEEA29,IOLnet,1,3,3,3,BPA8C,37647412.7880,66.7,0,2,1,0,37647412.7880,3,Medio,2,"Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,t,f,0.00
+CLI29CEEA29,IOLnet,1,3,3,3,BPA8C,37651261.3180,66.7,0,2,1,0,37651261.3180,3,Medio,2,"Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,t,f,0.00
 CLI15CE8B7C,App Mobile,1,2,2,2,MSTR,37406352.2355,100.0,0,1,1,0,37406352.2355,3,Medio,2,"Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,t,f,0.00
 CLI7C5C94A4,Sitio Web Responsive,1,1,1,1,YPFD,33965028.4200,100.0,0,1,0,0,33965028.4200,3,Medio,2,"Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,t,f,0.00
 CLI1A9492FD,Sitio Web Desktop,1,1,1,1,UNH,33625854.8977,100.0,0,1,0,0,33625854.8977,3,Medio,2,"Sin historial en enero + monto alto | Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,t,f,0.00
@@ -22,53 +22,53 @@ CLI2B5FD66A,Sitio Web Desktop,1,7,6,4,COME,21802.4183,57.1,4,2,1,7121.8673,14680
 CLI47EE1F3A,Sitio Web Desktop,1,6,5,5,COME,11804.3876,66.7,4,1,1,8687.8601,3116.5275,3,Medio,2,Precio fuera de mercado,f,f,f,f,t,345.20
 CLIBE39D16C,IOLnet,1,3,3,3,CAC5O,11261.0538,100.0,0,2,1,0,11261.0538,3,Medio,2,Precio fuera de mercado,f,f,f,f,t,4984573.03
 CLIC19D5B54,IOLnet,1,1,1,1,AL30,4.2600,0.0,0,0,1,0,4.2600,3,Medio,2,Precio fuera de mercado,f,f,f,f,t,368327.03
-CLI5DB1F6D9,IOLnet,1,127,51,67,AL30,829955291.1867,74.0,49,61,17,390678952.8482,439276338.3385,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLI5DB1F6D9,IOLnet,1,127,51,67,AL30,830639129.5667,74.0,49,61,17,390674323.3782,439964806.1885,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLICB9170B6,Sitio Web Desktop,1,9,7,8,SPOT,392243946.0672,88.9,3,2,4,124108484.0307,268135462.0365,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLI9C55B909,Sitio Web Desktop,1,8,7,7,CRM,369119180.3682,75.0,5,1,2,297475300.1268,71643880.2414,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
-CLIC12C57AC,IOLnet,1,19,15,14,IRCPD,340784467.2266,78.9,5,10,4,198095787.9748,142688679.2518,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLIC12C57AC,IOLnet,1,19,15,14,IRCPD,342519780.7366,78.9,5,10,4,199599561.7748,142920218.9618,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLIE2C3E233,Sitio Web Desktop,1,1,1,1,SPY,224165428.7827,0.0,1,0,0,224165428.7827,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
-CLI7450F4B7,App Mobile,1,54,34,36,TLCMD,221971276.74,70.4,21,26,7,94062869.12,127908407.62,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
-CLI2FD26182,Sitio Web Desktop,1,2,2,2,AL30,171257761.3652,100.0,1,1,0,164198436.2252,7059325.14,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLI7450F4B7,App Mobile,1,54,34,36,TLCMD,222142089.51,70.4,21,26,7,94222168.65,127919920.86,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLI2FD26182,Sitio Web Desktop,1,2,2,2,AL30,171273809.8452,100.0,1,1,0,164198436.2252,7075373.62,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLI20D116EF,Sitio Web Desktop,1,10,8,9,PLTR,137004764.2195,80.0,10,0,0,137004764.2195,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLI77CB0287,App Mobile,2,5,4,4,PETR3,134433147.5254,100.0,4,1,0,35628658.6342,98804488.8912,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLI477DB845,Sitio Web Desktop,1,3,3,1,YPFD,109959475.0393,100.0,1,1,1,78775603.7970,31183871.2423,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
-CLIAC2E7191,Sitio Web Desktop,1,1,1,1,AL30D,105385822.57,100.0,1,0,0,105385822.57,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLIAC2E7191,Sitio Web Desktop,1,1,1,1,AL30D,105344888.23,100.0,1,0,0,105344888.23,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLI2EFEE1FA,App Mobile,1,54,31,14,YPFD,89073536.4865,74.1,27,14,13,36948623.2757,52124913.2108,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI737D1F1D,App Mobile,1,1,1,1,S27F6,86980481.8960,0.0,1,0,0,86980481.8960,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLID71A5DA7,Sitio Web Desktop,2,5,3,5,COPX,75116749.0163,60.0,5,0,0,75116749.0163,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLI186BE7CD,App Mobile,1,3,3,3,CLS,75019430.7665,100.0,3,0,0,75019430.7665,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
-CLID71A5DA7,Sitio Web Desktop,2,5,3,5,COPX,75005776.3563,60.0,5,0,0,75005776.3563,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLIACF21E4B,Sitio Web Desktop,1,6,6,2,HUT,74314365.1695,50.0,3,2,1,8226188.4537,66088176.7158,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLIA5CDB759,Sitio Web Desktop,1,2,2,2,S27F6,68464207.4668,50.0,1,1,0,65753099.6784,2711107.7884,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
-CLIE5E7CF85,Sitio Web Desktop,1,4,4,4,IEURD,63984985.18,50.0,1,2,1,25864648.44,38120336.74,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLIE5E7CF85,Sitio Web Desktop,1,4,4,4,IEURD,64235545.33,50.0,1,2,1,25843998.03,38391547.30,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLI1D9EBE77,Sitio Web Desktop,1,5,4,5,GD30D,60207468.47,80.0,3,0,2,58617193.73,1590274.74,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLI5F21FC0D,App Mobile,1,5,4,5,AVGO,60146218.3307,60.0,3,2,0,14029379.2508,46116839.0799,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI1D9EBE77,Sitio Web Desktop,1,5,4,5,GD30D,60074403.30,80.0,3,0,2,58493645.20,1580758.10,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLI8FCC9FB0,Sitio Web Desktop,2,10,8,9,SLV,59472218.4231,70.0,8,1,1,26512896.1026,32959322.3205,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI88324F57,App Mobile,1,14,11,14,AAPL,57931276.2568,85.7,11,3,0,45911262.0611,12020014.1957,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLI88324F57,App Mobile,1,14,11,14,AAPL,58031486.9968,85.7,11,3,0,45923849.1411,12107637.8557,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLI67F7B15C,Sitio Web Desktop,1,12,10,10,IREN,55621348.0188,75.0,9,3,0,38611708.3434,17009639.6754,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIE8ED1E8C,IOLnet,1,1,1,1,BBD,54366359.7372,100.0,1,0,0,54366359.7372,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLI0BB94628,Sitio Web Responsive,1,40,25,23,COPX,51816029.1156,65.0,15,16,9,20306874.2970,31509154.8186,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI402CE551,Sitio Web Desktop,1,2,2,2,S27F6,51531880.9151,50.0,1,0,1,11304945.3696,40226935.5455,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
-CLI483AB641,Sitio Web Desktop,1,5,3,5,AL30D,50180681.9872,80.0,4,1,0,48584086.7372,1596595.25,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLI483AB641,Sitio Web Desktop,1,5,3,5,AL30D,50186066.8972,80.0,4,1,0,48584471.3172,1601595.58,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLIDC6598ED,Sitio Web Responsive,1,4,4,4,CRES,44961059.9915,50.0,1,2,1,14864496.6888,30096563.3027,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI33461599,Sitio Web Desktop,1,3,3,3,GLOB,43244802.5234,100.0,2,1,0,28971063.2164,14273739.3070,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI849BD9BB,Sitio Web Desktop,1,2,2,1,MU,42854270.6070,100.0,2,0,0,42854270.6070,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
-CLICDE497B4,Sitio Web Desktop,1,21,13,1,AL30D,42717368.38,81.0,15,6,0,33449579.48,9267788.90,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI2A0773A7,App Mobile,1,1,1,1,MGCOD,42513352.78,100.0,1,0,0,42513352.78,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
-CLI181795B6,Sitio Web Desktop,1,3,3,2,AL30D,41844294.8165,100.0,2,0,1,41770208.60,74086.2165,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
-CLI632D6A48,Sitio Web Desktop,2,9,9,3,AL30D,41796723.0800,77.8,6,2,1,25720507.4200,16076215.66,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI246324CD,Sitio Web Desktop,1,7,5,6,S27F6,40963541.5384,71.4,5,2,0,21821983.9080,19141557.6304,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLICDE497B4,Sitio Web Desktop,1,21,13,1,AL30D,42840860.87,81.0,15,6,0,33536455.11,9304405.76,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLI2A0773A7,App Mobile,1,1,1,1,MGCOD,42559072.48,100.0,1,0,0,42559072.48,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLI181795B6,Sitio Web Desktop,1,3,3,2,AL30D,41833209.9665,100.0,2,0,1,41759123.75,74086.2165,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLI632D6A48,Sitio Web Desktop,2,9,9,3,AL30D,41696706.3600,77.8,6,2,1,25721893.5100,15974812.85,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLI246324CD,Sitio Web Desktop,1,7,5,6,S27F6,41059781.0584,71.4,5,2,0,21833230.2580,19226550.8004,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIA6644ED8,Sitio Web Desktop,1,3,3,3,CVX,39572497.4415,100.0,3,0,0,39572497.4415,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLIC757E922,Sitio Web Desktop,1,1,1,1,YPFD,39464946.7176,100.0,1,0,0,39464946.7176,0,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
 CLIAB42ABDA,Sitio Web Desktop,1,2,2,1,VIST,36318535.2908,100.0,1,1,0,24684417.4808,11634117.8100,2,Medio,2,"Actividad top 0,1% | Operación >= p99,9 (info)",t,f,f,f,f,0.00
+CLI1310FE32,API,1,54,33,33,ARC1O,35384911.2553,61.1,17,27,10,12407984.1071,22976927.1482,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI76E586C2,App Mobile,1,61,40,35,SLV,35347562.7704,72.1,36,21,4,22807107.4400,12540455.3304,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI1310FE32,API,1,54,33,33,ARC1O,35337125.2253,61.1,17,27,10,12407343.2571,22929781.9682,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI5E319A1C,App Mobile,1,2,2,2,PAAS,34767808.9938,50.0,2,0,0,34767808.9938,0,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLIFB46155E,App Mobile,1,14,10,1,AL30D,33958432.67,92.9,11,3,0,25691883.41,8266549.26,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIFB46155E,App Mobile,1,14,10,1,AL30D,34000087.79,92.9,11,3,0,25666999.84,8333087.95,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI67249CA2,Sitio Web Desktop,1,33,27,8,CTIO,32295676.0564,69.7,15,9,9,20820258.7294,11475417.3270,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLID39D529B,API,1,165,56,116,NATU3,30335811.9402,72.7,71,71,23,17542236.7151,12793575.2251,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLID39D529B,API,1,165,56,116,NATU3,30359636.3902,72.7,71,71,23,17558642.0451,12800994.3451,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI9ABF772F,IOLnet,2,2,2,2,GFGC7930FE,28306864.0005,50.0,1,1,0,1607978.5848,26698885.4157,2,Medio,2,"Cambio brusco feb-mar | Operación >= p99,9 (info)",f,f,t,f,f,0.00
 CLI2E668694,Sitio Web Desktop,1,4,4,4,ASTS,26059773.9512,75.0,1,1,2,653069.1933,25406704.7579,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLI8A404ED9,Sitio Web Desktop,1,3,3,3,IBITD,25651761.83,66.7,2,1,0,1813233.93,23838527.90,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI8A404ED9,Sitio Web Desktop,1,3,3,3,IBITD,25687405.53,66.7,2,1,0,1815048.69,23872356.84,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLID8A4C08F,API,2,42,20,16,ASTS,22390511.1897,59.5,31,4,7,10149011.7860,12241499.4037,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI4F62C09B,Sitio Web Desktop,1,542,59,98,BYMA,21382734.3361,69.2,214,237,91,7331748.0674,14050986.2687,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI5BD66CE6,App Mobile,1,2,2,2,AL30,19208285.3944,50.0,1,1,0,22712.1232,19185573.2712,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
@@ -77,71 +77,71 @@ CLID41D3355,App Mobile,1,3,3,3,AL30,17736001.3778,100.0,1,1,1,1244671.3965,16491
 CLI3EEDE03E,API,1,19,11,6,MSTR,17003160.8919,78.9,1,6,12,446339.4496,16556821.4423,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI5C0371CB,Sitio Web Desktop,1,35,30,23,AGRO,16432113.9374,71.4,16,15,4,5061423.4983,11370690.4391,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI58F9C6E1,App Mobile,1,3,3,2,BYMA,16199633.2947,100.0,1,2,0,6296.0300,16193337.2647,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIBCF6D06A,App Mobile,1,4,3,3,CRMD,15937970.3846,75.0,1,0,3,3825.0046,15934145.38,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLI3695B8F7,Sitio Web Desktop,2,3,3,3,AL30,15158436.6559,33.3,1,0,2,25542.76,15132893.8959,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLIBCF6D06A,App Mobile,1,4,3,3,CRMD,15869665.7846,75.0,1,0,3,3825.0046,15865840.78,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI3695B8F7,Sitio Web Desktop,2,3,3,3,AL30,15149970.0059,33.3,1,0,2,25562.45,15124407.5559,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLIE8C77E7C,App Mobile,2,2,2,2,S17A6,14196096.1115,0.0,1,1,0,257292.6499,13938803.4616,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLIED1EC1DD,App Mobile,1,46,31,32,ETHA,13600883.0309,69.6,25,17,4,5939160.4596,7661722.5713,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLIAF3314DA,Sitio Web Desktop,2,49,30,11,BHIP,13035913.2396,79.6,23,21,5,4073105.7044,8962807.5352,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIAF3314DA,Sitio Web Desktop,2,49,30,11,BHIP,13038265.1796,79.6,23,21,5,4075457.6444,8962807.5352,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI82334071,Sitio Web Desktop,1,8,6,5,YPFD,12604713.8809,62.5,1,6,1,177882.2608,12426831.6201,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIFDE8BCEF,App Mobile,2,2,2,2,AL30D,12543327.6228,50.0,1,0,1,59724.5628,12483603.06,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLI071D43A2,Sitio Web Desktop,2,36,21,21,GDX,12240480.2444,61.1,5,17,14,2104957.0190,10135523.2254,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIFDE8BCEF,App Mobile,2,2,2,2,AL30D,12578698.3928,50.0,1,0,1,59724.5628,12518973.83,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI071D43A2,Sitio Web Desktop,2,36,21,21,GDX,12248040.0844,61.1,5,17,14,2104957.0190,10143083.0654,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIE5B59213,Sitio Web Desktop,2,35,25,6,NIO,12099965.7397,71.4,22,10,3,9762385.8815,2337579.8582,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIC2C9BA37,Sitio Web Desktop,1,2,2,1,AL30,11051583.8233,100.0,1,1,0,41931.4213,11009652.4020,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLID1F25441,Sitio Web Desktop,1,2,2,2,NG,10784781.0890,100.0,1,0,1,549326.2950,10235454.7940,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLIDBBA0462,API,1,676,59,138,GFGC79054F,10661094.9173,69.7,203,363,110,2439426.4867,8221668.4306,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIFC8A3A9C,Sitio Web Desktop,1,2,2,2,META,10646725.4355,100.0,1,1,0,810261.4905,9836463.9450,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIEF9921B3,Sitio Web Desktop,1,36,24,5,SLV,10348951.6460,63.9,18,7,11,3886098.6874,6462852.9586,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI6D4E6737,Sitio Web Desktop,1,2,2,2,AL30D,10187479.6184,50.0,1,1,0,8746.9684,10178732.65,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLIEF9921B3,Sitio Web Desktop,1,36,24,5,SLV,10355751.6760,63.9,18,7,11,3886485.0474,6469266.6286,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLI6D4E6737,Sitio Web Desktop,1,2,2,2,AL30D,10237924.2984,50.0,1,1,0,8746.9684,10229177.33,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI432ADE58,App Mobile,1,9,9,9,AMZN,9972400.9735,100.0,3,3,3,24561.0587,9947839.9148,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIC3B96C6D,Sitio Web Desktop,1,38,26,33,AI,9887418.9835,60.5,16,16,6,3477362.2027,6410056.7808,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIFEC39559,App Mobile,1,2,2,1,AL30D,9887695.42,100.0,1,1,0,17383.17,9870312.25,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLIC3B96C6D,Sitio Web Desktop,1,38,26,33,AI,9887561.7935,60.5,16,16,6,3477505.0127,6410056.7808,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI95234316,App Mobile,1,5,5,4,HUT,9752754.9426,80.0,2,0,3,696251.9389,9056503.0037,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI754544EA,Sitio Web Desktop,1,2,2,2,GLD,9744049.9262,100.0,1,1,0,255378.4290,9488671.4972,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIFEC39559,App Mobile,1,2,2,1,AL30D,9718949.00,100.0,1,1,0,17344.69,9701604.31,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI326C702F,App Mobile,1,4,4,3,VALE,9135081.5344,50.0,2,1,1,38125.5004,9096956.0340,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLI3C2BFDE7,App Mobile,1,3,3,2,AL30,8698208.4922,66.7,2,1,0,33035.6822,8665172.81,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLID267F8E9,App Mobile,1,2,2,1,AL30,8666659.3228,50.0,1,0,1,42942.0908,8623717.2320,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI3C2BFDE7,App Mobile,1,3,3,2,AL30,8620202.6122,66.7,2,1,0,33035.6822,8587166.93,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI2B4BA00B,App Mobile,2,10,8,6,PAMP,8586348.3248,70.0,0,3,7,0,8586348.3248,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI285C3D04,App Mobile,1,2,2,2,AL30,7837271.2171,100.0,1,0,1,195371.8471,7641899.3700,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI2CB71385,App Mobile,1,2,2,2,GOOGL,7731364.0935,50.0,1,1,0,8377.0635,7722987.0300,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI972C3223,Sitio Web Desktop,1,3,3,3,GD35,7627056.5410,66.7,1,2,0,406539.1600,7220517.3810,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI06C4F640,Sitio Web Desktop,1,2,2,2,BIOX,7608748.1400,0.0,1,0,1,285255.2255,7323492.9145,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIC9F19A00,Sitio Web Desktop,1,4,4,4,AL30,6936905.0524,50.0,2,1,1,153494.9000,6783410.1524,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIF568047D,App Mobile,2,4,4,4,MELI,6880439.0827,50.0,2,2,0,311012.29,6569426.7927,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLIC9F19A00,Sitio Web Desktop,1,4,4,4,AL30,6936875.4724,50.0,2,1,1,153465.3200,6783410.1524,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLIF568047D,App Mobile,2,4,4,4,MELI,6881415.5327,50.0,2,2,0,311988.74,6569426.7927,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI7AD98208,Sitio Web Desktop,1,35,26,18,BPAT,6851134.6599,68.6,21,8,6,3989264.0914,2861870.5685,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI44385363,App Mobile,2,7,7,7,AL30,6824981.8710,71.4,1,2,4,19835.1400,6805146.7310,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI372F7062,App Mobile,1,5,5,4,AAPL,6694389.3062,80.0,1,3,1,93919.8639,6600469.4423,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLI2D0A6DC2,App Mobile,1,2,2,2,AL30,6675055.3500,100.0,1,0,1,302809.4400,6372245.91,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI2D0A6DC2,App Mobile,1,2,2,2,AL30,6693110.3300,100.0,1,0,1,302809.4400,6390300.89,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLIF4760BA0,API,2,47,32,39,TGSV8500JU,6345748.4437,63.8,20,19,8,1303844.0511,5041904.3926,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI2BC9A593,Sitio Web Desktop,1,2,2,2,STLAD,6086500.88,0.0,1,1,0,429986.38,5656514.50,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI2BC9A593,Sitio Web Desktop,1,2,2,2,STLAD,6102790.72,0.0,1,1,0,433416.85,5669373.87,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI5AD24DB0,App Mobile,1,4,4,4,BBAR,6064279.6755,0.0,1,1,2,224390.0200,5839889.6555,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLIFC3D2F27,Sitio Web Desktop,1,4,4,4,COPX,5715913.3974,75.0,1,2,1,19484.7926,5696428.6048,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLI148F2F1E,App Mobile,2,2,2,2,IRCPO,5669957.5617,100.0,1,0,1,61497.5517,5608460.01,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIB54BDB89,Sitio Web Desktop,2,5,4,5,COPX,5587501.1805,100.0,2,3,0,158374.3838,5429126.7967,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI148F2F1E,App Mobile,2,2,2,2,IRCPO,5685076.1817,100.0,1,0,1,61497.5517,5623578.63,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLIB54BDB89,Sitio Web Desktop,2,5,4,5,COPX,5587628.7405,100.0,2,3,0,158501.9438,5429126.7967,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI738BA43C,Sitio Web Desktop,1,9,9,5,SLV,5585712.1466,66.7,2,5,2,422119.4120,5163592.7346,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIBA530D96,App Mobile,1,3,3,3,CVXD,5469673.79,100.0,1,1,1,31259.88,5438413.91,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLIBA530D96,App Mobile,1,3,3,3,CVXD,5459653.49,100.0,1,1,1,31356.86,5428296.63,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLIB8661B28,Sitio Web Desktop,3,31,18,28,AGRO,5375709.8919,80.6,28,3,0,5120910.0505,254799.8414,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI46BCEF67,App Mobile,2,2,2,2,NUD,5355356.7173,50.0,1,1,0,26852.11,5328504.6073,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI46BCEF67,App Mobile,2,2,2,2,NUD,5355385.5873,50.0,1,1,0,26880.98,5328504.6073,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI36431F7A,App Mobile,2,2,2,1,AL30,5192039.0748,100.0,1,1,0,10451.8956,5181587.1792,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLI575245E9,App Mobile,2,6,6,5,MSFT,5098559.1003,66.7,1,2,3,13030.7280,5085528.3723,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI575245E9,App Mobile,2,6,6,5,MSFT,5107212.2303,66.7,1,2,3,13030.7280,5094181.5023,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLIDE5A5E1A,Sitio Web Desktop,1,34,23,25,ORLY,4924891.0380,70.6,15,13,6,2315799.5782,2609091.4598,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI9A469FB8,App Mobile,1,31,24,13,MSTR,4723442.8700,80.6,12,13,6,1958388.1504,2765054.7196,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLI9A469FB8,App Mobile,1,31,24,13,MSTR,4724528.9600,80.6,12,13,6,1958388.1504,2766140.8096,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI4E9E7CC5,Sitio Web Desktop,1,42,31,36,AL30,4286529.5514,71.4,23,13,6,2449660.8746,1836868.6768,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI7A83095A,Sitio Web Desktop,2,16,11,12,TRAN,4189858.3639,75.0,2,6,8,119264.8522,4070593.5117,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLI65C20287,App Mobile,2,46,25,39,PFE,4053929.3965,71.7,18,24,4,1757632.3697,2296297.0268,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLI7A83095A,Sitio Web Desktop,2,16,11,12,TRAN,4206589.7739,75.0,2,6,8,119264.8522,4087324.9217,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI65C20287,App Mobile,2,46,25,39,PFE,4054333.7765,71.7,18,24,4,1758036.7497,2296297.0268,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI6C2A96BF,Sitio Web Desktop,2,38,28,25,COIN,3453504.3281,68.4,22,12,4,2354789.4210,1098714.9071,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI718D4E66,App Mobile,2,37,25,30,NUD,3386829.2828,81.1,15,18,4,1965391.9955,1421437.2873,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLI718D4E66,App Mobile,2,37,25,30,NUD,3395381.4428,81.1,15,18,4,1970860.2655,1424521.1773,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIE07B5F5F,App Mobile,1,44,31,19,SLV,3198702.4885,52.3,13,25,6,911566.7030,2287135.7855,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIEB701416,Sitio Web Desktop,2,62,35,20,GFGC75282A,2866758.8630,59.7,25,26,11,1497726.9432,1369031.9198,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIC7983F3D,API,2,87,33,3,PAMP,2707039.2511,67.8,61,21,5,1674436.9546,1032602.2965,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI25AB53AE,Sitio Web Desktop,1,32,21,25,BIOX,2597784.8482,71.9,21,11,0,1553045.1680,1044739.6802,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLIF7DA0E75,Sitio Web Desktop,1,31,27,25,AMZN,2554193.2842,67.7,16,11,4,1469457.4472,1084735.8370,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIF7DA0E75,Sitio Web Desktop,1,31,27,25,AMZN,2554306.8742,67.7,16,11,4,1469571.0372,1084735.8370,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI8A79F3E8,App Mobile,1,61,32,27,AI,2475591.9305,65.6,26,32,3,1095906.8037,1379685.1268,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLIA46BC931,API,2,77,39,57,ASMLD,2353246.2679,71.4,27,32,18,794269.2922,1558976.9757,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIA46BC931,API,2,77,39,57,ASMLD,2362237.5679,71.4,27,32,18,796821.0522,1565416.5157,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI01C41343,App Mobile,1,36,25,21,MSFT,2322926.6452,72.2,27,7,2,1709775.6579,613150.9873,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI0B85ADAB,Sitio Web Desktop,1,36,23,7,SATL,2176472.0629,69.4,11,17,8,938153.3877,1238318.6752,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI2B317BC5,Sitio Web Desktop,1,10,10,4,NIO,2012303.4804,50.0,0,7,3,0,2012303.4804,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLI7AA4AB54,Sitio Web Desktop,2,13,8,9,ETHAD,1972388.4446,69.2,1,10,2,105092.4120,1867296.0326,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIF39CACBB,App Mobile,1,31,23,16,BHIP,1873890.9313,83.9,10,13,8,583698.0577,1290192.8736,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLI2B317BC5,Sitio Web Desktop,1,10,10,4,NIO,2013392.9904,50.0,0,7,3,0,2013392.9904,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI7AA4AB54,Sitio Web Desktop,2,13,8,9,ETHAD,1978627.9446,69.2,1,10,2,105092.4120,1873535.5326,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLIF39CACBB,App Mobile,1,31,23,16,BHIP,1873942.4113,83.9,10,13,8,583749.5377,1290192.8736,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI36A35DBC,Sitio Web Responsive,2,68,37,34,PINS,1601098.2713,76.5,34,31,3,721981.9883,879116.2830,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI81EC5A7B,App Mobile,2,31,23,30,SLV,1452330.7100,61.3,12,14,5,492934.6190,959396.0910,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIA4137929,Sitio Web Responsive,2,55,33,38,CDE,1391713.0455,70.9,23,23,9,572400.2358,819312.8097,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
@@ -150,36 +150,36 @@ CLICFB7C702,App Mobile,1,72,37,12,BIOX,1235786.3560,76.4,26,28,18,403166.3679,83
 CLIE860C717,Sitio Web Desktop,1,18,12,13,GFGC79515A,1225430.8265,66.7,1,12,5,3734.1360,1221696.6905,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLIE21D339C,Sitio Web Desktop,1,16,3,13,MORI,1221954.1748,93.8,0,0,16,0,1221954.1748,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLID816280E,Sitio Web Responsive,1,39,27,29,ALAB,1060796.1055,71.8,18,14,7,569040.2073,491755.8982,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLIC0715348,App Mobile,1,31,22,18,IBIT,936588.9301,67.7,15,10,6,483593.6807,452995.2494,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIC0715348,App Mobile,1,31,22,18,IBIT,936766.0501,67.7,15,10,6,483593.6807,453172.3694,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIF26D247F,App Mobile,1,16,13,13,AMZN,921881.5372,81.3,0,7,9,0,921881.5372,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLI2BA82814,Sitio Web Desktop,2,44,30,29,AL30,912409.1020,75.0,17,20,7,366332.5521,546076.5499,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI99B59EC9,Sitio Web Desktop,2,41,15,15,AL30D,907154.9005,68.3,41,0,0,907154.9005,0,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLIC50D844D,Sitio Web Desktop,2,33,21,18,GLD,904692.4643,72.7,17,8,8,421484.5901,483207.8742,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLI2BA82814,Sitio Web Desktop,2,44,30,29,AL30,912456.1120,75.0,17,20,7,366332.5521,546123.5599,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLI99B59EC9,Sitio Web Desktop,2,41,15,15,AL30D,908217.6005,68.3,41,0,0,908217.6005,0,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIC50D844D,Sitio Web Desktop,2,33,21,18,GLD,904941.3343,72.7,17,8,8,421484.5901,483456.7442,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI614BBB5C,App Mobile,1,36,25,26,ASTS,877176.7870,66.7,20,9,7,459038.2408,418138.5462,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLIA7097AB3,App Mobile,1,33,22,31,LAR,838409.7842,75.8,14,11,8,479771.8113,358637.9729,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI7DF7710A,Sitio Web Desktop,1,31,25,25,EEMD,810096.4868,71.0,11,11,9,303612.2125,506484.2743,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIA7097AB3,App Mobile,1,33,22,31,LAR,839717.0042,75.8,14,11,8,479771.8113,359945.1929,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLI7DF7710A,Sitio Web Desktop,1,31,25,25,EEMD,810345.2568,71.0,11,11,9,303670.1525,506675.1043,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI00B2C21C,App Mobile,1,17,12,3,COME,795264.4139,58.8,2,11,4,51975.1001,743289.3138,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI08DE87FB,Sitio Web Desktop,1,39,26,18,GFGV7530FE,788024.9067,69.2,16,14,9,487042.9376,300981.9691,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI51E3CC13,App Mobile,1,80,37,33,IBIT,725902.5934,80.0,26,37,17,361462.1692,364440.4242,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI736B84E1,App Mobile,1,14,9,13,LOC3D,719243.5310,92.9,1,7,6,50711.63,668531.9010,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI736B84E1,App Mobile,1,14,9,13,LOC3D,721447.0010,92.9,1,7,6,50931.76,670515.2410,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLIFB6204E7,Sitio Web Desktop,1,24,18,14,SUPV,702133.9463,83.3,2,16,6,60069.7842,642064.1621,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI2BFE70EF,App Mobile,1,12,11,12,AAPL,671559.8290,66.7,1,9,2,50693.3820,620866.4470,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIC1EE483B,App Mobile,1,74,32,2,AL30D,624617.4461,71.6,14,45,15,84529.8336,540087.6125,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIC1EE483B,App Mobile,1,74,32,2,AL30D,625078.7761,71.6,14,45,15,84578.2836,540500.4925,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI6F6E6E2E,Sitio Web Desktop,1,43,32,15,COME,538201.3054,65.1,20,14,9,394466.9326,143734.3728,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIEF46912E,App Mobile,1,20,15,8,MELI,529550.3625,75.0,2,11,7,46377.8247,483172.5378,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI031CA078,App Mobile,1,36,25,16,GLOB,510711.9699,80.6,13,17,6,109247.2144,401464.7555,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI6B178993,Sitio Web Desktop,1,35,18,7,EDN,493072.3385,62.9,9,25,1,226173.6380,266898.7005,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLI0C75994A,Sitio Web Responsive,1,11,9,9,GFGV6400AB,467989.1136,81.8,0,4,7,0,467989.1136,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLI0C75994A,Sitio Web Responsive,1,11,9,9,GFGV6400AB,468613.3136,81.8,0,4,7,0,468613.3136,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI5195F3F2,Sitio Web Desktop,2,12,9,7,NFLX,462259.0938,75.0,1,5,6,8624.2131,453634.8807,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIED722A6B,App Mobile,1,34,23,20,AO27,453542.5719,76.5,10,13,11,145878.8431,307663.7288,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIED722A6B,App Mobile,1,34,23,20,AO27,453568.0119,76.5,10,13,11,145895.2331,307672.7788,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIC12E2566,Sitio Web Desktop,1,12,9,8,GGAL,432495.6528,66.7,1,9,2,27262.3208,405233.3320,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI5FE92B10,Sitio Web Desktop,2,39,24,9,GFGV4400AB,399187.7340,82.1,8,16,15,75148.8369,324038.8971,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLIF6EE4C10,App Mobile,1,15,12,7,AL30,393998.6446,53.3,0,13,2,0,393998.6446,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLIF6EE4C10,App Mobile,1,15,12,7,AL30,394003.0946,53.3,0,13,2,0,394003.0946,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI6C41652F,Sitio Web Desktop,1,36,21,18,CIBR,383243.9498,69.4,26,10,0,259992.7975,123251.1523,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLI92478489,Sitio Web Responsive,1,35,23,14,TXAR,335571.2276,71.4,17,8,10,35473.2408,300097.9868,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
-CLID6B667A4,App Mobile,1,16,11,15,TRAN,311173.3388,75.0,2,10,4,11022.2349,300151.1039,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
+CLID6B667A4,App Mobile,1,16,11,15,TRAN,311176.4088,75.0,2,10,4,11022.2349,300154.1739,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI8707F3F9,Sitio Web Responsive,1,17,14,13,GFGC82054F,307544.9581,64.7,2,7,8,24437.3640,283107.5941,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
-CLIA20E3CBE,App Mobile,1,50,35,14,BIOX,174321.5991,80.0,14,21,15,103731.1777,70590.4214,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
+CLIA20E3CBE,App Mobile,1,50,35,14,BIOX,174339.6591,80.0,14,21,15,103746.3577,70593.3014,2,Medio,2,"Actividad top 0,1%",t,f,f,f,f,0.00
 CLIC06F8622,App Mobile,1,16,11,7,AL30,147592.5840,56.3,2,11,3,10508.7759,137083.8081,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLIDC246185,API,2,10,7,8,ALUA,77454.6050,60.0,0,3,7,0,77454.6050,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
 CLI9015A02D,App Mobile,1,10,7,10,AVGO,46842.5950,70.0,0,10,0,0,46842.5950,2,Medio,2,Cambio brusco feb-mar,f,f,t,f,f,0.00
@@ -188,9 +188,9 @@ CLI46250831,Sitio Web Desktop,1,2,2,2,IBIT,31576906.9450,100.0,0,2,0,0,31576906.
 CLIF59CE725,Sitio Web Desktop,1,1,1,1,PBR,30081673.5660,100.0,0,0,1,0,30081673.5660,1,Bajo,3,"Sin historial en enero + monto alto | Operación >= p99,9 (info)",f,f,f,t,f,0.00
 CLI3436D4BA,Sitio Web Desktop,1,1,1,1,S16M6,29660718.7266,100.0,0,1,0,0,29660718.7266,1,Bajo,3,"Sin historial en enero + monto alto | Operación >= p99,9 (info)",f,f,f,t,f,0.00
 CLI30F4CAB9,Sitio Web Responsive,1,3,3,2,ETHA,29424616.8703,33.3,0,2,1,0,29424616.8703,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIBC3920B0,Sitio Web Desktop,1,1,1,1,AL35D,27668639.36,0.0,0,0,1,0,27668639.36,1,Bajo,3,"Sin historial en enero + monto alto | Operación >= p99,9 (info)",f,f,f,t,f,0.00
-CLIAD8B29E6,App Mobile,1,1,1,1,LACD,27255414.05,0.0,0,1,0,0,27255414.05,1,Bajo,3,"Sin historial en enero + monto alto | Operación >= p99,9 (info)",f,f,f,t,f,0.00
-CLI5DC83235,App Mobile,1,3,3,3,AL30D,26394238.8561,100.0,0,2,1,0,26394238.8561,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIBC3920B0,Sitio Web Desktop,1,1,1,1,AL35D,27835212.89,0.0,0,0,1,0,27835212.89,1,Bajo,3,"Sin historial en enero + monto alto | Operación >= p99,9 (info)",f,f,f,t,f,0.00
+CLIAD8B29E6,App Mobile,1,1,1,1,LACD,27390488.90,0.0,0,1,0,0,27390488.90,1,Bajo,3,"Sin historial en enero + monto alto | Operación >= p99,9 (info)",f,f,f,t,f,0.00
+CLI5DC83235,App Mobile,1,3,3,3,AL30D,26403859.3061,100.0,0,2,1,0,26403859.3061,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI21616967,Sitio Web Desktop,1,1,1,1,HUT,26262069.2655,100.0,0,0,1,0,26262069.2655,1,Bajo,3,"Sin historial en enero + monto alto | Operación >= p99,9 (info)",f,f,f,t,f,0.00
 CLID259E9F0,Sitio Web Desktop,1,2,2,2,GGAL,25673932.3089,100.0,0,2,0,0,25673932.3089,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI1631E59F,Sitio Web Desktop,1,3,3,3,COIN,25615993.5890,66.7,0,3,0,0,25615993.5890,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
@@ -198,17 +198,17 @@ CLIE5C52151,App Mobile,1,1,1,1,GGAL,25545408.5194,100.0,0,1,0,0,25545408.5194,1,
 CLI26BD8B5A,Sitio Web Desktop,1,1,1,1,S17A6,25116573.4092,0.0,0,1,0,0,25116573.4092,1,Bajo,3,"Sin historial en enero + monto alto | Operación >= p99,9 (info)",f,f,f,t,f,0.00
 CLI387A8324,Sitio Web Desktop,1,1,1,1,YPFD,24972065.3802,0.0,0,0,1,0,24972065.3802,1,Bajo,3,"Sin historial en enero + monto alto | Operación >= p99,9 (info)",f,f,f,t,f,0.00
 CLI52A6F54C,Sitio Web Desktop,1,1,1,1,AL30,24264076.3022,100.0,0,1,0,0,24264076.3022,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIB928825C,Sitio Web Desktop,1,1,1,1,SPYD,22948172.78,0.0,0,1,0,0,22948172.78,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIB928825C,Sitio Web Desktop,1,1,1,1,SPYD,23347234.49,0.0,0,1,0,0,23347234.49,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIDB35B09C,Sitio Web Desktop,1,1,1,1,S17A6,22294529.8684,100.0,0,1,0,0,22294529.8684,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI1A9E5D77,Sitio Web Desktop,1,2,2,2,GPRK,21890200.5305,50.0,0,2,0,0,21890200.5305,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI6B08D1E8,App Mobile,1,1,1,1,AE38D,21281892.99,0.0,0,0,1,0,21281892.99,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI6B08D1E8,App Mobile,1,1,1,1,AE38D,21390218.58,0.0,0,0,1,0,21390218.58,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI05D74753,Sitio Web Desktop,1,2,2,2,CEPU,21145259.1001,100.0,0,2,0,0,21145259.1001,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIB446B385,Sitio Web Desktop,1,3,3,3,AMZN,20803410.3447,66.7,0,2,1,0,20803410.3447,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI878AE768,Sitio Web Desktop,1,1,1,1,BRKB,20299703.7857,100.0,0,0,1,0,20299703.7857,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI630DAFFF,Sitio Web Desktop,1,1,1,1,S17A6,19959474.0800,100.0,0,1,0,0,19959474.0800,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIF635AE79,Sitio Web Responsive,1,2,2,2,PAMP,19624962.8367,50.0,0,0,2,0,19624962.8367,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLID853CE89,Sitio Web Desktop,1,4,4,4,GD41D,19360499.7341,100.0,0,0,4,0,19360499.7341,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIED3DF354,App Mobile,1,1,1,1,AL30,19344969.9977,100.0,0,1,0,0,19344969.9977,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLID853CE89,Sitio Web Desktop,1,4,4,4,GD41D,19320501.8441,100.0,0,0,4,0,19320501.8441,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI57D152BE,Sitio Web Desktop,1,1,1,1,S16M6,19073770.0371,0.0,0,1,0,0,19073770.0371,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIDD52585A,App Mobile,1,1,1,1,S17A6,18969821.7016,100.0,0,1,0,0,18969821.7016,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI141EF1FB,App Mobile,2,2,1,2,BBAR,18609724.4870,100.0,0,2,0,0,18609724.4870,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
@@ -217,89 +217,89 @@ CLI81B3811A,App Mobile,1,1,1,1,BBAR,18087484.4655,100.0,0,1,0,0,18087484.4655,1,
 CLI29799FC5,App Mobile,2,2,2,2,AL30,17962498.1021,100.0,0,1,1,0,17962498.1021,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI4812D84F,App Mobile,1,1,1,1,X15Y6,17956020.4980,0.0,0,0,1,0,17956020.4980,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIEAE3F533,App Mobile,1,5,5,5,B,17736747.2041,80.0,0,4,1,0,17736747.2041,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI98F76AF6,App Mobile,1,2,2,2,AL30,17340155.3936,50.0,0,1,1,0,17340155.3936,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI98F76AF6,App Mobile,1,2,2,2,AL30,17443430.7336,50.0,0,1,1,0,17443430.7336,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLICCFE022B,Sitio Web Desktop,1,2,2,2,PN35O,16837358.2218,100.0,0,2,0,0,16837358.2218,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI2B2A9827,Sitio Web Desktop,1,6,6,4,ETHA,16789022.0904,100.0,0,6,0,0,16789022.0904,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI59A1EDAF,Sitio Web Desktop,1,1,1,1,AL30,16656263.1144,100.0,0,1,0,0,16656263.1144,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI17B76728,Sitio Web Desktop,1,1,1,1,AL30C,16358695.92,100.0,0,1,0,0,16358695.92,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI13864C39,Sitio Web Desktop,1,1,1,1,MU,16238838.9753,100.0,0,1,0,0,16238838.9753,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI17B76728,Sitio Web Desktop,1,1,1,1,AL30C,16231949.25,100.0,0,1,0,0,16231949.25,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI6B95D31C,Sitio Web Desktop,1,4,3,3,NU,16118344.1996,75.0,0,2,2,0,16118344.1996,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI6B95D31C,Sitio Web Desktop,1,4,3,3,NU,16118854.9496,75.0,0,2,2,0,16118854.9496,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIE76670D8,App Mobile,1,3,3,2,EQNR,15666314.2066,33.3,0,0,3,0,15666314.2066,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI3A1B2E5E,Sitio Web Desktop,1,2,2,2,VIST,15630774.0905,0.0,0,1,1,0,15630774.0905,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI01AE1C61,App Mobile,1,2,2,1,AL30D,15610996.02,100.0,0,0,2,0,15610996.02,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI01AE1C61,App Mobile,1,2,2,1,AL30D,15554534.25,100.0,0,0,2,0,15554534.25,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIA7744FDE,App Mobile,1,1,1,1,NVDA,15394693.2300,100.0,0,1,0,0,15394693.2300,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLID8EEF3A5,App Mobile,1,2,2,2,AGRO,15230918.1657,50.0,0,0,2,0,15230918.1657,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI9756465F,App Mobile,2,2,1,2,PFED,14577835.23,100.0,0,2,0,0,14577835.23,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIE0683E49,App Mobile,1,1,1,1,AL30D,14538347.05,100.0,0,0,1,0,14538347.05,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI9756465F,App Mobile,2,2,1,2,PFED,14691665.80,100.0,0,2,0,0,14691665.80,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIE0683E49,App Mobile,1,1,1,1,AL30D,14625872.27,100.0,0,0,1,0,14625872.27,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI807619FF,Sitio Web Desktop,1,2,2,2,IBIT,14458673.3251,100.0,0,2,0,0,14458673.3251,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIA560D729,Sitio Web Desktop,1,1,1,1,AL30C,14391805.38,100.0,0,0,1,0,14391805.38,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIA560D729,Sitio Web Desktop,1,1,1,1,AL30C,14328260.73,100.0,0,0,1,0,14328260.73,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLID60BBF8A,App Mobile,1,1,1,1,MSTR,14234740.7356,0.0,0,1,0,0,14234740.7356,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIA07CAD31,App Mobile,1,1,1,1,AL30,14045842.0072,100.0,0,1,0,0,14045842.0072,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI4541AD50,Sitio Web Desktop,1,1,1,1,LACD,13763824.91,100.0,0,0,1,0,13763824.91,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI4541AD50,Sitio Web Desktop,1,1,1,1,LACD,13851366.48,100.0,0,0,1,0,13851366.48,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI17D39A2C,App Mobile,1,1,1,1,YPFD,13758990.0778,0.0,0,1,0,0,13758990.0778,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI13D57E5B,Sitio Web Desktop,1,1,1,1,S16M6,13704091.1802,0.0,0,1,0,0,13704091.1802,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIC43DBD4F,App Mobile,1,1,1,1,AL30D,13424633.33,100.0,0,1,0,0,13424633.33,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIC43DBD4F,App Mobile,1,1,1,1,AL30D,13423887.10,100.0,0,1,0,0,13423887.10,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIBFB6CD86,Sitio Web Desktop,1,2,2,1,BITF,13286940.4602,100.0,0,1,1,0,13286940.4602,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI8D9FF7FF,App Mobile,1,1,1,1,AL30,13267314.0765,100.0,0,1,0,0,13267314.0765,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI5DDA7D3C,Sitio Web Desktop,1,1,1,1,NUD,12892117.36,100.0,0,0,1,0,12892117.36,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI38987390,Sitio Web Desktop,1,1,1,1,AL30D,12822550.59,100.0,0,1,0,0,12822550.59,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI6D5FF90A,Sitio Web Desktop,1,1,1,1,PBRD,12728280.49,100.0,0,1,0,0,12728280.49,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI38987390,Sitio Web Desktop,1,1,1,1,AL30D,12914455.68,100.0,0,1,0,0,12914455.68,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI5DDA7D3C,Sitio Web Desktop,1,1,1,1,NUD,12871282.39,100.0,0,0,1,0,12871282.39,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI6D5FF90A,Sitio Web Desktop,1,1,1,1,PBRD,12819509.90,100.0,0,1,0,0,12819509.90,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI28209C96,Sitio Web Desktop,1,1,1,1,AO27,12649966.4350,100.0,0,1,0,0,12649966.4350,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI53560D93,App Mobile,1,1,1,1,S16M6,12058999.0414,0.0,0,1,0,0,12058999.0414,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI52EE00B1,Sitio Web Desktop,1,1,1,1,AL30,11615801.5548,100.0,0,0,1,0,11615801.5548,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI0819D0BB,Sitio Web Desktop,1,3,3,3,EWZ,11523134.8145,66.7,0,3,0,0,11523134.8145,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI26289FBE,Sitio Web Desktop,1,1,1,1,MGCQD,11487816.26,0.0,0,1,0,0,11487816.26,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIB15EC6C0,App Mobile,1,1,1,1,AMZN,11441091.3961,100.0,0,0,1,0,11441091.3961,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI26289FBE,Sitio Web Desktop,1,1,1,1,MGCQD,11435102.95,0.0,0,1,0,0,11435102.95,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIE80729D0,App Mobile,1,1,1,1,SPYD,11418379.35,100.0,0,0,1,0,11418379.35,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI725F776A,Sitio Web Desktop,1,1,1,1,AL30,11349704.5620,100.0,0,1,0,0,11349704.5620,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIE80729D0,App Mobile,1,1,1,1,SPYD,11348436.92,100.0,0,0,1,0,11348436.92,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI279E6869,App Mobile,1,5,5,4,AAPL,11084403.4113,60.0,0,3,2,0,11084403.4113,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI52DEBFBD,Sitio Web Desktop,1,1,1,1,BACGD,11026949.30,100.0,0,1,0,0,11026949.30,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI882C4F0B,Sitio Web Desktop,1,1,1,1,MELID,10973307.30,100.0,0,0,1,0,10973307.30,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI279E6869,App Mobile,1,5,5,4,AAPL,11057510.9713,60.0,0,3,2,0,11057510.9713,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI882C4F0B,Sitio Web Desktop,1,1,1,1,MELID,11043100.44,100.0,0,0,1,0,11043100.44,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI52DEBFBD,Sitio Web Desktop,1,1,1,1,BACGD,10927682.16,100.0,0,1,0,0,10927682.16,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIE9557664,Sitio Web Desktop,1,1,1,1,DNC3O,10891593.4186,100.0,0,1,0,0,10891593.4186,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIBBAB6668,Sitio Web Desktop,1,2,1,1,AL30,10759142.5341,50.0,0,2,0,0,10759142.5341,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIB7EF57BB,App Mobile,1,1,1,1,DIAD,10532245.77,0.0,0,1,0,0,10532245.77,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIB7EF57BB,App Mobile,1,1,1,1,DIAD,10527972.50,0.0,0,1,0,0,10527972.50,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI5361C6C6,Sitio Web Desktop,1,1,1,1,YPFD,10502401.2564,100.0,0,1,0,0,10502401.2564,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI4DAE4253,App Mobile,1,1,1,1,AL30D,10448169.19,0.0,0,0,1,0,10448169.19,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI517CADCF,Sitio Web Desktop,1,1,1,1,BA7DD,10394633.36,100.0,0,0,1,0,10394633.36,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI517CADCF,Sitio Web Desktop,1,1,1,1,BA7DD,10422653.97,100.0,0,0,1,0,10422653.97,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI4DAE4253,App Mobile,1,1,1,1,AL30D,10402037.02,0.0,0,0,1,0,10402037.02,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIFF8232E9,App Mobile,2,2,2,1,TRAN,10141787.5722,100.0,0,0,2,0,10141787.5722,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIA03CD2C3,Sitio Web Desktop,1,2,2,2,DISN,10133089.1809,100.0,0,2,0,0,10133089.1809,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIDB3E7D4B,App Mobile,1,5,5,4,HMY,10089689.2776,80.0,0,2,3,0,10089689.2776,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI6A704C85,App Mobile,1,1,1,1,SPYD,9996648.98,100.0,0,1,0,0,9996648.98,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIC717F804,App Mobile,2,3,3,3,AL30D,9994867.84,33.3,0,3,0,0,9994867.84,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIC717F804,App Mobile,2,3,3,3,AL30D,10069886.40,33.3,0,3,0,0,10069886.40,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI6A704C85,App Mobile,1,1,1,1,SPYD,10010835.10,100.0,0,1,0,0,10010835.10,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI3C95DD3F,App Mobile,1,1,1,1,S17A6,9944205.9312,100.0,0,1,0,0,9944205.9312,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI0C2BF14F,Sitio Web Desktop,1,3,2,3,META,9911339.0244,33.3,0,1,2,0,9911339.0244,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLICF2CEDF8,App Mobile,1,1,1,1,AL30,9844002.4852,100.0,0,1,0,0,9844002.4852,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI962EEF8D,Sitio Web Desktop,1,1,1,1,AL30,9746306.1393,100.0,0,1,0,0,9746306.1393,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIBB28256B,App Mobile,1,1,1,1,AL30,9716350.7812,100.0,0,1,0,0,9716350.7812,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI98C3725D,App Mobile,1,1,1,1,YMCXD,9621586.02,100.0,0,1,0,0,9621586.02,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI45ADE819,Sitio Web Desktop,1,1,1,1,DNC3D,9618884.02,100.0,0,1,0,0,9618884.02,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI45ADE819,Sitio Web Desktop,1,1,1,1,DNC3D,9595120.69,100.0,0,1,0,0,9595120.69,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI5533EA14,App Mobile,1,3,2,3,GD35,9585986.7144,100.0,0,3,0,0,9585986.7144,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI98C3725D,App Mobile,1,1,1,1,YMCXD,9573697.41,100.0,0,1,0,0,9573697.41,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI9B60EA44,App Mobile,1,1,1,1,AL30,9561654.6752,100.0,0,1,0,0,9561654.6752,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI0E1123EB,App Mobile,1,1,1,1,AL30,9494480.7172,0.0,0,1,0,0,9494480.7172,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI063F9E25,App Mobile,1,1,1,1,AL30,9480389.8200,100.0,0,1,0,0,9480389.8200,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI6E672D5B,App Mobile,1,1,1,1,AL30,9452001.3903,100.0,0,0,1,0,9452001.3903,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI87125D31,Sitio Web Desktop,1,1,1,1,MSFT,9446099.0425,100.0,0,0,1,0,9446099.0425,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI27725F32,Sitio Web Desktop,1,2,2,2,HJCID,9414680.7025,50.0,0,0,2,0,9414680.7025,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI27725F32,Sitio Web Desktop,1,2,2,2,HJCID,9415424.4125,50.0,0,0,2,0,9415424.4125,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI6DC4D295,App Mobile,1,1,1,1,S16M6,9371405.5083,100.0,0,1,0,0,9371405.5083,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI8EF7DFCF,Sitio Web Desktop,1,1,1,1,S17A6,9350776.8576,100.0,0,1,0,0,9350776.8576,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIFECDF34C,App Mobile,1,1,1,1,AL30D,9332547.90,100.0,0,0,1,0,9332547.90,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIFECDF34C,App Mobile,1,1,1,1,AL30D,9291341.57,100.0,0,0,1,0,9291341.57,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIFE47BC7F,App Mobile,1,1,1,1,AL30,9240361.8672,100.0,0,1,0,0,9240361.8672,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLID4D02176,App Mobile,1,1,1,1,AL30,9121595.3928,0.0,0,1,0,0,9121595.3928,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIB85A199C,Sitio Web Desktop,1,1,1,1,AL30D,9081116.49,100.0,0,0,1,0,9081116.49,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIE53A9B02,App Mobile,1,2,2,2,S31G6,9032137.0664,100.0,0,0,2,0,9032137.0664,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIB85A199C,Sitio Web Desktop,1,1,1,1,AL30D,9023411.04,100.0,0,0,1,0,9023411.04,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI9B9D4ED1,Sitio Web Desktop,2,3,3,3,EWZD,9028889.94,66.7,0,1,2,0,9028889.94,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI105BF12A,Sitio Web Desktop,2,2,2,2,MELI,9002268.2238,100.0,0,0,2,0,9002268.2238,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI9B9D4ED1,Sitio Web Desktop,2,3,3,3,EWZD,8972294.73,66.7,0,1,2,0,8972294.73,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLID93CCDD2,Sitio Web Desktop,1,2,2,2,GD35,8927753.0272,50.0,0,1,1,0,8927753.0272,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLICC3AB459,App Mobile,1,1,1,1,AL30D,8746922.37,100.0,0,0,1,0,8746922.37,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI556C3554,App Mobile,1,1,1,1,AL30,8709098.1400,0.0,0,1,0,0,8709098.1400,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLICC3AB459,App Mobile,1,1,1,1,AL30D,8694578.39,100.0,0,0,1,0,8694578.39,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI200F4D9E,App Mobile,1,1,1,1,CRM,8691815.7517,0.0,0,0,1,0,8691815.7517,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI52F209D0,Sitio Web Desktop,1,1,1,1,MSFT,8687863.6740,100.0,0,1,0,0,8687863.6740,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI6E805E32,App Mobile,1,1,1,1,AL30,8621332.3755,100.0,0,1,0,0,8621332.3755,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI03380784,App Mobile,1,1,1,1,AL30D,8426455.70,0.0,0,1,0,0,8426455.70,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI03380784,App Mobile,1,1,1,1,AL30D,8486204.29,0.0,0,1,0,0,8486204.29,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI30F4CB9B,Sitio Web Desktop,1,1,1,1,MSFTD,8321887.42,0.0,0,1,0,0,8321887.42,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI5009723A,Sitio Web Responsive,1,1,1,1,BBAR,8293274.3248,100.0,0,0,1,0,8293274.3248,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIE20421F8,Sitio Web Desktop,1,1,1,1,GGAL,8284862.4691,100.0,0,1,0,0,8284862.4691,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIE6D70927,Sitio Web Desktop,1,1,1,1,AL30,8275781.1396,100.0,0,0,1,0,8275781.1396,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI30F4CB9B,Sitio Web Desktop,1,1,1,1,MSFTD,8257409.69,0.0,0,1,0,0,8257409.69,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIF95BA8D3,Sitio Web Desktop,1,5,4,1,SATL,8235219.6930,40.0,0,4,1,0,8235219.6930,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI7A91A632,Sitio Web Desktop,1,1,1,1,BBAR,8140308.3546,100.0,0,1,0,0,8140308.3546,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLICADE9AD0,Sitio Web Desktop,1,2,2,1,S17A6,8128302.4856,50.0,0,1,1,0,8128302.4856,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
@@ -312,49 +312,49 @@ CLI7224E3FD,App Mobile,1,2,2,1,AL30,7841740.0440,100.0,0,2,0,0,7841740.0440,1,Ba
 CLI5D87606D,IOLnet,2,2,2,1,S17A6,7820473.6040,100.0,0,2,0,0,7820473.6040,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIC367E78C,App Mobile,1,1,1,1,MSFT,7815559.0240,100.0,0,1,0,0,7815559.0240,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI992F4F7C,App Mobile,1,4,4,2,SUPV,7770689.7424,75.0,0,2,2,0,7770689.7424,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI51EE1DFD,App Mobile,1,1,1,1,SPYD,7754253.43,0.0,0,1,0,0,7754253.43,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI067FF82C,Sitio Web Desktop,1,2,2,1,AL35D,7739780.86,100.0,0,2,0,0,7739780.86,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIE5EE3F78,Sitio Web Desktop,1,1,1,1,NVDA,7736877.3625,100.0,0,1,0,0,7736877.3625,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI067FF82C,Sitio Web Desktop,1,2,2,1,AL35D,7721579.84,100.0,0,2,0,0,7721579.84,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI51EE1DFD,App Mobile,1,1,1,1,SPYD,7735096.65,0.0,0,1,0,0,7735096.65,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI3AB1D822,Sitio Web Desktop,1,2,2,2,MELI,7695293.1429,50.0,0,2,0,0,7695293.1429,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI42FBF5BA,Sitio Web Desktop,1,1,1,1,TLCQD,7676966.15,0.0,0,0,1,0,7676966.15,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI92E42C3F,App Mobile,1,1,1,1,DNC5D,7631838.55,100.0,0,1,0,0,7631838.55,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI49D013BD,Sitio Web Desktop,1,2,2,2,NUD,7577036.82,100.0,0,1,1,0,7577036.82,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI42FBF5BA,Sitio Web Desktop,1,1,1,1,TLCQD,7664559.40,0.0,0,0,1,0,7664559.40,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI92E42C3F,App Mobile,1,1,1,1,DNC5D,7660968.72,100.0,0,1,0,0,7660968.72,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI49D013BD,Sitio Web Desktop,1,2,2,2,NUD,7580885.96,100.0,0,1,1,0,7580885.96,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI386B1197,App Mobile,2,2,2,2,VSCVD,7565746.27,100.0,0,0,2,0,7565746.27,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI337AC1FD,Sitio Web Desktop,1,2,1,2,NU,7558460.2685,100.0,0,2,0,0,7558460.2685,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI386B1197,App Mobile,2,2,2,2,VSCVD,7551344.06,100.0,0,0,2,0,7551344.06,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI45C9AE9F,Sitio Web Desktop,2,3,2,3,DNC7D,7480947.74,100.0,0,0,3,0,7480947.74,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI45C9AE9F,Sitio Web Desktop,2,3,2,3,DNC7D,7513554.23,100.0,0,0,3,0,7513554.23,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIB52AF7DA,Sitio Web Desktop,1,1,1,1,VISTD,7458824.76,0.0,0,1,0,0,7458824.76,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI48B75DD4,App Mobile,1,4,4,4,AAPL,7412566.7228,75.0,0,3,1,0,7412566.7228,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIB52AF7DA,Sitio Web Desktop,1,1,1,1,VISTD,7406309.61,0.0,0,1,0,0,7406309.61,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIDA4C21DB,Sitio Web Desktop,1,1,1,1,YMCID,7346370.67,100.0,0,0,1,0,7346370.67,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIDA4C21DB,Sitio Web Desktop,1,1,1,1,YMCID,7383763.96,100.0,0,0,1,0,7383763.96,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIFE756DBF,App Mobile,1,3,3,3,AL30,7318595.6074,33.3,0,3,0,0,7318595.6074,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI47E6D22F,Sitio Web Desktop,1,1,1,1,MSFT,7258451.6580,100.0,0,1,0,0,7258451.6580,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI1B76A8EE,App Mobile,1,1,1,1,SPYD,7233166.26,100.0,0,1,0,0,7233166.26,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIEC9F309B,App Mobile,1,1,1,1,S30A6,7219024.9554,100.0,0,0,1,0,7219024.9554,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI1B76A8EE,App Mobile,1,1,1,1,SPYD,7167391.90,100.0,0,1,0,0,7167391.90,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI9C2B2E03,App Mobile,1,1,1,1,YPFDD,7152343.75,100.0,0,1,0,0,7152343.75,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIE66A0B4B,Sitio Web Desktop,2,4,3,4,AN29,7147072.7303,100.0,0,0,4,0,7147072.7303,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIE66A0B4B,Sitio Web Desktop,2,4,3,4,AN29,7140337.7803,100.0,0,0,4,0,7140337.7803,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI9C2B2E03,App Mobile,1,1,1,1,YPFDD,7087956.70,100.0,0,1,0,0,7087956.70,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIF579C682,App Mobile,1,3,2,3,MELI,7067243.9000,66.7,0,3,0,0,7067243.9000,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI7A5086BD,App Mobile,1,1,1,1,AL30,7060689.6842,100.0,0,0,1,0,7060689.6842,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIF579C682,App Mobile,1,3,2,3,MELI,7052027.4800,66.7,0,3,0,0,7052027.4800,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI7C739A77,Sitio Web Desktop,1,1,1,1,TZXO6,7040996.8542,100.0,0,0,1,0,7040996.8542,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI836112B3,App Mobile,1,1,1,1,AL30D,7026359.07,0.0,0,0,1,0,7026359.07,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLICB314963,App Mobile,1,1,1,1,IBIT,7007825.3340,100.0,0,1,0,0,7007825.3340,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIE5DA690E,App Mobile,1,1,1,1,TRAN,6994402.0275,100.0,0,0,1,0,6994402.0275,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI836112B3,App Mobile,1,1,1,1,AL30D,6981952.01,0.0,0,0,1,0,6981952.01,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI60C34D0F,Sitio Web Desktop,1,1,1,1,AL35D,6916825.28,0.0,0,0,1,0,6916825.28,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI60C34D0F,Sitio Web Desktop,1,1,1,1,AL35D,6958466.65,0.0,0,0,1,0,6958466.65,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI81259A08,Sitio Web Desktop,1,1,1,1,AL30C,6910080.22,100.0,0,0,1,0,6910080.22,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI1003DAC0,App Mobile,1,1,1,1,AL30,6907387.0806,100.0,0,1,0,0,6907387.0806,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI81259A08,Sitio Web Desktop,1,1,1,1,AL30C,6891502.93,100.0,0,0,1,0,6891502.93,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI345CBF40,Sitio Web Desktop,1,1,1,1,S17A6,6876395.1168,100.0,0,0,1,0,6876395.1168,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI21AEDDB6,Sitio Web Desktop,1,1,1,1,DNC3O,6870258.1035,100.0,0,1,0,0,6870258.1035,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI90DA8E25,Sitio Web Desktop,1,1,1,1,BPOD7,6859193.9986,100.0,0,1,0,0,6859193.9986,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI2A39F9FB,Sitio Web Desktop,1,1,1,1,EEMD,6839051.43,100.0,0,1,0,0,6839051.43,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI2A39F9FB,Sitio Web Desktop,1,1,1,1,EEMD,6838671.27,100.0,0,1,0,0,6838671.27,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI82810AC9,App Mobile,1,1,1,1,YPFD,6767632.4991,0.0,0,1,0,0,6767632.4991,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI6FDC35FF,App Mobile,1,1,1,1,NUD,6748885.44,0.0,0,1,0,0,6748885.44,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI5AD15466,Sitio Web Desktop,1,3,3,2,YPFDD,6736181.6912,100.0,0,1,2,0,6736181.6912,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI5D467DDB,Sitio Web Desktop,1,3,3,3,LAR,6729543.0062,33.3,0,3,0,0,6729543.0062,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIA63C9089,Sitio Web Responsive,1,1,1,1,VIST,6727130.1953,100.0,0,1,0,0,6727130.1953,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI5AD15466,Sitio Web Desktop,1,3,3,2,YPFDD,6720409.6512,100.0,0,1,2,0,6720409.6512,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI52768625,App Mobile,1,1,1,1,IRCPD,6702829.25,100.0,0,1,0,0,6702829.25,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI1E8F9B71,App Mobile,1,2,2,2,AL30D,6693212.8507,50.0,0,0,2,0,6693212.8507,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIF8CC6F2A,App Mobile,1,1,1,1,CVXD,6655389.42,0.0,0,0,1,0,6655389.42,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI6FDC35FF,App Mobile,1,1,1,1,NUD,6688130.42,0.0,0,1,0,0,6688130.42,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI1E8F9B71,App Mobile,1,2,2,2,AL30D,6678729.7407,50.0,0,0,2,0,6678729.7407,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI0B039FED,Sitio Web Responsive,1,2,2,2,NIO,6649035.7844,50.0,0,2,0,0,6649035.7844,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIBFF1EC90,App Mobile,1,2,2,1,AL30,6646191.7672,50.0,0,1,1,0,6646191.7672,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI52768625,App Mobile,1,1,1,1,IRCPD,6642488.84,100.0,0,1,0,0,6642488.84,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI1967CE39,App Mobile,1,3,3,2,HL,6627749.6397,100.0,0,2,1,0,6627749.6397,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIF8CC6F2A,App Mobile,1,1,1,1,CVXD,6626003.65,0.0,0,0,1,0,6626003.65,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI75153621,App Mobile,1,1,1,1,S16M6,6614455.5854,100.0,0,1,0,0,6614455.5854,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI30F15B1D,App Mobile,1,1,1,1,AGRO,6602086.0050,0.0,0,0,1,0,6602086.0050,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI8C2CBCBE,Sitio Web Desktop,1,1,1,1,BYMA,6593285.0880,100.0,0,0,1,0,6593285.0880,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
@@ -363,87 +363,88 @@ CLI0F9B3892,App Mobile,1,1,1,1,AL30,6578198.7050,0.0,0,0,1,0,6578198.7050,1,Bajo
 CLI6989E582,App Mobile,1,1,1,1,LAR,6460509.5880,100.0,0,1,0,0,6460509.5880,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI7BE200BA,App Mobile,2,2,2,2,ETHA,6441949.1398,100.0,0,1,1,0,6441949.1398,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI4DCAEC41,App Mobile,1,1,1,1,MSFT,6432960.0958,100.0,0,0,1,0,6432960.0958,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI77F363A2,Sitio Web Desktop,1,2,2,2,NUD,6387798.5616,100.0,0,1,1,0,6387798.5616,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI23040254,App Mobile,1,1,1,1,BMA.D,6372212.14,100.0,0,0,1,0,6372212.14,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI83C55B7F,Sitio Web Desktop,1,1,1,1,AL30D,6370346.14,100.0,0,1,0,0,6370346.14,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIBC88B156,App Mobile,1,1,1,1,AL30D,6339214.51,100.0,0,1,0,0,6339214.51,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI23040254,App Mobile,1,1,1,1,BMA.D,6412962.96,100.0,0,0,1,0,6412962.96,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI83C55B7F,Sitio Web Desktop,1,1,1,1,AL30D,6393340.61,100.0,0,1,0,0,6393340.61,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIBC88B156,App Mobile,1,1,1,1,AL30D,6363410.83,100.0,0,1,0,0,6363410.83,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI77F363A2,Sitio Web Desktop,1,2,2,2,NUD,6349480.0816,100.0,0,1,1,0,6349480.0816,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI06A2F9A7,App Mobile,1,2,2,1,AL30,6328269.5795,100.0,0,2,0,0,6328269.5795,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI73413B35,Sitio Web Desktop,1,1,1,1,VSCVD,6293460.80,0.0,0,1,0,0,6293460.80,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI69AD401D,Sitio Web Desktop,1,1,1,1,GD35D,6233049.43,100.0,0,1,0,0,6233049.43,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLID60DB20E,App Mobile,1,1,1,1,TLCPD,6274061.23,0.0,0,1,0,0,6274061.23,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI73413B35,Sitio Web Desktop,1,1,1,1,VSCVD,6236805.61,0.0,0,1,0,0,6236805.61,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLID5EC6622,Sitio Web Desktop,1,1,1,1,VIST,6228364.5710,0.0,0,0,1,0,6228364.5710,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLID60DB20E,App Mobile,1,1,1,1,TLCPD,6225449.99,0.0,0,1,0,0,6225449.99,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIF313A840,Sitio Web Desktop,1,1,1,1,SPOT,6219701.1172,0.0,0,0,1,0,6219701.1172,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI66DC2711,App Mobile,1,1,1,1,AL30,6203087.2575,100.0,0,1,0,0,6203087.2575,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI54511A26,App Mobile,1,1,1,1,NVDA,6194134.0611,100.0,0,1,0,0,6194134.0611,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIB4436B8E,App Mobile,1,1,1,1,TGSUD,6183486.62,100.0,0,0,1,0,6183486.62,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIE7BE7872,Sitio Web Desktop,1,1,1,1,GD35D,6178080.24,100.0,0,1,0,0,6178080.24,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIA2CC48D4,Sitio Web Desktop,1,1,1,1,AL30D,6166776.13,100.0,0,1,0,0,6166776.13,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIE7BE7872,Sitio Web Desktop,1,1,1,1,GD35D,6177736.82,100.0,0,1,0,0,6177736.82,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI69AD401D,Sitio Web Desktop,1,1,1,1,GD35D,6176938.09,100.0,0,1,0,0,6176938.09,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI47FEBFA5,App Mobile,1,1,1,1,AL30,6157575.8980,0.0,0,1,0,0,6157575.8980,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIB4436B8E,App Mobile,1,1,1,1,TGSUD,6156191.68,100.0,0,0,1,0,6156191.68,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIA2CC48D4,Sitio Web Desktop,1,1,1,1,AL30D,6145701.74,100.0,0,1,0,0,6145701.74,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI3140234B,App Mobile,1,5,5,3,METR,6125202.9532,100.0,0,4,1,0,6125202.9532,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI91D4450F,App Mobile,1,3,3,2,AGRO,6120685.7947,66.7,0,0,3,0,6120685.7947,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI99D20AF7,App Mobile,1,1,1,1,GLDD,6100374.69,100.0,0,0,1,0,6100374.69,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI99D20AF7,App Mobile,1,1,1,1,GLDD,6073439.49,100.0,0,0,1,0,6073439.49,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI42BD4C48,Sitio Web Desktop,1,1,1,1,UNH,6066940.9720,100.0,0,1,0,0,6066940.9720,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI45D0C0E8,Sitio Web Desktop,1,3,3,3,ADBED,6046287.2493,66.7,0,2,1,0,6046287.2493,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIEE174EC5,Sitio Web Desktop,2,24,20,14,VEA,6039010.4484,66.7,12,10,2,4317594.1079,1721416.3405,1,Bajo,3,Horario atípico (z>=3),f,t,f,f,f,0.00
+CLIEE174EC5,Sitio Web Desktop,2,24,20,14,VEA,6050958.9584,66.7,12,10,2,4329423.3279,1721535.6305,1,Bajo,3,Horario atípico (z>=3),f,t,f,f,f,0.00
+CLI45D0C0E8,Sitio Web Desktop,1,3,3,3,ADBED,6033091.7193,66.7,0,2,1,0,6033091.7193,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI3C830D2C,Sitio Web Desktop,1,1,1,1,MRNA,6021579.7836,100.0,0,1,0,0,6021579.7836,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI9297C3EE,Sitio Web Desktop,1,2,2,2,AL30,6014963.4152,100.0,0,2,0,0,6014963.4152,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI1E3D8AA3,App Mobile,1,1,1,1,ALUA,5979451.6875,100.0,0,1,0,0,5979451.6875,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI8E34D546,Sitio Web Desktop,1,1,1,1,PN43O,5964119.6448,100.0,0,1,0,0,5964119.6448,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI0FAC8D0B,App Mobile,1,1,1,1,AL30,5940746.1434,0.0,0,0,1,0,5940746.1434,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLICFBA9C17,Sitio Web Desktop,1,1,1,1,AL30D,5940722.09,100.0,0,1,0,0,5940722.09,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI8E77E532,Sitio Web Desktop,1,2,2,2,COPX,5935415.3808,0.0,0,1,1,0,5935415.3808,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIED36C6EB,Sitio Web Desktop,1,3,2,3,GGAL,5926515.0264,66.7,0,3,0,0,5926515.0264,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLICFBA9C17,Sitio Web Desktop,1,1,1,1,AL30D,5919355.52,100.0,0,1,0,0,5919355.52,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI69DE0579,App Mobile,1,1,1,1,AL30D,5911221.19,100.0,0,1,0,0,5911221.19,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI2349A667,App Mobile,1,2,2,1,AN29D,5870154.11,100.0,0,2,0,0,5870154.11,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI69DE0579,App Mobile,1,1,1,1,AL30D,5884096.80,100.0,0,1,0,0,5884096.80,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI2349A667,App Mobile,1,2,2,1,AN29D,5867833.29,100.0,0,2,0,0,5867833.29,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIE65F6319,Sitio Web Desktop,1,1,1,1,GLD,5858283.8920,100.0,0,1,0,0,5858283.8920,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI2F61B9F9,Sitio Web Desktop,1,1,1,1,YPFDD,5830505.86,100.0,0,0,1,0,5830505.86,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIF0642704,Sitio Web Desktop,1,2,1,2,AVGO,5815587.8734,100.0,0,2,0,0,5815587.8734,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI2F61B9F9,Sitio Web Desktop,1,1,1,1,YPFDD,5809282.31,100.0,0,0,1,0,5809282.31,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI2A54344C,App Mobile,1,1,1,1,AL30,5804861.8472,0.0,0,1,0,0,5804861.8472,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIE2B1C0BA,App Mobile,1,3,3,2,GLDD,5782785.2402,100.0,0,0,3,0,5782785.2402,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI61516266,App Mobile,1,1,1,1,AL30,5766984.4484,100.0,0,1,0,0,5766984.4484,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIE2B1C0BA,App Mobile,1,3,3,2,GLDD,5762223.5002,100.0,0,0,3,0,5762223.5002,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI211959CD,Sitio Web Desktop,1,1,1,1,EEM,5754359.0131,100.0,0,1,0,0,5754359.0131,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIB2BB2DD4,App Mobile,1,2,2,2,NVDAD,5663369.7664,100.0,0,1,1,0,5663369.7664,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIB2BB2DD4,App Mobile,1,2,2,2,NVDAD,5683211.3164,100.0,0,1,1,0,5683211.3164,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI427556FF,Sitio Web Desktop,1,1,1,1,MSFT,5643245.2028,0.0,0,0,1,0,5643245.2028,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI3BD93340,Sitio Web Desktop,1,1,1,1,COME,5596731.8520,100.0,0,0,1,0,5596731.8520,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI604A3111,Sitio Web Desktop,1,1,1,1,AL30C,5589991.08,100.0,0,1,0,0,5589991.08,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIF3128A7D,App Mobile,1,1,1,1,PNDCD,5586546.19,100.0,0,1,0,0,5586546.19,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI604A3111,Sitio Web Desktop,1,1,1,1,AL30C,5587723.04,100.0,0,1,0,0,5587723.04,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIF3128A7D,App Mobile,1,1,1,1,PNDCD,5584279.56,100.0,0,1,0,0,5584279.56,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI7BA61833,App Mobile,1,1,1,1,AL30,5568615.8550,100.0,0,1,0,0,5568615.8550,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI81A227D6,Sitio Web Desktop,1,2,2,2,GFGV57747A,5556355.4844,100.0,0,0,2,0,5556355.4844,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIF9FCD7D2,App Mobile,1,1,1,1,S30A6,5554924.6467,100.0,0,1,0,0,5554924.6467,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIB236BA45,App Mobile,2,2,2,2,AL30C,5530882.62,50.0,0,2,0,0,5530882.62,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI81295CD2,Sitio Web Desktop,1,1,1,1,S30A6,5520999.9088,0.0,0,0,1,0,5520999.9088,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI96F7DD1A,App Mobile,1,1,1,1,PAASD,5512698.54,0.0,0,1,0,0,5512698.54,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIB236BA45,App Mobile,2,2,2,2,AL30C,5510538.36,50.0,0,2,0,0,5510538.36,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIEA74DF7E,Sitio Web Responsive,1,4,3,3,AL30D,5474346.2988,50.0,0,1,3,0,5474346.2988,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI96F7DD1A,App Mobile,1,1,1,1,PAASD,5512392.10,0.0,0,1,0,0,5512392.10,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI0CD68540,App Mobile,1,1,1,1,AL30,5469669.0804,0.0,0,1,0,0,5469669.0804,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI36789495,App Mobile,1,1,1,1,S17A6,5469178.2768,100.0,0,0,1,0,5469178.2768,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI2AB8624E,Sitio Web Desktop,1,3,2,3,GDX,5457115.9605,0.0,0,3,0,0,5457115.9605,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIEA74DF7E,Sitio Web Responsive,1,4,3,3,AL30D,5454243.4888,50.0,0,1,3,0,5454243.4888,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI643FF545,Sitio Web Desktop,1,1,1,1,BPOB8,5449466.0984,0.0,0,1,0,0,5449466.0984,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI0057508B,App Mobile,1,1,1,1,S30O6,5409241.5300,100.0,0,1,0,0,5409241.5300,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIC7D4AE29,App Mobile,1,1,1,1,HUT,5384035.7460,0.0,0,1,0,0,5384035.7460,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI9B7919E6,App Mobile,1,1,1,1,S16M6,5383451.4195,100.0,0,1,0,0,5383451.4195,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI40173032,Sitio Web Desktop,1,1,1,1,AE38D,5371085.44,100.0,0,1,0,0,5371085.44,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIAC4AEF17,App Mobile,1,1,1,1,AL30,5365163.1592,100.0,0,1,0,0,5365163.1592,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI17BBB458,App Mobile,1,1,1,1,YPFD,5351643.9652,100.0,0,0,1,0,5351643.9652,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI0FD1E135,Sitio Web Desktop,1,1,1,1,COME,5340379.7200,100.0,0,0,1,0,5340379.7200,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI40173032,Sitio Web Desktop,1,1,1,1,AE38D,5329470.44,100.0,0,1,0,0,5329470.44,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIAFEE5D9A,App Mobile,2,4,4,3,AL30,5324313.1230,50.0,0,2,2,0,5324313.1230,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI9597C5DC,App Mobile,1,1,1,1,PGD,5315630.61,0.0,0,1,0,0,5315630.61,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI74126739,Sitio Web Desktop,1,1,1,1,AL30,5299771.9502,100.0,0,0,1,0,5299771.9502,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI8FAB79D5,Sitio Web Desktop,1,1,1,1,T15E7,5282088.3838,100.0,0,0,1,0,5282088.3838,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI9597C5DC,App Mobile,1,1,1,1,PGD,5275782.02,0.0,0,1,0,0,5275782.02,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIBBAE4A5D,Sitio Web Desktop,1,1,1,1,TZXD6,5215967.8970,100.0,0,0,1,0,5215967.8970,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIEDCD8ABA,Sitio Web Desktop,1,1,1,1,AL30D,5191602.84,0.0,0,1,0,0,5191602.84,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLICB002593,App Mobile,1,1,1,1,AL30D,5187779.14,100.0,0,0,1,0,5187779.14,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI83CE9998,Sitio Web Desktop,1,1,1,1,TLCTD,5183230.78,100.0,0,0,1,0,5183230.78,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIBEC506E7,App Mobile,1,2,2,2,BRKB,5168963.1428,100.0,0,0,2,0,5168963.1428,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI83CE9998,Sitio Web Desktop,1,1,1,1,TLCTD,5168586.23,100.0,0,0,1,0,5168586.23,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLICB002593,App Mobile,1,1,1,1,AL30D,5156001.78,100.0,0,0,1,0,5156001.78,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI3F8FABCA,Sitio Web Desktop,1,1,1,1,S16M6,5155490.9490,100.0,0,1,0,0,5155490.9490,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIEDCD8ABA,Sitio Web Desktop,1,1,1,1,AL30D,5152684.02,0.0,0,1,0,0,5152684.02,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI16A35EC5,Sitio Web Desktop,2,3,3,3,GFGC67747A,5146197.2412,33.3,0,1,2,0,5146197.2412,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIE83B5AFD,Sitio Web Desktop,1,1,1,1,AL30D,5111788.40,100.0,0,0,1,0,5111788.40,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIE83B5AFD,Sitio Web Desktop,1,1,1,1,AL30D,5144300.73,100.0,0,0,1,0,5144300.73,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI16A35EC5,Sitio Web Desktop,2,3,3,3,GFGC67747A,5129540.6912,33.3,0,1,2,0,5129540.6912,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIE36C798D,App Mobile,1,2,2,2,IEUR,5094918.3689,100.0,0,2,0,0,5094918.3689,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI92BB8344,Sitio Web Desktop,1,1,1,1,PYPLD,5079735.56,0.0,0,1,0,0,5079735.56,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI09143D6A,App Mobile,2,4,2,2,TXAR,5074332.5284,50.0,0,4,0,0,5074332.5284,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLIE3EB8EC4,Sitio Web Desktop,1,1,1,1,PAGSD,5070427.85,100.0,0,1,0,0,5070427.85,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIBBECB65A,App Mobile,1,1,1,1,MU,5062362.6649,100.0,0,1,0,0,5062362.6649,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLIE3EB8EC4,Sitio Web Desktop,1,1,1,1,PAGSD,5034344.40,100.0,0,1,0,0,5034344.40,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI92BB8344,Sitio Web Desktop,1,1,1,1,PYPLD,5033543.29,0.0,0,1,0,0,5033543.29,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI06820DCA,Sitio Web Desktop,1,2,2,2,ETHA,5041325.9735,100.0,0,1,1,0,5041325.9735,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLI6D611AEF,Sitio Web Desktop,1,2,2,2,AMZN,5029574.0532,100.0,0,0,2,0,5029574.0532,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
-CLI06820DCA,Sitio Web Desktop,1,2,2,2,ETHA,5023846.9635,100.0,0,1,1,0,5023846.9635,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
+CLI6B668876,Sitio Web Desktop,1,1,1,1,GLDD,5014116.23,100.0,0,1,0,0,5014116.23,1,Bajo,3,Sin historial en enero + monto alto,f,f,f,t,f,0.00
 CLIBF03B1C3,Sitio Web Desktop,1,10,8,9,COMC53.0FE,1497948.6791,70.0,4,5,1,77820.1730,1420128.5061,1,Bajo,3,Horario atípico (z>=3),f,t,f,f,f,0.00
 CLI5AA5100A,App Mobile,1,22,16,18,CRM,1497118.7225,81.8,7,13,2,272611.8655,1224506.8570,1,Bajo,3,Horario atípico (z>=3),f,t,f,f,f,0.00
 CLIAAF59141,App Mobile,1,20,15,14,GOOGL,1439811.9224,65.0,10,7,3,419882.2622,1019929.6602,1,Bajo,3,Horario atípico (z>=3),f,t,f,f,f,0.00

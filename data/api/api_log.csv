@@ -1,6 +1,4 @@
 ts_utc,api,url,estado,filas,detalle
-2026-10-06T18:20:16Z,nolaborables,https://nolaborables.com.ar/api/v2/feriados/2026,ERROR,0,URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
-2026-10-06T18:20:16Z,argdatos,https://api.argentinadatos.com/v1/feriados/2026,ERROR,0,URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
-2026-10-06T18:20:16Z,snapshot,data/api/snapshot/feriados_2026.json,FALLBACK,20,se usó la copia local versionada
-2026-10-06T18:20:16Z,argdatos,https://api.argentinadatos.com/v1/cotizaciones/dolares/bolsa,ERROR,0,URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
-2026-10-06T18:20:16Z,mep_impl,dataset AL30/AL30D,FALLBACK,0,el SQL calcula el MEP implícito con el dataset
+2026-10-07T14:28:13Z,nolaborables,https://nolaborables.com.ar/api/v2/feriados/2026,ERROR,0,URLError: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-10-07T14:28:20Z,argdatos,https://api.argentinadatos.com/v1/feriados/2026,OK,20,
+2026-10-07T14:28:20Z,argdatos,https://api.argentinadatos.com/v1/cotizaciones/dolares/bolsa,OK,107,
