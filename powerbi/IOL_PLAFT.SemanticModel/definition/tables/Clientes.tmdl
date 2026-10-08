@@ -119,13 +119,27 @@ table Clientes
 		summarizeBy: sum
 		sourceColumn: log10_monto_ars
 
+	column rank_monto
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: rank_monto
+
+	column rank_ops
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: rank_ops
+
 	partition Clientes = m
 		mode: import
 		source =
 				let
 					Origen = Csv.Document(File.Contents(CarpetaDatos & "clientes.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
 					Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
-					Tipos = Table.TransformColumnTypes(Encabezados, {{"id_cliente", type text}, {"canal_principal", type text}, {"ops", Int64.Type}, {"dias_activos", Int64.Type}, {"simbolos", Int64.Type}, {"monto_ars", type number}, {"ops_ene", Int64.Type}, {"ops_feb", Int64.Type}, {"ops_mar", Int64.Type}, {"score_riesgo", Int64.Type}, {"nivel_riesgo", type text}, {"orden_nivel", Int64.Type}, {"motivos", type text}, {"diferencia_valor_ars", type number}, {"log10_ops", type number}, {"log10_monto_ars", type number}}, "en-US"),
+					Tipos = Table.TransformColumnTypes(Encabezados, {{"id_cliente", type text}, {"canal_principal", type text}, {"ops", Int64.Type}, {"dias_activos", Int64.Type}, {"simbolos", Int64.Type}, {"monto_ars", type number}, {"ops_ene", Int64.Type}, {"ops_feb", Int64.Type}, {"ops_mar", Int64.Type}, {"score_riesgo", Int64.Type}, {"nivel_riesgo", type text}, {"orden_nivel", Int64.Type}, {"motivos", type text}, {"diferencia_valor_ars", type number}, {"log10_ops", type number}, {"log10_monto_ars", type number}, {"rank_monto", Int64.Type}, {"rank_ops", Int64.Type}}, "en-US"),
 					Booleanos = Table.TransformColumns(Tipos, {{"p1_actividad_alta", each _ = "t", type logical}, {"p2_horario_atipico", each _ = "t", type logical}, {"p3_cambio_brusco", each _ = "t", type logical}, {"p3_sin_historial_monto_alto", each _ = "t", type logical}, {"p4_precio_fuera_mercado", each _ = "t", type logical}})
 				in
 					Booleanos

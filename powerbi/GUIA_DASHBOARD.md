@@ -110,7 +110,7 @@ Paleta sugerida: neutros para el contexto y un solo color de acento para las ale
 - **Distribución de clientes**: columnas `vw_dim_cliente[ops]` agrupadas en intervalos (1, 2, 3–5, 6–10, 11–50, >50) con el recuento de clientes.
 
 ### Página 3 — Patrones (`capturas/03_patrones.png`)
-- **P1 Dispersión**: eje X `vw_dim_cliente[ops]` (escala logarítmica), eje Y `vw_dim_cliente[monto_ars]` (logarítmica), leyenda `nivel_riesgo`, detalle `id_cliente`. Los puntos aislados arriba a la derecha son los outliers.
+- **P1 Rankings**: dos gráficos de barras horizontales con el **Top 10 de clientes por monto (ARS M)** y el **Top 10 por cantidad de operaciones**, coloreados por `nivel_riesgo`. Reemplazan al gráfico de dispersión en escala logarítmica porque se leen sin explicación.
 - **P3 Columnas agrupadas** desde `vw_cliente_mes`: `ops` por `mes`, filtrado con `p3_cambio_brusco = Verdadero`. Conviene sumar un segmentador de `id_cliente`.
 - **P4 Tabla** de operaciones con `flag_precio_fuera_mercado = Verdadero`: cliente, canal, fecha, símbolo, cantidad, precio y `ratio_vs_mercado`.
 - **P2 Tarjeta / texto**: "Fuera de horario es estructural: 70% en todos los canales", junto a la medida `% Fuera de horario` desagregada por canal.

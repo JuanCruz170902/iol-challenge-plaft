@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "ed437bf0782432606c3e",
+  "name": "9f26ca715620879c12d2",
   "position": {
-    "x": 20,
+    "x": 335,
     "y": 76,
-    "z": 3000,
+    "z": 7000,
     "height": 330,
     "width": 305,
-    "tabOrder": 3000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "barChart",
@@ -55,18 +55,23 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Clientes"
+                        }
+                      },
+                      "Property": "ops"
                     }
                   },
-                  "Property": "Monto clientes (M)"
+                  "Function": 0
                 }
               },
-              "queryRef": "Medidas.Monto clientes (M)",
-              "nativeQueryRef": "Monto clientes (M)",
-              "displayName": "Monto (ARS M)"
+              "queryRef": "Sum(Clientes.ops)",
+              "nativeQueryRef": "Sum of ops",
+              "displayName": "Operaciones"
             }
           ]
         }
@@ -75,13 +80,18 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medidas"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Clientes"
+                      }
+                    },
+                    "Property": "ops"
                   }
                 },
-                "Property": "Monto clientes (M)"
+                "Function": 0
               }
             },
             "direction": "Descending"
@@ -345,7 +355,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'P1 · Top 10 clientes por monto (ARS M)'"
+                  "Value": "'P1 · Top 10 clientes por operaciones'"
                 }
               }
             },
@@ -418,7 +428,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "Filter6e51f5466e9b7cffe5f62561",
+        "name": "Filtera1497f33bb090ff0fa619aee",
         "field": {
           "Column": {
             "Expression": {
@@ -426,7 +436,7 @@
                 "Entity": "Clientes"
               }
             },
-            "Property": "rank_monto"
+            "Property": "rank_ops"
           }
         },
         "type": "Advanced",
@@ -451,7 +461,7 @@
                           "Source": "t"
                         }
                       },
-                      "Property": "rank_monto"
+                      "Property": "rank_ops"
                     }
                   },
                   "Right": {

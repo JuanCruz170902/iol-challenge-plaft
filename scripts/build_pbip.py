@@ -97,6 +97,8 @@ T = {
         ("diferencia_valor_ars", "double", "number", {"fmt": "#,##0"}),
         ("log10_ops", "double", "number", {"fmt": "0.00", "sum": True}),
         ("log10_monto_ars", "double", "number", {"fmt": "0.00", "sum": True}),
+        ("rank_monto", "int64", "Int64.Type", {"hidden": True, "fmt": "0"}),
+        ("rank_ops", "int64", "Int64.Type", {"hidden": True, "fmt": "0"}),
     ]),
     "Calendario": ("calendario.csv", [
         ("fecha", "dateTime", "date", {"fmt": "dd/MM/yyyy"}),
@@ -600,13 +602,22 @@ def build_report():
     # ---------------- 3. Patrones
     p = "patrones"
     v = header(p, "Patrones anómalos", "P1 actividad extrema · P2 horarios (estructural) · P3 cambio brusco · P4 precio fuera de mercado")
-    v.append(visual(p, "scatter", "scatterChart", 20, 76, 620, 330,
+    # P1 · Rankings simples (reemplazan el gráfico de dispersión en escala logarítmica)
+    # Barra apilada por nivel (un solo nivel por cliente): el color sale del nivel y el valor se muestra como total
+    colores_nivel = {"dataPoint": color_por_valor("Clientes", "nivel_riesgo", NIVEL_COLORES),
+                     "totals": [{"properties": {"show": lit("true"), "labelDisplayUnits": lit("1D")}}]}
+    v.append(visual(p, "scatter", "barChart", 20, 76, 305, 330,
                     {"Category": [nm(col("Clientes", "id_cliente"), "Cliente")], "Series": [nm(col("Clientes", "nivel_riesgo"), "Nivel de riesgo")],
-                     "X": [nm(agg("Clientes", "log10_ops"), "Operaciones (escala log10)")],
-                     "Y": [nm(agg("Clientes", "log10_monto_ars"), "Monto ARS (escala log10)")]},
-                    objects={"dataPoint": color_por_valor("Clientes", "nivel_riesgo", NIVEL_COLORES),
-                             "legend": [{"properties": {"show": lit("true"), "position": lit("'Top'")}}]},
-                    title="P1 · Clientes según cantidad de operaciones y monto (escala logarítmica)", z=2))
+                     "Y": [nm(meas("Monto clientes (M)"), "Monto (ARS M)")]},
+                    objects=chart_objects(hide_value_axis=True, legend_top=True, extra=colores_nivel),
+                    title="P1 · Top 10 clientes por monto (ARS M)", sort=[(meas("Monto clientes (M)"), "Descending")],
+                    filters=[hasta_filter("p1_top_monto", "Clientes", "rank_monto", 10)], z=2))
+    v.append(visual(p, "p1_ops", "barChart", 335, 76, 305, 330,
+                    {"Category": [nm(col("Clientes", "id_cliente"), "Cliente")], "Series": [nm(col("Clientes", "nivel_riesgo"), "Nivel de riesgo")],
+                     "Y": [nm(agg("Clientes", "ops"), "Operaciones")]},
+                    objects=chart_objects(hide_value_axis=True, legend_top=True, extra=colores_nivel),
+                    title="P1 · Top 10 clientes por operaciones", sort=[(agg("Clientes", "ops"), "Descending")],
+                    filters=[hasta_filter("p1_top_ops", "Clientes", "rank_ops", 10)], z=6))
     v.append(visual(p, "p3", "pivotTable", 660, 76, 600, 330,
                     {"Rows": [nm(col("P3Top", "id_cliente"), "Cliente")], "Columns": [col("P3Top", "mes")],
                      "Values": [nm(agg("P3Top", "ops"), "Operaciones")]},
