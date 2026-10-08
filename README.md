@@ -107,7 +107,7 @@ Detalle completo en [`outputs/03_patrones_anomalos.txt`](outputs/03_patrones_ano
 | **P4** | Precio fuera de mercado | Precio < 50% o > 200% de la mediana del mismo instrumento ese día (≥ 5 operaciones de referencia; se excluyen opciones) | **13 operaciones de 9 clientes** con una diferencia de valor de **ARS 741 M** respecto del precio de mercado. 5 de las 7 operaciones de IOLnet tienen precio 1,00 o 0,01. Ejemplo: `CLIEFAFE73D` compró 38.077 TGNO4 a $1,00 (mercado $4.582) y 40.351 METR a $1,00 (mercado $2.441) con 14 segundos de diferencia. |
 
 **Score de riesgo por cliente** (tabla `clientes_riesgo`). Pesos: P4 = 3 · P3 cambio brusco = 2 · P1 = 2 · P3 sin historial = 1 · P2 = 1. Nivel Alto ≥ 4, Medio 2–3, Bajo 1.
-Resultado: **5 clientes en riesgo Alto** (18% del volumen), 180 Medio y 268 Bajo. La cola completa está en [`outputs/clientes_riesgo.csv`](outputs/clientes_riesgo.csv).
+Resultado: **5 clientes en riesgo Alto** (18% del volumen), 180 Medio y 269 Bajo. La cola completa está en [`outputs/clientes_riesgo.csv`](outputs/clientes_riesgo.csv).
 
 ## Task 03 — Integración con API externa
 
