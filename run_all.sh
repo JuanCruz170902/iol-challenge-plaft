@@ -14,4 +14,5 @@ $PSQL -f sql/03_patrones_anomalos.sql    > outputs/03_patrones_anomalos.txt
 $PSQL -f sql/04_vistas_powerbi.sql
 mkdir -p powerbi/data
 $PSQL -f sql/05_export_powerbi.sql
+$PSQL -f sql/06_perfiles_ia.sql
 echo "OK - resultados en outputs/, vistas iol.vw_* listas para Power BI"

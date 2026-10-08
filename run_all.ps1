@@ -21,4 +21,5 @@ Run-Sql "sql/03_patrones_anomalos.sql"   "outputs/03_patrones_anomalos.txt"
 Run-Sql "sql/04_vistas_powerbi.sql"
 New-Item -ItemType Directory -Force -Path "powerbi/data" | Out-Null
 Run-Sql "sql/05_export_powerbi.sql"
+Run-Sql "sql/06_perfiles_ia.sql"
 Write-Host "OK - resultados en outputs/, vistas iol.vw_* listas para Power BI"

@@ -67,23 +67,25 @@ Mensaje de usuario, con **datos reales del dataset** (cliente `CLIBDBEB632`, gen
 }
 ```
 
-## Resultado esperado (salida obtenida con Claude para este caso)
+## Resultado obtenido (ChatGPT, con el prompt y los datos de arriba)
 
 ```json
 {
-  "resumen": "Cliente sin actividad en enero que empieza a operar el 26/02 exclusivamente por API y llega a 282 operaciones en 12 días (23,5 por día activo, frente a un promedio de 1,7 operaciones por cliente en todo el trimestre). Opera solo 5 acciones locales, en 37 de 55 combinaciones día-especie compra y vende la misma especie en el mismo día, con órdenes de 1 a 21 nominales y un monto total bajo (ARS 178 mil).",
-  "hipotesis_riesgo": "Patrón compatible con prueba o calibración de un algoritmo sobre especies de menor liquidez (COME, VALO, BYMA). A mayor escala, este tipo de compra-venta repetida de baja cantidad puede usarse para generar volumen artificial o mover el precio de cierre (wash trading / layering). También es compatible con una cuenta nueva que se usa para probar la operatoria antes de operar montos mayores.",
-  "hipotesis_benigna": "Un desarrollador o inversor minorista que conectó un bot propio a la API y lo está probando con montos mínimos para limitar pérdidas. El monto total es bajo y no hay transferencia de valor evidente.",
+  "resumen": "Cliente con inicio de actividad el 26/02/2026 y fuerte incremento de operaciones en marzo: 40 operaciones en febrero frente a 242 hasta el 13/03. Registra 23,5 operaciones por día activo, muy por encima del promedio poblacional informado de 1,7. El 100% de las operaciones se realizó vía API, con concentración en cinco especies y operaciones de compra y venta de una misma especie en el mismo día en 37 de 55 días-especie observados. El monto total operado informado es ARS 177.776, con un promedio de ARS 630 por operación.",
+  "hipotesis_riesgo": "La combinación de crecimiento muy abrupto de la actividad, frecuencia operativa excepcionalmente superior al promedio, uso exclusivo de API y realización frecuente de compras y ventas de la misma especie durante el mismo día podría resultar compatible con una operatoria automatizada o de alta rotación que amerite revisar su racionalidad económica y consistencia con el perfil declarado. Con los datos disponibles no puede afirmarse que exista lavado de activos, fraude ni otra conducta irregular.",
+  "hipotesis_benigna": "La actividad podría responder a una estrategia legítima de trading automatizado mediante API, con operaciones de bajo monto y alta frecuencia, particularmente orientada a capturar movimientos de precios intradiarios. La compra y venta de las mismas especies durante el día también puede ser consistente con una estrategia de rotación o rebalanceo de cartera.",
   "verificaciones": [
-    "Fecha de alta de la cuenta y de habilitación de la API (¿coincide con el 26/02?)",
-    "Si hay otras cuentas operando del otro lado de las mismas especies y minutos (posible contraparte vinculada)",
-    "Impacto de sus órdenes en el precio de cierre de COME y VALO en los días de mayor actividad (03 al 05/03)",
-    "Perfil del inversor declarado y origen de los fondos depositados"
+    "Revisar el perfil económico, actividad declarada y origen de fondos del cliente, y contrastarlos con el nivel y tipo de operatoria observado.",
+    "Analizar el detalle temporal de las operaciones para determinar si existe un patrón sistemático de entrada y salida, incluyendo resultados económicos y frecuencia de reversión.",
+    "Verificar qué aplicación, estrategia o tercero utiliza la API y si la operatoria automatizada está autorizada y es consistente con la actividad declarada.",
+    "Revisar ingresos y egresos de fondos asociados a la operatoria, contrapartes y eventuales transferencias hacia/desde terceros, si dicha información se encuentra disponible."
   ],
   "prioridad": "Media",
-  "justificacion_prioridad": "La frecuencia y el cambio de comportamiento son extremos, pero el monto en juego es bajo; conviene revisarlo antes de que escale de volumen."
+  "justificacion_prioridad": "La alerta presenta indicadores relevantes de comportamiento atípico —especialmente el salto de actividad y la frecuencia operativa—, pero los montos son relativamente bajos y existe una explicación benigna plausible basada en trading automatizado. Se recomienda revisión humana antes de escalar."
 }
 ```
+
+**Lectura del analista sobre esta salida.** La ficha respeta las reglas del prompt: usa solo los datos provistos, no acusa y llega a una prioridad razonable (Media: comportamiento muy atípico pero de monto bajo). Le agregaría una verificación más concreta: buscar si hay **cuentas vinculadas operando del otro lado** de las mismas especies y minutos, y medir el **impacto de sus órdenes en el precio de cierre** de las especies menos líquidas (COME, VALO). Ese es justamente el rol del analista: validar y completar el borrador.
 
 ## Qué hace el analista con la ficha
 
@@ -91,7 +93,11 @@ Mensaje de usuario, con **datos reales del dataset** (cliente `CLIBDBEB632`, gen
 2. **Decide**: cierra el caso como "explicado", pide la información sugerida al área comercial o de cumplimiento, o lo eleva a un análisis profundo o a un eventual ROS.
 3. **Registra su decisión** junto a la ficha. Con esas decisiones acumuladas se pueden recalibrar después los pesos del score (qué reglas terminan en casos reales) y medir cuánto acierta la prioridad sugerida.
 
-## Implementación sugerida (no requerida en el challenge)
+## Implementación sugerida
+
+**Versión lista para usar:** [`docs/asistente_ia.md`](asistente_ia.md). `sql/06_perfiles_ia.sql` genera la base con el perfil de los 454 clientes de la cola ([`outputs/perfiles_clientes_ia.json`](../outputs/perfiles_clientes_ia.json)). Cargada en un asistente (GPT personalizado, Proyecto de Claude o Gem de Gemini) junto con estas instrucciones, el analista escribe solo el ID del cliente y recibe la ficha, sin copiar datos a mano.
+
+A escala:
 
 - Un job diario toma `clientes_riesgo` con score ≥ 2, arma el JSON de cada cliente con una query y llama a la API del modelo (Claude, por ejemplo) con salida estructurada en JSON.
 - La ficha se guarda en una tabla `fichas_alerta (id_cliente, fecha, ficha_json, modelo, decision_analista)` que Power BI muestra en la página de detalle.

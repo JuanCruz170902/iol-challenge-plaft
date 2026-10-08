@@ -21,8 +21,9 @@
 │   ├── 02_api_enriquecimiento.sql         Task 03: calendario hábil, dólar MEP, montos en ARS
 │   ├── 03_patrones_anomalos.sql           Task 02: 4 patrones + score de riesgo por cliente
 │   ├── 04_vistas_powerbi.sql              capa semántica (vistas vw_*) para el dashboard
-│   └── 05_export_powerbi.sql              exporta las tablas del dashboard a powerbi/data/*.csv
-├── outputs/                               resultados de cada query (.txt) y cola de revisión (.csv)
+│   ├── 05_export_powerbi.sql              exporta las tablas del dashboard a powerbi/data/*.csv
+│   └── 06_perfiles_ia.sql                 Task 04: base de perfiles de clientes para el asistente de IA
+├── outputs/                               resultados de cada query (.txt), cola de revisión (.csv) y perfiles para la IA (.json)
 ├── powerbi/
 │   ├── IOL_PLAFT.pbip                     proyecto Power BI (abrir con Power BI Desktop)
 │   ├── IOL_PLAFT.SemanticModel/           modelo en TMDL: tablas, relaciones y medidas DAX (texto, versionable)
@@ -32,6 +33,7 @@
 │   ├── capturas/                          screenshots usados en este README
 │   └── GUIA_DASHBOARD.md                  diseño de páginas y medidas
 ├── docs/propuesta_ia.md                   Task 04: caso de uso de IA, prompt y resultado
+├── docs/asistente_ia.md                   Task 04: cómo armar el asistente de consulta por ID de cliente
 ├── run_all.ps1 / run_all.sh               corre todo el pipeline de punta a punta
 ```
 
@@ -55,7 +57,8 @@ El pipeline crea la base `iol` y luego:
 3. llama a las APIs;
 4. enriquece las operaciones;
 5. calcula los patrones;
-6. publica las vistas `iol.vw_*` y exporta las tablas del dashboard a `powerbi/data/`.
+6. publica las vistas `iol.vw_*` y exporta las tablas del dashboard a `powerbi/data/`;
+7. genera la base de perfiles para el asistente de IA (`outputs/perfiles_clientes_ia.json`).
 
 Los resultados de cada paso quedan en `outputs/`.
 
@@ -142,7 +145,9 @@ Script: [`scripts/fetch_api.py`](scripts/fetch_api.py). Uso del dato: [`sql/02_a
 
 ## Task 04 — Propuesta de IA
 
-Ver [`docs/propuesta_ia.md`](docs/propuesta_ia.md). Caso de uso: **la IA redacta la ficha de alerta de cada cliente de la cola de revisión.** Arma un resumen, presenta una hipótesis de riesgo junto a una benigna, sugiere verificaciones y una prioridad, siempre a partir de las métricas que ya calculó el SQL. El documento incluye el prompt con datos reales (`CLIBDBEB632`) y la salida obtenida. Las reglas detectan, la IA redacta y el analista decide.
+Ver [`docs/propuesta_ia.md`](docs/propuesta_ia.md). Caso de uso: **la IA redacta la ficha de alerta de cada cliente de la cola de revisión.** Arma un resumen, presenta una hipótesis de riesgo junto a una benigna, sugiere verificaciones y una prioridad, siempre a partir de las métricas que ya calculó el SQL. El documento incluye el prompt con datos reales (`CLIBDBEB632`), la salida obtenida con ChatGPT y la lectura del analista sobre esa salida. Las reglas detectan, la IA redacta y el analista decide.
+
+**Asistente de consulta listo para usar** ([`docs/asistente_ia.md`](docs/asistente_ia.md)). `sql/06_perfiles_ia.sql` genera una base con el perfil de los 454 clientes de la cola (`outputs/perfiles_clientes_ia.json`). Se carga en un GPT personalizado, un Proyecto de Claude o un Gem de Gemini junto con las instrucciones del documento. Después, el analista escribe solo el ID del cliente y recibe la ficha, sin copiar datos a mano.
 
 ## Dashboard (Power BI)
 
